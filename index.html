@@ -188,6 +188,7 @@
                             <li><a href="#about-two">About</a></li>
                             <li><a href="#testimonials-two">Testimonials</a></li>
                             <li><a href="#gallery-two">Gallery</a></li>
+                            <li><a href="#plan-your-trip">Plan Your Trip</a></li>
                             <li><a href="#footer-contact">Contact</a></li>
                         </ul>
                     </nav>
@@ -317,8 +318,116 @@
             </div>
         </section>
 
+        <!-- Plan Your Trip -->
+        <section class="travel-enquiry section-bg-green" id="plan-your-trip">
+            <div class="container">
+                <div class="sec-title text-center">
+                    <h2 class="sec-title__tagline">Plan Your Trip</h2>
+                    <h3 class="sec-title__title">Let's Plan Your Journey</h3>
+                    <p class="sec-title__text">Tell us about your travel plans, and we'll help craft a journey around
+                        you.</p>
+                </div>
+                <form class="travel-enquiry__form" id="travel-enquiry-form" novalidate>
+                    <div class="travel-enquiry__field">
+                        <label for="travel-name">Full Name <span aria-hidden="true">*</span></label>
+                        <input id="travel-name" name="name" type="text" autocomplete="name" required
+                            aria-describedby="travel-name-error">
+                        <span class="travel-enquiry__error" id="travel-name-error" aria-live="polite" hidden></span>
+                    </div>
+                    <div class="travel-enquiry__field">
+                        <label for="travel-phone">WhatsApp Number <span aria-hidden="true">*</span></label>
+                        <input id="travel-phone" name="phone" type="tel" autocomplete="tel"
+                            placeholder="e.g. +91 95972 29511" required aria-describedby="travel-phone-error">
+                        <span class="travel-enquiry__error" id="travel-phone-error" aria-live="polite" hidden></span>
+                    </div>
+                    <div class="travel-enquiry__field">
+                        <label for="travel-email">Email Address <span aria-hidden="true">*</span></label>
+                        <input id="travel-email" name="email" type="email" autocomplete="email" required
+                            aria-describedby="travel-email-error">
+                        <span class="travel-enquiry__error" id="travel-email-error" aria-live="polite" hidden></span>
+                    </div>
+                    <div class="travel-enquiry__field">
+                        <label for="travel-destination">Destination <span aria-hidden="true">*</span></label>
+                        <input id="travel-destination" name="destination" type="text" autocomplete="off" required
+                            aria-describedby="travel-destination-error">
+                        <span class="travel-enquiry__error" id="travel-destination-error" aria-live="polite"
+                            hidden></span>
+                    </div>
+                    <div class="travel-enquiry__field">
+                        <label for="travel-departure">Departure Date <span aria-hidden="true">*</span></label>
+                        <input id="travel-departure" name="departure" type="date" required
+                            aria-describedby="travel-departure-error">
+                        <span class="travel-enquiry__error" id="travel-departure-error" aria-live="polite"
+                            hidden></span>
+                    </div>
+                    <div class="travel-enquiry__field">
+                        <label for="travel-return">Return Date <span aria-hidden="true">*</span></label>
+                        <input id="travel-return" name="return" type="date" required
+                            aria-describedby="travel-return-error">
+                        <span class="travel-enquiry__error" id="travel-return-error" aria-live="polite" hidden></span>
+                    </div>
+                    <div class="travel-enquiry__field">
+                        <label for="travel-adults">Adults <span aria-hidden="true">*</span></label>
+                        <input id="travel-adults" name="adults" type="number" min="1" step="1" inputmode="numeric"
+                            required aria-describedby="travel-adults-error">
+                        <span class="travel-enquiry__error" id="travel-adults-error" aria-live="polite" hidden></span>
+                    </div>
+                    <div class="travel-enquiry__field">
+                        <label for="travel-children">Children</label>
+                        <input id="travel-children" name="children" type="number" min="0" step="1" inputmode="numeric"
+                            aria-describedby="travel-children-error">
+                        <span class="travel-enquiry__error" id="travel-children-error" aria-live="polite" hidden></span>
+                    </div>
+                    <div class="travel-enquiry__field">
+                        <label for="travel-type">Trip Type <span aria-hidden="true">*</span></label>
+                        <select id="travel-type" name="tripType" required aria-describedby="travel-type-error">
+                            <option value="" selected disabled>Select a trip type</option>
+                            <option>Family Holiday</option>
+                            <option>Honeymoon</option>
+                            <option>Couple</option>
+                            <option>Solo Travel</option>
+                            <option>Group Tour</option>
+                            <option>Corporate Travel</option>
+                            <option>Luxury Travel</option>
+                            <option>Other</option>
+                        </select>
+                        <span class="travel-enquiry__error" id="travel-type-error" aria-live="polite" hidden></span>
+                    </div>
+                    <div class="travel-enquiry__field">
+                        <label for="travel-budget">Approximate Budget <span aria-hidden="true">*</span></label>
+                        <select id="travel-budget" name="budget" required aria-describedby="travel-budget-error">
+                            <option value="" selected disabled>Select a budget</option>
+                            <option>Under ₹50,000</option>
+                            <option>₹50,000 – ₹1 Lakh</option>
+                            <option>₹1 Lakh – ₹2 Lakh</option>
+                            <option>₹2 Lakh – ₹5 Lakh</option>
+                            <option>₹5 Lakh+</option>
+                            <option>Not Sure Yet</option>
+                        </select>
+                        <span class="travel-enquiry__error" id="travel-budget-error" aria-live="polite" hidden></span>
+                    </div>
+                    <div class="travel-enquiry__field travel-enquiry__field--wide">
+                        <label for="travel-requirements">Additional Requirements</label>
+                        <textarea id="travel-requirements" name="requirements" rows="4"
+                            aria-describedby="travel-requirements-error"></textarea>
+                        <span class="travel-enquiry__error" id="travel-requirements-error" aria-live="polite"
+                            hidden></span>
+                    </div>
+                    <div class="travel-enquiry__actions">
+                        <button class="adhvan-btn travel-enquiry__submit" type="submit">
+                            <span>Get My Travel Plan</span>
+                        </button>
+                        <p class="travel-enquiry__note">Your enquiry will open in WhatsApp with the details filled in.
+                        </p>
+                        <p class="travel-enquiry__status" id="travel-enquiry-status" role="status" aria-live="polite"
+                            hidden></p>
+                    </div>
+                </form>
+            </div>
+        </section>
+
         <!-- Why Choose Section -->
-        <section class="why-choose-two section-bg-green" id="why-choose-two">
+        <section class="why-choose-two section-bg-white" id="why-choose-two">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-5">
@@ -373,7 +482,7 @@
         </section>
 
         <!-- Services Section -->
-        <section class="services-lux" id="services-lux">
+        <section class="services-lux section-bg-green" id="services-lux">
             <div class="destination-two__element-one travhub-splax"
                 data-para-options='{"orientation": "up", "scale": 1.9, "overflow": true}'><img
                     src="assets/images/shapes/dec-2-1.png" alt="services-shapes-1"></div>
@@ -455,7 +564,7 @@
         </section>
 
         <!-- About Section -->
-        <section class="about-two" id="about-two">
+        <section class="about-two section-bg-white" id="about-two">
             <div class="container">
                 <div class="row gutter-y-30">
                     <div class="col-xl-6 col-md-6">
@@ -492,7 +601,7 @@
         </section>
 
         <!-- Testimonials Section -->
-        <section class="testimonials-two" id="testimonials-two">
+        <section class="testimonials-two section-bg-green" id="testimonials-two">
             <div class="testimonials-one__bg"
                 style="background-image: url(assets/images/shapes/page-header-bg-shape.png);"></div>
             <div class="container">
@@ -573,7 +682,7 @@
         </section>
 
         <!-- Gallery Section -->
-        <section class="gallery-two" id="gallery-two">
+        <section class="gallery-two section-bg-white" id="gallery-two">
             <div class="container-fluid">
                 <div class="sec-title text-center pb-3">
                     <h2 class="sec-title__tagline bw-split-in-right pt-5">Travel Moments & Trip Highlights</h2>

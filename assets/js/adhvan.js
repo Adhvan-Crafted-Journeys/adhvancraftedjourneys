@@ -636,4 +636,186 @@
       io.observe(el);
     });
   })();
+
+  const travelEnquiryForm = document.querySelector("#travel-enquiry-form");
+  if (travelEnquiryForm) {
+    let travelFormSubmitted = false;
+    const travelFormFields = Array.from(
+      travelEnquiryForm.querySelectorAll("input, select, textarea")
+    );
+    const departureDateInput = travelEnquiryForm.querySelector("#travel-departure");
+    const returnDateInput = travelEnquiryForm.querySelector("#travel-return");
+
+    function getTravelFieldError(field) {
+      const value = field.value.trim();
+
+      if (field.id === "travel-name" && !value) {
+        return "Please enter your full name.";
+      }
+      if (field.id === "travel-phone") {
+        const digits = value.replace(/\D/g, "");
+        if (!value) {
+          return "Please enter your WhatsApp number.";
+        }
+        if (!/^\+?[0-9\s().-]+$/.test(value) || digits.length < 7 || digits.length > 15) {
+          return "Enter a valid phone number with 7 to 15 digits.";
+        }
+      }
+      if (field.id === "travel-email") {
+        if (!value) {
+          return "Please enter your email address.";
+        }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+          return "Enter a valid email address.";
+        }
+      }
+      if (field.id === "travel-destination" && !value) {
+        return "Please enter your destination.";
+      }
+      if (field.id === "travel-departure" && !value) {
+        return "Please select a departure date.";
+      }
+      if (field.id === "travel-return") {
+        if (!value) {
+          return "Please select a return date.";
+        }
+        if (departureDateInput.value && value < departureDateInput.value) {
+          return "Return date cannot be earlier than departure date.";
+        }
+      }
+      if (field.id === "travel-adults") {
+        if (!value) {
+          return "Please enter the number of adults.";
+        }
+        if (!Number.isInteger(Number(value)) || Number(value) < 1) {
+          return "Enter a whole number of at least 1 adult.";
+        }
+      }
+      if (field.id === "travel-children" && (field.validity.badInput || (value &&
+        (!Number.isInteger(Number(value)) || Number(value) < 0)))) {
+        return "Enter a whole number of 0 or more children.";
+      }
+      if (field.id === "travel-type" && !value) {
+        return "Please select a trip type.";
+      }
+      if (field.id === "travel-budget" && !value) {
+        return "Please select an approximate budget.";
+      }
+
+      return "";
+    }
+
+    function showTravelFieldError(field, message) {
+      const error = document.querySelector(`#${field.id}-error`);
+      field.setAttribute("aria-invalid", message ? "true" : "false");
+      error.textContent = message;
+      error.hidden = !message;
+    }
+
+    function validateTravelForm() {
+      let isValid = true;
+      let firstInvalidField = null;
+
+      travelFormFields.forEach(function (field) {
+        const message = getTravelFieldError(field);
+        showTravelFieldError(field, message);
+        if (message) {
+          isValid = false;
+          firstInvalidField = firstInvalidField || field;
+        }
+      });
+
+      if (firstInvalidField) {
+        firstInvalidField.focus();
+      }
+      return isValid;
+    }
+
+    function formatTravelDate(value) {
+      return new Intl.DateTimeFormat("en-IN", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+        timeZone: "UTC"
+      }).format(new Date(`${value}T00:00:00Z`));
+    }
+
+    function buildWhatsAppMessage(form) {
+      const values = new FormData(form);
+      const travelers = [`${values.get("adults")} ${Number(values.get("adults")) === 1 ? "Adult" : "Adults"}`];
+      const children = String(values.get("children") || "").trim();
+      if (children) {
+        travelers.push(`${children} ${Number(children) === 1 ? "Child" : "Children"}`);
+      }
+
+      const lines = [
+        "Hello Adhvan Crafted Journeys,",
+        "",
+        "I would like to plan a trip.",
+        "",
+        "*Travel Enquiry*",
+        "",
+        `Name: ${String(values.get("name")).trim()}`,
+        `WhatsApp: ${String(values.get("phone")).trim()}`,
+        `Email: ${String(values.get("email")).trim()}`,
+        `Destination: ${String(values.get("destination")).trim()}`,
+        `Travel Dates: ${formatTravelDate(String(values.get("departure")))} – ${formatTravelDate(String(values.get("return")))}`,
+        `Travelers: ${travelers.join("\n")}`,
+        `Trip Type: ${String(values.get("tripType"))}`,
+        `Budget: ${String(values.get("budget"))}`
+      ];
+
+      const requirements = String(values.get("requirements") || "").trim();
+      if (requirements) {
+        lines.push("", "Additional Requirements:", requirements);
+      }
+      lines.push("", "Thank you.");
+      return lines.join("\n");
+    }
+
+    function openWhatsApp(message) {
+      const whatsappNumber = "7373843646";
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    }
+
+    departureDateInput.addEventListener("change", function () {
+      returnDateInput.min = departureDateInput.value;
+      if (travelFormSubmitted || returnDateInput.value) {
+        showTravelFieldError(returnDateInput, getTravelFieldError(returnDateInput));
+      }
+    });
+
+    travelFormFields.forEach(function (field) {
+      field.addEventListener("blur", function () {
+        showTravelFieldError(field, getTravelFieldError(field));
+      });
+      field.addEventListener("input", function () {
+        if (travelFormSubmitted || field.getAttribute("aria-invalid") === "true") {
+          showTravelFieldError(field, getTravelFieldError(field));
+        }
+      });
+      field.addEventListener("change", function () {
+        if (travelFormSubmitted || field.getAttribute("aria-invalid") === "true") {
+          showTravelFieldError(field, getTravelFieldError(field));
+        }
+      });
+    });
+
+    travelEnquiryForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      travelFormSubmitted = true;
+      const status = document.querySelector("#travel-enquiry-status");
+      status.hidden = true;
+      status.textContent = "";
+
+      if (!validateTravelForm()) {
+        return;
+      }
+
+      openWhatsApp(buildWhatsAppMessage(travelEnquiryForm));
+      status.textContent = "Your enquiry is ready in WhatsApp. Please tap Send to contact our travel team.";
+      status.hidden = false;
+    });
+  }
 })(jQuery);

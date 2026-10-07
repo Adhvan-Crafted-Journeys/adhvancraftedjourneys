@@ -4493,3 +4493,154 @@ h6 {
   height: 20px;
   margin-right: 8px;
 }
+
+/*--------------------------------------------------------------
+# Travel Enquiry
+--------------------------------------------------------------*/
+.travel-enquiry {
+  padding: 75px 0;
+}
+
+.travel-enquiry .sec-title {
+  margin-bottom: 32px;
+}
+
+.travel-enquiry .sec-title__title {
+  margin-bottom: 8px;
+}
+
+.travel-enquiry__form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 22px;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 32px;
+  border: 1px solid rgba(var(--adhvan-base-rgb), 0.12);
+  border-radius: 18px;
+  background: var(--adhvan-white);
+  box-shadow: 0 12px 35px rgba(var(--adhvan-base-rgb), 0.08);
+}
+
+.travel-enquiry__field {
+  min-width: 0;
+}
+
+.travel-enquiry__field label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--adhvan-black);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.travel-enquiry__field label span {
+  color: #b42318;
+}
+
+.travel-enquiry__field input,
+.travel-enquiry__field select,
+.travel-enquiry__field textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 52px;
+  padding: 11px 14px;
+  border: 1px solid var(--adhvan-border-color);
+  border-radius: 8px;
+  background-color: var(--adhvan-white);
+  color: var(--adhvan-black);
+  font: inherit;
+  line-height: 1.4;
+}
+
+.travel-enquiry__field select {
+  padding-right: 32px;
+}
+
+.travel-enquiry__field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.travel-enquiry__field input:focus,
+.travel-enquiry__field select:focus,
+.travel-enquiry__field textarea:focus {
+  border-color: var(--adhvan-base);
+  outline: 3px solid rgba(var(--adhvan-base-rgb), 0.14);
+}
+
+.travel-enquiry__field [aria-invalid="true"] {
+  border-color: #b42318;
+}
+
+.travel-enquiry__error {
+  display: block;
+  margin-top: 4px;
+  color: #b42318;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.travel-enquiry__error[hidden],
+.travel-enquiry__status[hidden] {
+  display: none;
+}
+
+.travel-enquiry__field--wide,
+.travel-enquiry__actions {
+  grid-column: 1 / -1;
+}
+
+.travel-enquiry__actions {
+  text-align: center;
+}
+
+.travel-enquiry__submit {
+  min-height: 54px;
+  padding: 0 30px;
+  font-size: 16px;
+}
+
+.travel-enquiry__note,
+.travel-enquiry__status {
+  margin: 10px 0 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.travel-enquiry__note {
+  color: var(--adhvan-text2);
+}
+
+.travel-enquiry__status {
+  color: var(--adhvan-base);
+  font-weight: 600;
+}
+
+@media (max-width: 767px) {
+  .travel-enquiry {
+    padding: 48px 0;
+  }
+
+  .travel-enquiry__form {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+    padding: 22px 18px;
+  }
+
+  .travel-enquiry__field--wide,
+  .travel-enquiry__actions {
+    grid-column: auto;
+  }
+
+  .travel-enquiry__submit {
+    width: 100%;
+  }
+}
+
+@media (max-width: 359px) {
+  .travel-enquiry__form {
+    padding: 18px 14px;
+  }
+}
