@@ -896,7 +896,7 @@
     }
 
     function openWhatsApp(message) {
-      const whatsappNumber = "919597229511";
+      const whatsappNumber = "7373843646";
       const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
       window.open(whatsappUrl, "_blank", "noopener,noreferrer");
     }
