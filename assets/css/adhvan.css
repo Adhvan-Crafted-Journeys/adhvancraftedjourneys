@@ -81,6 +81,14 @@ h6 {
   color: var(--adhvan-black);
 }
 
+.section-bg-green {
+  background: rgba(var(--adhvan-base-rgb), 0.06) !important;
+}
+
+.section-bg-white {
+  background: var(--adhvan-white) !important;
+}
+
 @media (max-width: 575px) {
 
   h1 br,
