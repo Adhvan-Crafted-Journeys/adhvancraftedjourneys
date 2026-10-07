@@ -637,6 +637,128 @@
     });
   })();
 
+  const itineraryModal = document.querySelector("#dubai-itinerary-modal");
+  if (itineraryModal) {
+    const itineraryOpeners = document.querySelectorAll("[data-itinerary-open]");
+    const itineraryCloseButton = itineraryModal.querySelector(".itinerary-modal__close");
+    const itineraryOverlay = itineraryModal.querySelector(".itinerary-modal__overlay");
+    const itineraryPlanLink = itineraryModal.querySelector(".itinerary-modal__cta");
+    let itineraryOpener = null;
+    let bodyWasLocked = false;
+
+    function openItineraryModal(opener) {
+      itineraryOpener = opener;
+      bodyWasLocked = document.body.classList.contains("locked");
+      itineraryModal.hidden = false;
+      document.body.classList.add("locked");
+      itineraryCloseButton.focus();
+    }
+
+    function closeItineraryModal(restoreFocus) {
+      itineraryModal.hidden = true;
+      if (!bodyWasLocked) {
+        document.body.classList.remove("locked");
+      }
+      if (restoreFocus && itineraryOpener) {
+        itineraryOpener.focus();
+      }
+    }
+
+    itineraryOpeners.forEach(function (opener) {
+      opener.addEventListener("click", function () {
+        openItineraryModal(opener);
+      });
+    });
+
+    itineraryCloseButton.addEventListener("click", function () {
+      closeItineraryModal(true);
+    });
+
+    itineraryModal.addEventListener("click", function (event) {
+      if (event.target === itineraryOverlay) {
+        closeItineraryModal(true);
+      }
+    });
+
+    itineraryModal.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        closeItineraryModal(true);
+        return;
+      }
+
+      if (event.key === "Tab") {
+        const focusableElements = Array.from(
+          itineraryModal.querySelectorAll("button, a[href], [tabindex]:not([tabindex='-1'])")
+        ).filter(function (element) {
+          return !element.disabled && element.getClientRects().length > 0;
+        });
+        if (focusableElements.length) {
+          const currentIndex = focusableElements.indexOf(document.activeElement);
+          const direction = event.shiftKey ? -1 : 1;
+          const nextIndex = currentIndex === -1
+            ? (event.shiftKey ? focusableElements.length - 1 : 0)
+            : (currentIndex + direction + focusableElements.length) % focusableElements.length;
+
+          event.preventDefault();
+          focusableElements[nextIndex].focus();
+        }
+      }
+    });
+
+    itineraryPlanLink.addEventListener("click", function (event) {
+      event.preventDefault();
+
+      const travelEnquiryForm = document.querySelector("#travel-enquiry-form");
+      if (!travelEnquiryForm) {
+        window.location.hash = "plan-your-trip";
+        closeItineraryModal(false);
+        return;
+      }
+
+      const destinationInput = travelEnquiryForm.querySelector("#travel-destination");
+      const departureDateInput = travelEnquiryForm.querySelector("#travel-departure");
+      const returnDateInput = travelEnquiryForm.querySelector("#travel-return");
+      const requirementsInput = travelEnquiryForm.querySelector("#travel-requirements");
+
+      destinationInput.value = "Dubai, UAE";
+      destinationInput.dispatchEvent(new Event("input", { bubbles: true }));
+      destinationInput.dispatchEvent(new Event("change", { bubbles: true }));
+
+      departureDateInput.value = "2027-01-17";
+      departureDateInput.dispatchEvent(new Event("input", { bubbles: true }));
+      departureDateInput.dispatchEvent(new Event("change", { bubbles: true }));
+
+      returnDateInput.value = "2027-01-24";
+      returnDateInput.dispatchEvent(new Event("input", { bubbles: true }));
+      returnDateInput.dispatchEvent(new Event("change", { bubbles: true }));
+
+      if (!requirementsInput.value.trim()) {
+        requirementsInput.value = "Interested in the Dubai 2027 itinerary.";
+        requirementsInput.dispatchEvent(new Event("input", { bubbles: true }));
+      }
+
+      bodyWasLocked = false;
+      closeItineraryModal(false);
+      if (window.location.hash !== itineraryPlanLink.getAttribute("href")) {
+        window.history.replaceState(null, "", itineraryPlanLink.getAttribute("href"));
+      }
+
+      window.requestAnimationFrame(function () {
+        const travelSection = document.querySelector("#plan-your-trip");
+        const stickyHeader = document.querySelector(".sticky-header--cloned.active");
+        const headerOffset = stickyHeader ? stickyHeader.getBoundingClientRect().height : 0;
+        const sectionTop = window.pageYOffset + travelSection.getBoundingClientRect().top;
+
+        window.scrollTo({
+          top: Math.max(0, sectionTop - headerOffset - 16),
+          behavior: "smooth"
+        });
+        destinationInput.focus({ preventScroll: true });
+      });
+    });
+  }
+
   const travelEnquiryForm = document.querySelector("#travel-enquiry-form");
   if (travelEnquiryForm) {
     let travelFormSubmitted = false;
@@ -774,7 +896,7 @@
     }
 
     function openWhatsApp(message) {
-      const whatsappNumber = "7373843646";
+      const whatsappNumber = "919597229511";
       const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
       window.open(whatsappUrl, "_blank", "noopener,noreferrer");
     }

@@ -293,8 +293,12 @@
                         <div class="swiper-slide">
                             <img src="assets/images/tours/australia.webp" alt="">
                         </div>
-                        <div class="swiper-slide">
-                            <img src="assets/images/tours/dubai.webp" alt="">
+                        <div class="swiper-slide itinerary-tour-slide">
+                            <img src="assets/images/tours/dubai.webp" alt="Dubai">
+                            <button class="itinerary-tour-slide__cta" type="button" data-itinerary-open
+                                aria-haspopup="dialog" aria-controls="dubai-itinerary-modal">
+                                View Itinerary
+                            </button>
                         </div>
                         <div class="swiper-slide">
                             <img src="assets/images/tours/singapore.webp" alt="">
@@ -317,6 +321,385 @@
                 </div>
             </div>
         </section>
+
+        <div class="itinerary-modal" id="dubai-itinerary-modal" role="dialog" aria-modal="true"
+            aria-labelledby="itinerary-modal-title" aria-describedby="itinerary-modal-subtitle" hidden>
+            <div class="itinerary-modal__overlay" aria-hidden="true"></div>
+            <div class="itinerary-modal__content" tabindex="-1">
+                <header class="itinerary-modal__header">
+                    <div>
+                        <p class="itinerary-modal__eyebrow">DUBAI 2027</p>
+                        <!-- <h2 id="itinerary-modal-title">Sathyabama College Dubai 2027</h2> -->
+                        <p class="itinerary-modal__subtitle" id="itinerary-modal-subtitle">8 Days / 7 Nights</p>
+                        <p class="itinerary-modal__intro">Experience Dubai through a carefully planned 8-day journey
+                            featuring city highlights, iconic attractions, cultural experiences, shopping, desert
+                            adventures and leisure time.</p>
+                    </div>
+                    <button class="itinerary-modal__close" type="button" aria-label="Close itinerary">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </header>
+                <div class="itinerary-modal__body">
+                    <section class="itinerary-modal__section" aria-labelledby="itinerary-overview-title">
+                        <h3 id="itinerary-overview-title">Trip Overview</h3>
+                        <dl class="itinerary-modal__overview">
+                            <div><dt>Destination</dt><dd>Dubai, UAE</dd></div>
+                            <div><dt>Duration</dt><dd>8 Days / 7 Nights</dd></div>
+                            <div><dt>Travel Dates</dt><dd>17 January 2027 – 24 January 2027</dd></div>
+                            <div><dt>Departure</dt><dd>Chennai (MAA)</dd></div>
+                            <div><dt>Arrival</dt><dd>Dubai (DXB)</dd></div>
+                            <div><dt>Return</dt><dd>Dubai (DXB) → Chennai (MAA)</dd></div>
+                            <!-- <div><dt>Group</dt><dd>Sathyabama College</dd></div> -->
+                        </dl>
+                    </section>
+                    <section class="itinerary-modal__section" aria-labelledby="itinerary-highlights-title">
+                        <h3 id="itinerary-highlights-title">Trip Highlights</h3>
+                        <ul class="itinerary-modal__highlights">
+                            <li>Dubai City Tour</li>
+                            <li>Dubai Frame photo stop</li>
+                            <li>Palm Jumeirah</li>
+                            <li>Jumeirah Public Beach</li>
+                            <li>Museum of the Future photo stop</li>
+                            <li>Dubai Mall</li>
+                            <li>Dhow Cruise Dinner at Marina</li>
+                            <li>Burj Khalifa – Levels 124 &amp; 125</li>
+                            <li>Global Village</li>
+                            <li>Dolphin Show OR Museum of the Future</li>
+                            <li>Optional Abu Dhabi Tour</li>
+                            <li>BAPS Temple</li>
+                            <li>Sheikh Zayed Grand Mosque drive-through</li>
+                            <li>Ferrari World</li>
+                            <li>Miracle Garden</li>
+                            <li>Desert Safari</li>
+                            <li>Gold Souq</li>
+                            <li>Meena Bazar</li>
+                        </ul>
+                    </section>
+                    <section class="itinerary-modal__section" aria-labelledby="itinerary-included-title">
+                        <h3 id="itinerary-included-title">What's Included in the Experience</h3>
+                        <ul class="itinerary-modal__included">
+                            <li>50-seater AC deluxe coach transfers where specified</li>
+                            <li>English-speaking tour guide</li>
+                            <li>Dhow cruise dinner</li>
+                            <li>Burj Khalifa entrance ticket</li>
+                            <li>Global Village entrance ticket</li>
+                            <li>Miracle Garden entrance</li>
+                            <li>Desert Safari experience</li>
+                            <li>UAE tourist visa</li>
+                            <li>Daily breakfast</li>
+                            <li>Meals as specified in the itinerary</li>
+                            <li>Unlimited cold water bottles per person per day</li>
+                        </ul>
+                    </section>
+                    <section class="itinerary-modal__section" aria-labelledby="itinerary-optional-title">
+                        <h3 id="itinerary-optional-title">Optional Experiences</h3>
+                        <div class="itinerary-modal__options">
+                            <article>
+                                <h4>Museum of the Future</h4>
+                                <p>Supplementary experience</p>
+                            </article>
+                            <article>
+                                <h4>Abu Dhabi Tour</h4>
+                                <p>Supplementary experience</p>
+                            </article>
+                        </div>
+                        <p class="itinerary-modal__fine-print">Subject to availability and pre-booking requirements.</p>
+                    </section>
+                    <section class="itinerary-modal__section" aria-labelledby="itinerary-pricing-title">
+                        <h3 id="itinerary-pricing-title">Accommodation &amp; Pricing</h3>
+                        <div class="itinerary-modal__pricing-options">
+                            <article class="itinerary-modal__pricing">
+                                <h4>Fortune Pearl or similar</h4>
+                                <p class="itinerary-modal__pricing-category">3 Star</p>
+                                <p class="itinerary-modal__meal-plan">Meal Plan: Daily Breakfast</p>
+                                <dl>
+                                    <div><dt>Double Sharing</dt><dd>₹69,350 <span>/ person</span></dd></div>
+                                    <div><dt>Single Occupancy</dt><dd>₹98,100 <span>/ person</span></dd></div>
+                                </dl>
+                            </article>
+                            <article class="itinerary-modal__pricing">
+                                <h4>Fortune Pearl or similar</h4>
+                                <p class="itinerary-modal__pricing-category">3 Star</p>
+                                <p class="itinerary-modal__meal-plan">Meal Plan: Daily Breakfast + Dinner</p>
+                                <dl>
+                                    <div><dt>Double Sharing</dt><dd>₹76,500 <span>/ person</span></dd></div>
+                                    <div><dt>Single Occupancy</dt><dd>₹105,500 <span>/ person</span></dd></div>
+                                </dl>
+                            </article>
+                        </div>
+                        <div class="itinerary-modal__supplements">
+                            <h4>Supplementary Experiences</h4>
+                            <div>
+                                <p>Museum of the Future <strong>₹2,300 / person</strong></p>
+                                <p>Abu Dhabi Tour <strong>₹10,600 / person</strong></p>
+                            </div>
+                        </div>
+                        <p class="itinerary-modal__fine-print">Quotation only. No rooms or flight seats have been
+                            booked.</p>
+                        <p class="itinerary-modal__fine-print">Price is based on 40 adults and may vary.</p>
+                    </section>
+                    <section class="itinerary-modal__section" aria-labelledby="itinerary-flights-title">
+                        <h3 id="itinerary-flights-title">Flight Details</h3>
+                        <p class="itinerary-modal__flight-intro">Indicative Emirates flight details for the Dubai 2027
+                            itinerary.</p>
+                        <div class="itinerary-modal__flights">
+                            <article class="itinerary-modal__flight-card">
+                                <div class="itinerary-modal__flight-heading">
+                                    <span>OUTBOUND</span>
+                                    <p>Chennai → Dubai</p>
+                                </div>
+                                <div class="itinerary-modal__flight-route">
+                                    <div>
+                                        <strong>Chennai (MAA)</strong>
+                                        <span>09:50 AM</span>
+                                    </div>
+                                    <span class="itinerary-modal__flight-arrow" aria-hidden="true">→</span>
+                                    <div>
+                                        <strong>Dubai (DXB)</strong>
+                                        <span>12:40 PM</span>
+                                    </div>
+                                </div>
+                                <dl class="itinerary-modal__flight-meta">
+                                    <div><dt>Airline</dt><dd>Emirates</dd></div>
+                                    <div><dt>Flight</dt><dd>EK-545</dd></div>
+                                    <div><dt>Route</dt><dd>MAA → DXB</dd></div>
+                                    <div><dt>Flight Type</dt><dd>Non-stop</dd></div>
+                                    <div><dt>Date</dt><dd>17 January 2027</dd></div>
+                                    <div><dt>Duration</dt><dd>4h 20m</dd></div>
+                                </dl>
+                            </article>
+                            <article class="itinerary-modal__flight-card">
+                                <div class="itinerary-modal__flight-heading">
+                                    <span>RETURN</span>
+                                    <p>Dubai → Chennai</p>
+                                </div>
+                                <div class="itinerary-modal__flight-route">
+                                    <div>
+                                        <strong>Dubai (DXB)</strong>
+                                        <span>09:00 PM</span>
+                                    </div>
+                                    <span class="itinerary-modal__flight-arrow" aria-hidden="true">→</span>
+                                    <div>
+                                        <strong>Chennai (MAA)</strong>
+                                        <span>02:15 AM</span>
+                                        <small>25 January 2027</small>
+                                    </div>
+                                </div>
+                                <dl class="itinerary-modal__flight-meta">
+                                    <div><dt>Airline</dt><dd>Emirates</dd></div>
+                                    <div><dt>Flight</dt><dd>EK-542</dd></div>
+                                    <div><dt>Route</dt><dd>DXB → MAA</dd></div>
+                                    <div><dt>Flight Type</dt><dd>Non-stop</dd></div>
+                                    <div><dt>Date</dt><dd>24 January 2027</dd></div>
+                                    <div><dt>Duration</dt><dd>3h 45m</dd></div>
+                                </dl>
+                            </article>
+                        </div>
+                        <div class="itinerary-modal__flight-extras">
+                            <section class="itinerary-modal__baggage" aria-labelledby="itinerary-baggage-title">
+                                <h4 id="itinerary-baggage-title">Baggage Allowance <span>Adult</span></h4>
+                                <dl>
+                                    <div><dt>Cabin baggage</dt><dd>1 piece up to 7 kg</dd></div>
+                                    <div><dt>Check-in baggage</dt><dd>30 kg</dd></div>
+                                </dl>
+                            </section>
+                            <section class="itinerary-modal__flight-price" aria-labelledby="itinerary-flight-price-title">
+                                <h4 id="itinerary-flight-price-title">Flight Price</h4>
+                                <p class="itinerary-modal__flight-price-value">₹45,256 <span>/ person</span></p>
+                                <p class="itinerary-modal__flight-quote-label">Price as of quotation</p>
+                                <p class="itinerary-modal__fine-print">Airline ticket pricing is dynamic and may change
+                                    at the time of ticket issuance.</p>
+                                <p class="itinerary-modal__fine-print">Flight pricing is subject to availability and
+                                    may change at the time of issuance.</p>
+                            </section>
+                        </div>
+                    </section>
+                    <section class="itinerary-modal__section itinerary-modal__important"
+                        aria-labelledby="itinerary-important-title">
+                        <h3 id="itinerary-important-title">Important Notes</h3>
+                        <p class="itinerary-modal__important-intro">Please review these important quotation and booking
+                            conditions before planning your trip.</p>
+                        <div class="itinerary-modal__quotation-note">
+                            <span class="fas fa-exclamation-circle" aria-hidden="true"></span>
+                            <div>
+                                <h4>Quotation Only</h4>
+                                <p>This itinerary and pricing are provided as a quotation only. No rooms or flight seats
+                                    have been booked.</p>
+                            </div>
+                        </div>
+                        <ul class="itinerary-modal__important-list">
+                            <li>Itinerary is suggestive and may be changed due to operational requirements.</li>
+                            <li>Pricing is based on 40 adults and may vary.</li>
+                            <li>Airline ticket pricing is dynamic and may change at the time of ticket issuance.</li>
+                            <li>Supplementary experiences are subject to availability and the applicable pre-booking
+                                requirements stated in the itinerary.</li>
+                            <li>Museum of the Future is subject to pre-booking 50 days prior to arrival.</li>
+                            <li>Peak / festive surcharge is excluded from the quoted package pricing.</li>
+                        </ul>
+                    </section>
+                    <section class="itinerary-modal__section" aria-labelledby="itinerary-days-title">
+                        <h3 id="itinerary-days-title">Day-by-Day Itinerary</h3>
+                        <div class="itinerary-modal__days">
+                            <article class="itinerary-modal__day">
+                                <p class="itinerary-modal__day-number">DAY 01</p>
+                                <h4>Arrival in Dubai</h4>
+                                <ul>
+                                    <li>Meet &amp; greet at DXB airport exit.</li>
+                                    <li>Transfer by 50-seater AC deluxe coach with tour guide.</li>
+                                    <li>Standard hotel check-in at 3:00 PM.</li>
+                                    <li>Evening Dhow Cruise Dinner at Marina.</li>
+                                    <li>2-hour sailing.</li>
+                                    <li>International buffet dinner.</li>
+                                    <li>Upper deck seating.</li>
+                                    <li>Tanoura dance.</li>
+                                    <li>Return to hotel.</li>
+                                </ul>
+                            </article>
+                            <article class="itinerary-modal__day">
+                                <p class="itinerary-modal__day-number">DAY 02</p>
+                                <h4>Dubai City Tour</h4>
+                                <ul>
+                                    <li>Breakfast.</li>
+                                    <li>Transfer by 50-seater AC deluxe coach with tour guide.</li>
+                                    <li>Dubai city tour.</li>
+                                    <li>Photo stop at Dubai Frame.</li>
+                                    <li>Drive through Palm Jumeirah.</li>
+                                    <li>Photo stop at Jumeirah Public Beach.</li>
+                                    <li>Photo stop at Museum of the Future.</li>
+                                    <li>Proceed to Dubai Mall.</li>
+                                    <li>Return to hotel.</li>
+                                </ul>
+                            </article>
+                            <article class="itinerary-modal__day">
+                                <p class="itinerary-modal__day-number">DAY 03</p>
+                                <h4>Burj Khalifa</h4>
+                                <ul>
+                                    <li>Breakfast.</li>
+                                    <li>One-way transfer from hotel to Dubai World Trade Centre.</li>
+                                    <li>Evening transfer with tour guide.</li>
+                                    <li>Burj Khalifa — Level 124/125.</li>
+                                    <li>Non-peak entrance ticket.</li>
+                                    <li>Return to hotel.</li>
+                                </ul>
+                            </article>
+                            <article class="itinerary-modal__day">
+                                <p class="itinerary-modal__day-number">DAY 04</p>
+                                <h4>Global Village</h4>
+                                <ul>
+                                    <li>Breakfast.</li>
+                                    <li>One-way transfer from hotel to Dubai World Trade Centre.</li>
+                                    <li>Evening transfer with tour guide.</li>
+                                    <li>Global Village entrance ticket.</li>
+                                    <li>Return to hotel.</li>
+                                </ul>
+                            </article>
+                            <article class="itinerary-modal__day">
+                                <p class="itinerary-modal__day-number">DAY 05</p>
+                                <h4>Dolphin Show / Museum of the Future</h4>
+                                <ul>
+                                    <li>Breakfast.</li>
+                                    <li>One-way transfer from hotel to Dubai World Trade Centre.</li>
+                                    <li>Evening transfer with tour guide.</li>
+                                    <li>Dolphin Show OR Museum of the Future.</li>
+                                    <li>Supplement cost applies.</li>
+                                    <li>Subject to pre-booking 50 days prior to arrival.</li>
+                                    <li>Return to hotel.</li>
+                                </ul>
+                            </article>
+                            <article class="itinerary-modal__day">
+                                <p class="itinerary-modal__day-number">DAY 06</p>
+                                <h4>Leisure / Abu Dhabi Tour</h4>
+                                <ul>
+                                    <li>Breakfast.</li>
+                                    <li>Free day for leisure OR Abu Dhabi tour with supplement cost.</li>
+                                    <li>Transfer with tour guide.</li>
+                                    <li>BAPS Temple.</li>
+                                    <li>Drive through Sheikh Zayed Grand Mosque.</li>
+                                    <li>Ferrari World entrance.</li>
+                                    <li>Drive through Abu Dhabi Corniche.</li>
+                                    <li>Return to hotel.</li>
+                                </ul>
+                            </article>
+                            <article class="itinerary-modal__day itinerary-modal__day--safari">
+                                <p class="itinerary-modal__day-number">DAY 07</p>
+                                <h4>Miracle Garden &amp; Desert Safari</h4>
+                                <ul>
+                                    <li>Breakfast.</li>
+                                    <li>Transfer by 50-seater AC deluxe coach with guide.</li>
+                                    <li>Miracle Garden entrance.</li>
+                                    <li>Desert Safari experience.</li>
+                                    <li>6 persons per SUV.</li>
+                                </ul>
+                                <p class="itinerary-modal__activities-label">Desert Safari activities</p>
+                                <ul class="itinerary-modal__activities">
+                                    <li>Dune bash</li>
+                                    <li>Sunset stop</li>
+                                    <li>Camel ride</li>
+                                    <li>Sand board</li>
+                                    <li>BBQ dinner</li>
+                                    <li>Arabic coffee with dates at camp entrance</li>
+                                    <li>Belly dance</li>
+                                    <li>Tanoura dance</li>
+                                    <li>Fire show</li>
+                                </ul>
+                                <ul>
+                                    <li>Return to hotel.</li>
+                                </ul>
+                            </article>
+                            <article class="itinerary-modal__day">
+                                <p class="itinerary-modal__day-number">DAY 08</p>
+                                <h4>Shopping &amp; Departure</h4>
+                                <ul>
+                                    <li>Breakfast.</li>
+                                    <li>Checkout.</li>
+                                    <li>Transfer by 50-seater AC deluxe coach with guide.</li>
+                                    <li>Shopping at Gold Souq / Meena Bazar.</li>
+                                    <li>Transfer to DXB airport for departure.</li>
+                                </ul>
+                            </article>
+                        </div>
+                    </section>
+                    <section class="itinerary-modal__section itinerary-modal__inclusions"
+                        aria-labelledby="itinerary-inclusions-title">
+                        <h3 id="itinerary-inclusions-title">Inclusions &amp; Exclusions</h3>
+                        <p class="itinerary-modal__inclusions-intro">Know what is covered in the Dubai 2027 travel
+                            package and what is excluded.</p>
+                        <div class="itinerary-modal__inclusions-grid">
+                            <section class="itinerary-modal__inclusions-card itinerary-modal__inclusions-card--included"
+                                aria-labelledby="itinerary-included-list-title">
+                                <h4 id="itinerary-included-list-title">What's Included</h4>
+                                <ul>
+                                    <li>Accommodation as per the mentioned hotel category.</li>
+                                    <li>Daily breakfast.</li>
+                                    <li>UAE tourist visa.</li>
+                                    <li>All transfers and sightseeing by AC coach with an English-speaking guide.</li>
+                                    <li>Meals as specified in the itinerary.</li>
+                                    <li>Unlimited cold water bottles per person per day.</li>
+                                    <li>Applicable taxes.</li>
+                                </ul>
+                            </section>
+                            <section class="itinerary-modal__inclusions-card itinerary-modal__inclusions-card--excluded"
+                                aria-labelledby="itinerary-excluded-list-title">
+                                <h4 id="itinerary-excluded-list-title">What's Not Included</h4>
+                                <ul>
+                                    <li>International / domestic flights.</li>
+                                    <li>Travel insurance.</li>
+                                    <li>Personal expenses.</li>
+                                    <li>Tips / gratuities.</li>
+                                    <li>Items not mentioned in the itinerary.</li>
+                                    <li>Peak / festive surcharge.</li>
+                                </ul>
+                            </section>
+                        </div>
+                    </section>
+                </div>
+                <footer class="itinerary-modal__footer">
+                    <a class="adhvan-btn itinerary-modal__cta" href="#plan-your-trip">
+                        <span>Plan This Trip</span>
+                    </a>
+                </footer>
+            </div>
+        </div>
 
         <!-- Plan Your Trip -->
         <section class="travel-enquiry section-bg-green" id="plan-your-trip">
