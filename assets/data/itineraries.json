@@ -1,0 +1,1058 @@
+{
+  "itineraries": [
+    {
+      "id": "dubai-2027",
+      "title": "Dubai 2027",
+      "duration": {
+        "days": 8,
+        "nights": 7
+      },
+      "description": "Discover Dubai through a guided city tour featuring photo stops and drives past landmarks including Dubai Frame, Palm Jumeirah and the Museum of the Future. The itinerary also includes an evening dhow cruise, visits to Burj Khalifa and Global Village, and a choice between the Dolphin Show and the Museum of the Future, subject to the stated supplement and advance-booking conditions. An Abu Dhabi tour is offered as an alternative to a leisure day at an additional supplement, with listed stops including BAPS Temple, Sheikh Zayed Grand Mosque, Ferrari World and the Corniche. The journey also features Miracle Garden, a desert safari with listed camp activities, and time for shopping before departure.",
+      "days": [
+        {
+          "day": 1,
+          "date": "",
+          "title": "Arrival in Dubai",
+          "activities": [
+            {
+              "time": "",
+              "title": "Meet & greet at DXB airport exit.",
+              "description": "Meet the tour representative at the designated arrival exit of Dubai International Airport for a welcome and assistance."
+            },
+            {
+              "time": "",
+              "title": "Transfer by 50-seater AC deluxe coach with tour guide.",
+              "description": "Travel by 50-seater air-conditioned deluxe coach with the tour guide accompanying the group."
+            },
+            {
+              "time": "",
+              "title": "Standard hotel check-in at 3:00 PM.",
+              "description": "Complete the hotel check-in process from the stated standard check-in time of 3:00 PM."
+            },
+            {
+              "time": "",
+              "title": "Evening Dhow Cruise Dinner at Marina.",
+              "description": "Board the dhow for an evening cruise and dinner around Dubai Marina."
+            },
+            {
+              "time": "",
+              "title": "2-hour sailing.",
+              "description": "The dhow cruise is scheduled to sail for two hours."
+            },
+            {
+              "time": "",
+              "title": "International buffet dinner.",
+              "description": "Dinner is arranged in an international buffet format; specific dishes are not listed."
+            },
+            {
+              "time": "",
+              "title": "Upper deck seating.",
+              "description": "Seating on the dhow is arranged on the upper deck."
+            },
+            {
+              "time": "",
+              "title": "Tanoura dance.",
+              "description": "Watch a Tanoura dance performance during the evening programme."
+            },
+            {
+              "time": "",
+              "title": "Return to hotel.",
+              "description": "Travel back to the hotel after the day's scheduled activities."
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "date": "",
+          "title": "Dubai City Tour",
+          "activities": [
+            {
+              "time": "",
+              "title": "Breakfast.",
+              "description": "Breakfast is scheduled before the day's activities."
+            },
+            {
+              "time": "",
+              "title": "Transfer by 50-seater AC deluxe coach with tour guide.",
+              "description": "Travel by 50-seater air-conditioned deluxe coach with the tour guide accompanying the group."
+            },
+            {
+              "time": "",
+              "title": "Dubai city tour.",
+              "description": "Explore Dubai on a city sightseeing tour with the group."
+            },
+            {
+              "time": "",
+              "title": "Photo stop at Dubai Frame.",
+              "description": "Pause at Dubai Frame for a photo opportunity."
+            },
+            {
+              "time": "",
+              "title": "Drive through Palm Jumeirah.",
+              "description": "Take a sightseeing drive through Palm Jumeirah."
+            },
+            {
+              "time": "",
+              "title": "Photo stop at Jumeirah Public Beach.",
+              "description": "Pause at Jumeirah Public Beach for a photo opportunity."
+            },
+            {
+              "time": "",
+              "title": "Photo stop at Museum of the Future.",
+              "description": "Pause near the Museum of the Future for a photo opportunity."
+            },
+            {
+              "time": "",
+              "title": "Proceed to Dubai Mall.",
+              "description": "Continue to Dubai Mall as the next stop on the day's itinerary."
+            },
+            {
+              "time": "",
+              "title": "Return to hotel.",
+              "description": "Travel back to the hotel after the day's scheduled activities."
+            }
+          ]
+        },
+        {
+          "day": 3,
+          "date": "",
+          "title": "Burj Khalifa",
+          "activities": [
+            {
+              "time": "",
+              "title": "Breakfast.",
+              "description": "Breakfast is scheduled before the day's activities."
+            },
+            {
+              "time": "",
+              "title": "One-way transfer from hotel to Dubai World Trade Centre.",
+              "description": "Travel one way from the hotel to Dubai World Trade Centre."
+            },
+            {
+              "time": "",
+              "title": "Evening transfer with tour guide.",
+              "description": "An evening transfer is arranged with the tour guide accompanying the group."
+            },
+            {
+              "time": "",
+              "title": "Burj Khalifa — Level 124/125.",
+              "description": "Visit the Burj Khalifa's 124th and 125th levels as listed in the itinerary."
+            },
+            {
+              "time": "",
+              "title": "Non-peak entrance ticket.",
+              "description": "The listed entrance ticket is for a non-peak visit period."
+            },
+            {
+              "time": "",
+              "title": "Return to hotel.",
+              "description": "Travel back to the hotel after the day's scheduled activities."
+            }
+          ]
+        },
+        {
+          "day": 4,
+          "date": "",
+          "title": "Global Village",
+          "activities": [
+            {
+              "time": "",
+              "title": "Breakfast.",
+              "description": "Breakfast is scheduled before the day's activities."
+            },
+            {
+              "time": "",
+              "title": "One-way transfer from hotel to Dubai World Trade Centre.",
+              "description": "Travel one way from the hotel to Dubai World Trade Centre."
+            },
+            {
+              "time": "",
+              "title": "Evening transfer with tour guide.",
+              "description": "An evening transfer is arranged with the tour guide accompanying the group."
+            },
+            {
+              "time": "",
+              "title": "Global Village entrance ticket.",
+              "description": "An entrance ticket is listed for the Global Village visit."
+            },
+            {
+              "time": "",
+              "title": "Return to hotel.",
+              "description": "Travel back to the hotel after the day's scheduled activities."
+            }
+          ]
+        },
+        {
+          "day": 5,
+          "date": "",
+          "title": "Dolphin Show / Museum of the Future",
+          "activities": [
+            {
+              "time": "",
+              "title": "Breakfast.",
+              "description": "Breakfast is scheduled before the day's activities."
+            },
+            {
+              "time": "",
+              "title": "One-way transfer from hotel to Dubai World Trade Centre.",
+              "description": "Travel one way from the hotel to Dubai World Trade Centre."
+            },
+            {
+              "time": "",
+              "title": "Evening transfer with tour guide.",
+              "description": "An evening transfer is arranged with the tour guide accompanying the group."
+            },
+            {
+              "time": "",
+              "title": "Dolphin Show OR Museum of the Future.",
+              "description": "Choose either the Dolphin Show or the Museum of the Future; the selected option is subject to the stated supplement and advance-booking conditions."
+            },
+            {
+              "time": "",
+              "title": "Supplement cost applies.",
+              "description": "An additional supplement applies to the selected optional activity; the amount is not specified here."
+            },
+            {
+              "time": "",
+              "title": "Subject to pre-booking 50 days prior to arrival.",
+              "description": "The selected activity is subject to pre-booking 50 days before arrival."
+            },
+            {
+              "time": "",
+              "title": "Return to hotel.",
+              "description": "Travel back to the hotel after the day's scheduled activities."
+            }
+          ]
+        },
+        {
+          "day": 6,
+          "date": "",
+          "title": "Leisure / Abu Dhabi Tour",
+          "activities": [
+            {
+              "time": "",
+              "title": "Breakfast.",
+              "description": "Breakfast is scheduled before the day's activities."
+            },
+            {
+              "time": "",
+              "title": "Free day for leisure OR Abu Dhabi tour with supplement cost.",
+              "description": "Choose a free day at leisure or opt for the Abu Dhabi tour, which carries a supplement."
+            },
+            {
+              "time": "",
+              "title": "Transfer with tour guide.",
+              "description": "A transfer is arranged with the tour guide accompanying the group; the transport mode is not specified."
+            },
+            {
+              "time": "",
+              "title": "BAPS Temple.",
+              "description": "Visit BAPS Temple as a listed stop on the Abu Dhabi tour."
+            },
+            {
+              "time": "",
+              "title": "Drive through Sheikh Zayed Grand Mosque.",
+              "description": "Take a drive past Sheikh Zayed Grand Mosque as part of the sightseeing route."
+            },
+            {
+              "time": "",
+              "title": "Ferrari World entrance.",
+              "description": "Ferrari World entrance is listed as part of the Abu Dhabi tour; ticket details are not specified."
+            },
+            {
+              "time": "",
+              "title": "Drive through Abu Dhabi Corniche.",
+              "description": "Take a sightseeing drive along Abu Dhabi Corniche."
+            },
+            {
+              "time": "",
+              "title": "Return to hotel.",
+              "description": "Travel back to the hotel after the day's scheduled activities."
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "date": "",
+          "title": "Miracle Garden & Desert Safari",
+          "activities": [
+            {
+              "time": "",
+              "title": "Breakfast.",
+              "description": "Breakfast is scheduled before the day's activities."
+            },
+            {
+              "time": "",
+              "title": "Transfer by 50-seater AC deluxe coach with guide.",
+              "description": "Travel by 50-seater air-conditioned deluxe coach with a guide accompanying the group."
+            },
+            {
+              "time": "",
+              "title": "Miracle Garden entrance.",
+              "description": "Entrance to Miracle Garden is listed for the visit."
+            },
+            {
+              "time": "",
+              "title": "Desert Safari experience.",
+              "description": "Take part in the listed desert safari experience."
+            },
+            {
+              "time": "",
+              "title": "6 persons per SUV.",
+              "description": "The vehicle arrangement is listed for groups of six people per SUV."
+            },
+            {
+              "time": "",
+              "title": "Dune bash.",
+              "description": "Experience a drive over the desert dunes as part of the safari."
+            },
+            {
+              "time": "",
+              "title": "Sunset stop.",
+              "description": "Pause in the desert around sunset during the safari."
+            },
+            {
+              "time": "",
+              "title": "Camel ride.",
+              "description": "Take the camel ride listed as part of the safari activities."
+            },
+            {
+              "time": "",
+              "title": "Sand board.",
+              "description": "Try sandboarding as part of the desert safari activities."
+            },
+            {
+              "time": "",
+              "title": "BBQ dinner.",
+              "description": "Dinner is arranged as a barbecue meal; specific dishes are not listed."
+            },
+            {
+              "time": "",
+              "title": "Arabic coffee with dates at camp entrance.",
+              "description": "Arabic coffee and dates are listed for guests at the camp entrance."
+            },
+            {
+              "time": "",
+              "title": "Belly dance.",
+              "description": "Watch a belly dance performance during the camp programme."
+            },
+            {
+              "time": "",
+              "title": "Tanoura dance.",
+              "description": "Watch a Tanoura dance performance during the evening programme."
+            },
+            {
+              "time": "",
+              "title": "Fire show.",
+              "description": "Watch a fire performance during the camp programme."
+            },
+            {
+              "time": "",
+              "title": "Return to hotel.",
+              "description": "Travel back to the hotel after the day's scheduled activities."
+            }
+          ]
+        },
+        {
+          "day": 8,
+          "date": "",
+          "title": "Shopping & Departure",
+          "activities": [
+            {
+              "time": "",
+              "title": "Breakfast.",
+              "description": "Breakfast is scheduled before the day's activities."
+            },
+            {
+              "time": "",
+              "title": "Checkout.",
+              "description": "Complete the hotel checkout process before departure."
+            },
+            {
+              "time": "",
+              "title": "Transfer by 50-seater AC deluxe coach with guide.",
+              "description": "Travel by 50-seater air-conditioned deluxe coach with a guide accompanying the group."
+            },
+            {
+              "time": "",
+              "title": "Shopping at Gold Souq / Meena Bazar.",
+              "description": "Allow time to browse the shops at Gold Souq or Meena Bazar."
+            },
+            {
+              "time": "",
+              "title": "Transfer to DXB airport for departure.",
+              "description": "Travel by transfer to Dubai International Airport for the departure."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tamil-nadu-five-senses-jan-2027",
+      "title": "Tamil Nadu Through the Five Senses",
+      "duration": {
+        "days": 11,
+        "nights": 10
+      },
+      "tag-line": "Travel Beyond the Ordinary. Experience the Extraordinary.",
+      "sub-title": "Pongal Celebration",
+      "description": "Discover Tamil Nadu through its timeless temples, magnificent heritage, living craft traditions, and vibrant harvest celebrations. From the sacred banks of the Kaveri and the artistic treasures of Thanjavur to the warmth of a village Pongal celebration, the cool mountain landscapes of Kodaikanal, the ancient stories of Keeladi, and the distinctive flavours of Chettinad and Madurai, this thoughtfully curated journey invites you to experience the soul of Tamil Nadu through all five senses. See its architectural wonders, taste its regional delicacies, touch its traditional crafts, hear its stories and musical traditions, and feel the warmth of its people and living culture.",
+      "days": [
+        {
+          "day": 1,
+          "date": "2027-01-10",
+          "title": "Arrival in Trichy",
+          "description": "Keep the day light. Confirm flight arrival time before scheduling anything fixed.",
+          "activities": [
+            {
+              "time": "As per flight",
+              "title": "Arrive at Tiruchirappalli International Airport",
+              "description": "Arrive at Tiruchirappalli International Airport; meet-and-greet and transfer to hotel."
+            },
+            {
+              "time": "12:00–14:00*",
+              "title": "Hotel check-in / luggage drop, lunch and time to settle in",
+              "description": "Hotel check-in / luggage drop, lunch and time to settle in."
+            },
+            {
+              "time": "15:30–16:30*",
+              "title": "Welcome orientation: introduction to Tamil Nadu, local customs and the Five Senses journey",
+              "description": "Welcome orientation: introduction to Tamil Nadu, local customs and the Five Senses journey."
+            },
+            {
+              "time": "16:30 onwards",
+              "title": "Rest and leisure time",
+              "description": "Rest and leisure time; dinner and briefing for the next day."
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "date": "2027-01-11",
+          "title": "Sacred Trichy and the Kaveri",
+          "description": "Plan around temple pooja closures. Please confirm whether the church is St Joseph’s Church or another basilica.",
+          "activities": [
+            {
+              "time": "06:45–07:15",
+              "title": "Breakfast",
+              "description": "Breakfast."
+            },
+            {
+              "time": "07:15–10:00",
+              "title": "Sri Ranganathaswamy Temple, Srirangam",
+              "description": "Sri Ranganathaswamy Temple, Srirangam. Allow for walking and queues; temple darshan timings may vary."
+            },
+            {
+              "time": "10:15–11:30",
+              "title": "Jambukeswarar Temple, Thiruvanaikaval",
+              "description": "Jambukeswarar Temple, Thiruvanaikaval."
+            },
+            {
+              "time": "11:45–12:45",
+              "title": "Lunch at a local restaurant",
+              "description": "Lunch at a local restaurant."
+            },
+            {
+              "time": "13:00–14:30",
+              "title": "Rock Fort area and local market visit",
+              "description": "Rock Fort area and local market visit. If climbing the steps is included, allow extra time and assess mobility."
+            },
+            {
+              "time": "14:45–15:30",
+              "title": "Visit the church/basilica intended by the organiser",
+              "description": "Visit the church/basilica intended by the organiser; exact site and access to be confirmed."
+            },
+            {
+              "time": "15:45–16:15",
+              "title": "Kaveri Bridge / river views, subject to traffic and safe access",
+              "description": "Kaveri Bridge / river views, subject to traffic and safe access."
+            },
+            {
+              "time": "16:30 onwards",
+              "title": "Return to hotel, rest and dinner",
+              "description": "Return to hotel, rest and dinner."
+            }
+          ]
+        },
+        {
+          "day": 3,
+          "date": "2027-01-12",
+          "title": "Kallanai and Thanjavur’s Living Crafts",
+          "description": "All artisan visits need advance appointments and confirmation of workshop locations and availability.",
+          "activities": [
+            {
+              "time": "07:30–08:15",
+              "title": "Breakfast and check-out",
+              "description": "Breakfast and check-out."
+            },
+            {
+              "time": "08:15–09:00",
+              "title": "Drive to Grand Anicut (Kallanai)",
+              "description": "Drive to Grand Anicut (Kallanai)."
+            },
+            {
+              "time": "09:00–10:00",
+              "title": "Visit Kallanai and learn about the region’s irrigation and agricultural heritage",
+              "description": "Visit Kallanai and learn about the region’s irrigation and agricultural heritage."
+            },
+            {
+              "time": "10:00–11:30",
+              "title": "Drive to Thanjavur",
+              "description": "Drive to Thanjavur; allow about 1–1.5 hours depending on traffic."
+            },
+            {
+              "time": "11:30–12:30",
+              "title": "Hotel luggage drop / check-in if available",
+              "description": "Hotel luggage drop / check-in if available."
+            },
+            {
+              "time": "12:30–13:30",
+              "title": "Lunch and short rest",
+              "description": "Lunch and short rest."
+            },
+            {
+              "time": "14:00–15:00",
+              "title": "Meet a local veena maker",
+              "description": "Meet a local veena maker; learn about materials, construction and musical traditions."
+            },
+            {
+              "time": "15:15–16:00",
+              "title": "Doll-making demonstration",
+              "description": "Doll-making demonstration."
+            },
+            {
+              "time": "16:15–17:00",
+              "title": "Knitting / textile craft interaction with a local maker",
+              "description": "Knitting / textile craft interaction with a local maker."
+            },
+            {
+              "time": "Evening",
+              "title": "Return to hotel, dinner and overnight",
+              "description": "Return to hotel, dinner and overnight."
+            }
+          ]
+        },
+        {
+          "day": 4,
+          "date": "2027-01-13",
+          "title": "Maratha Heritage and Thanjavur Painting",
+          "description": "Important: district tourism information lists Saraswathi Mahal Library as closed on Wednesdays and government holidays. Arrange a confirmed alternative or swap the library visit into a verified opening slot. Palace galleries may have separate schedules.",
+          "activities": [
+            {
+              "time": "08:00–09:00",
+              "title": "Breakfast",
+              "description": "Breakfast."
+            },
+            {
+              "time": "09:00–11:00",
+              "title": "Thanjavur Maratha Palace complex and selected open sections / collections",
+              "description": "Thanjavur Maratha Palace complex and selected open sections / collections."
+            },
+            {
+              "time": "11:00–12:00",
+              "title": "Saraswathi Mahal Library / Saraswathi Mandapam only if the exact venue is open and access is confirmed",
+              "description": "Saraswathi Mahal Library / Saraswathi Mandapam only if the exact venue is open and access is confirmed."
+            },
+            {
+              "time": "12:00–13:00",
+              "title": "Lunch",
+              "description": "Lunch."
+            },
+            {
+              "time": "13:30–15:00",
+              "title": "Meet a Thanjavur painting artist",
+              "description": "Meet a Thanjavur painting artist; learn about motifs, surface preparation and traditional techniques."
+            },
+            {
+              "time": "15:00–16:00",
+              "title": "Optional hands-on demonstration if offered by the artist",
+              "description": "Optional hands-on demonstration if offered by the artist."
+            },
+            {
+              "time": "16:00–17:00",
+              "title": "Tea, local browsing or return to hotel",
+              "description": "Tea, local browsing or return to hotel."
+            },
+            {
+              "time": "Evening",
+              "title": "Dinner and overnight",
+              "description": "Dinner and overnight."
+            }
+          ]
+        },
+        {
+          "day": 5,
+          "date": "2027-01-14",
+          "title": "Bhogi and a Village Pongal Experience",
+          "description": "The community celebration is planned for Bhogi on 14 January. Confirm programme, group size, transport, meal arrangements, permissions, photography etiquette and any host contribution.",
+          "activities": [
+            {
+              "time": "07:30–08:30",
+              "title": "Breakfast",
+              "description": "Breakfast."
+            },
+            {
+              "time": "08:30–09:15",
+              "title": "Transfer to host village",
+              "description": "Transfer to host village; meet the community coordinator and receive a briefing on respectful participation and photography."
+            },
+            {
+              "time": "09:15–10:00",
+              "title": "Guided village walk: kolam, homes, streets and harvest-season preparations",
+              "description": "Guided village walk: kolam, homes, streets and harvest-season preparations."
+            },
+            {
+              "time": "10:00–12:00",
+              "title": "Participate in the community-approved Bhogi / Pongal preparations, according to the host programme",
+              "description": "Participate in the community-approved Bhogi / Pongal preparations, according to the host programme."
+            },
+            {
+              "time": "12:00–13:00",
+              "title": "Traditional lunch with the host community, if pre-arranged",
+              "description": "Traditional lunch with the host community, if pre-arranged."
+            },
+            {
+              "time": "13:00–14:30",
+              "title": "Continue village immersion: local stories, conversations and seasonal traditions",
+              "description": "Continue village immersion: local stories, conversations and seasonal traditions."
+            },
+            {
+              "time": "14:30–15:30",
+              "title": "Tea / refreshments and closing interaction with hosts",
+              "description": "Tea / refreshments and closing interaction with hosts."
+            },
+            {
+              "time": "15:30–16:15",
+              "title": "Return to Thanjavur",
+              "description": "Return to Thanjavur."
+            },
+            {
+              "time": "Evening",
+              "title": "Rest, dinner and overnight",
+              "description": "Rest, dinner and overnight."
+            }
+          ]
+        },
+        {
+          "day": 6,
+          "date": "2027-01-15",
+          "title": "Brihadeeswarar Temple and Drive to Kodaikanal",
+          "description": "Thai Pongal is a major festival day. Confirm temple access, traffic, restaurant availability and hotel check-in. Keep the drive flexible.",
+          "activities": [
+            {
+              "time": "06:30–07:00",
+              "title": "Early breakfast and check-out",
+              "description": "Early breakfast and check-out."
+            },
+            {
+              "time": "07:00–09:00",
+              "title": "Visit Brihadeeswarar Temple",
+              "description": "Visit Brihadeeswarar Temple; explore the great Chola temple and its architecture."
+            },
+            {
+              "time": "09:00–09:30",
+              "title": "Collect luggage and depart Thanjavur",
+              "description": "Collect luggage and depart Thanjavur."
+            },
+            {
+              "time": "09:30–14:30*",
+              "title": "Drive to Kodaikanal, with a comfort stop and lunch en route",
+              "description": "Drive to Kodaikanal, with a comfort stop and lunch en route."
+            },
+            {
+              "time": "14:30–15:30*",
+              "title": "Arrive, check in and refresh",
+              "description": "Arrive, check in and refresh."
+            },
+            {
+              "time": "15:30 onwards",
+              "title": "Rest after the long drive",
+              "description": "Rest after the long drive; no major sightseeing planned."
+            },
+            {
+              "time": "Evening",
+              "title": "Dinner and overnight",
+              "description": "Dinner and overnight."
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "date": "2027-01-16",
+          "title": "Kodaikanal: Hills, Gardens and Lake",
+          "description": "Fog, rain, traffic and temporary closures can change the sequence. Choose viewpoints based on actual conditions.",
+          "activities": [
+            {
+              "time": "07:30–08:30",
+              "title": "Breakfast",
+              "description": "Breakfast."
+            },
+            {
+              "time": "09:00–10:00",
+              "title": "Coaker’s Walk, weather permitting",
+              "description": "Coaker’s Walk, weather permitting."
+            },
+            {
+              "time": "10:15–11:15",
+              "title": "Bryant Park, subject to opening and seasonal conditions",
+              "description": "Bryant Park, subject to opening and seasonal conditions."
+            },
+            {
+              "time": "11:30–12:30",
+              "title": "Kodaikanal Lake area",
+              "description": "Kodaikanal Lake area; optional boating if operating and weather permits."
+            },
+            {
+              "time": "12:30–13:30",
+              "title": "Lunch",
+              "description": "Lunch."
+            },
+            {
+              "time": "13:45–15:00",
+              "title": "Scenic viewpoints and a gentle drive through the surrounding landscape",
+              "description": "Scenic viewpoints and a gentle drive through the surrounding landscape."
+            },
+            {
+              "time": "15:00–16:00",
+              "title": "Local produce / market stop for browsing",
+              "description": "Local produce / market stop for browsing."
+            },
+            {
+              "time": "16:00 onwards",
+              "title": "Return to hotel and leisure time",
+              "description": "Return to hotel and leisure time; dinner and overnight."
+            }
+          ]
+        },
+        {
+          "day": 8,
+          "date": "2027-01-17",
+          "title": "Keeladi and Madurai’s Food Culture",
+          "description": "Confirm the exact Keeladi site / museum intended, opening hours and access. A visit to the excavation site requires separate confirmation.",
+          "activities": [
+            {
+              "time": "07:30–08:30",
+              "title": "Breakfast and check-out",
+              "description": "Breakfast and check-out."
+            },
+            {
+              "time": "08:30–11:30*",
+              "title": "Drive from Kodaikanal to the Madurai / Keeladi area",
+              "description": "Drive from Kodaikanal to the Madurai / Keeladi area; allow for hill-road conditions and a comfort stop."
+            },
+            {
+              "time": "11:30–13:00",
+              "title": "Visit Keeladi archaeological museum, subject to confirmed hours and any notices",
+              "description": "Visit Keeladi archaeological museum, subject to confirmed hours and any notices."
+            },
+            {
+              "time": "13:00–14:00",
+              "title": "Lunch in the Madurai area",
+              "description": "Lunch in the Madurai area."
+            },
+            {
+              "time": "14:00–15:00",
+              "title": "Transfer to hotel",
+              "description": "Transfer to hotel; check-in / luggage drop."
+            },
+            {
+              "time": "15:30–17:00",
+              "title": "Guided food experience featuring selected local specialities",
+              "description": "Guided food experience featuring selected local specialities; confirm vendors and dietary needs."
+            },
+            {
+              "time": "17:00–18:30",
+              "title": "Guided local market visit focused on everyday commerce, ingredients and regional life",
+              "description": "Guided local market visit focused on everyday commerce, ingredients and regional life."
+            },
+            {
+              "time": "Evening",
+              "title": "Return to hotel, dinner as arranged and overnight",
+              "description": "Return to hotel, dinner as arranged and overnight."
+            }
+          ]
+        },
+        {
+          "day": 9,
+          "date": "2027-01-18",
+          "title": "Chettinad Architecture and Tile Craft",
+          "description": "This is a substantial out-and-back excursion. Confirm which Chettinad Palace is intended and arrange private-property access, tile workshop and lunch in advance.",
+          "activities": [
+            {
+              "time": "07:00–07:45",
+              "title": "Early breakfast",
+              "description": "Early breakfast."
+            },
+            {
+              "time": "07:45–09:30*",
+              "title": "Drive from Madurai to the Karaikudi / Chettinad area",
+              "description": "Drive from Madurai to the Karaikudi / Chettinad area."
+            },
+            {
+              "time": "09:30–10:30",
+              "title": "Visit the selected Chettinad Palace / heritage mansion, subject to permission and operator schedule",
+              "description": "Visit the selected Chettinad Palace / heritage mansion, subject to permission and operator schedule."
+            },
+            {
+              "time": "10:45–11:30",
+              "title": "Visit Athangudi Periya Veedu, subject to booking and opening hours",
+              "description": "Visit Athangudi Periya Veedu, subject to booking and opening hours."
+            },
+            {
+              "time": "11:30–12:00",
+              "title": "Transfer to a traditional Athangudi tile workshop",
+              "description": "Transfer to a traditional Athangudi tile workshop."
+            },
+            {
+              "time": "12:00–13:00",
+              "title": "Tile-making demonstration: pigments, patterns, moulds and curing methods, subject to workshop operations",
+              "description": "Tile-making demonstration: pigments, patterns, moulds and curing methods, subject to workshop operations."
+            },
+            {
+              "time": "13:00–14:00",
+              "title": "Chettinad-style lunch at a pre-arranged venue",
+              "description": "Chettinad-style lunch at a pre-arranged venue."
+            },
+            {
+              "time": "14:00–15:00",
+              "title": "Optional village / heritage-street walk or additional craft interaction if time permits",
+              "description": "Optional village / heritage-street walk or additional craft interaction if time permits."
+            },
+            {
+              "time": "15:00–16:45*",
+              "title": "Drive back to Madurai",
+              "description": "Drive back to Madurai."
+            },
+            {
+              "time": "Evening",
+              "title": "Rest, dinner and overnight",
+              "description": "Rest, dinner and overnight."
+            }
+          ]
+        },
+        {
+          "day": 10,
+          "date": "2027-01-19",
+          "title": "Madurai Temple and Nayak Heritage",
+          "description": "Meenakshi Temple generally has separate morning and evening sessions. The early visit is designed to avoid the midday closure; confirm the current schedule before travel.",
+          "activities": [
+            {
+              "time": "06:30–07:00",
+              "title": "Early breakfast",
+              "description": "Early breakfast."
+            },
+            {
+              "time": "07:00–09:30",
+              "title": "Meenakshi Amman Temple visit",
+              "description": "Meenakshi Amman Temple visit; allow for security, queues and walking. Dress modestly and follow rules on belongings and photography."
+            },
+            {
+              "time": "09:30–10:30",
+              "title": "Tea / refreshments and a guided walk through historic streets or the nearby market",
+              "description": "Tea / refreshments and a guided walk through historic streets or the nearby market."
+            },
+            {
+              "time": "10:30–11:30",
+              "title": "Short hotel rest if needed",
+              "description": "Short hotel rest if needed."
+            },
+            {
+              "time": "11:30–12:30",
+              "title": "Lunch",
+              "description": "Lunch."
+            },
+            {
+              "time": "13:00–14:30",
+              "title": "Visit Thirumalai Nayakkar Mahal",
+              "description": "Visit Thirumalai Nayakkar Mahal; confirm entry hours shortly before the visit."
+            },
+            {
+              "time": "14:30–15:30",
+              "title": "Interpretive walk or final market stop, depending on the group’s energy",
+              "description": "Interpretive walk or final market stop, depending on the group’s energy."
+            },
+            {
+              "time": "15:30 onwards",
+              "title": "Return to hotel, free time and farewell dinner",
+              "description": "Return to hotel, free time and farewell dinner."
+            },
+            {
+              "time": "Evening",
+              "title": "Overnight in Madurai",
+              "description": "Overnight in Madurai."
+            }
+          ]
+        },
+        {
+          "day": 11,
+          "date": "2027-01-20",
+          "title": "Farewell and Departure",
+          "description": "Schedule the feedback session only after flight details are known. Allow the airport arrival buffer recommended by the airline.",
+          "activities": [
+            {
+              "time": "Morning",
+              "title": "Breakfast and check-out according to flight timing",
+              "description": "Breakfast and check-out according to flight timing."
+            },
+            {
+              "time": "Before departure",
+              "title": "New-friends gathering, feedback session and reflections on the journey, if flight timing allows",
+              "description": "New-friends gathering, feedback session and reflections on the journey, if flight timing allows."
+            },
+            {
+              "time": "Allow 45–60 min*",
+              "title": "Transfer from hotel to Madurai Airport",
+              "description": "Transfer from hotel to Madurai Airport; adjust for traffic and airline requirements."
+            },
+            {
+              "time": "As per flight",
+              "title": "Depart from Madurai Airport",
+              "description": "Depart from Madurai Airport."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kashmir-winter-packages",
+      "title": "Kashmir Winter Packages",
+      "duration": {
+        "days": 6,
+        "nights": 5
+      },
+      "tag-line": "Experience the Paradise on Earth",
+      "sub-title": "Choose Your Package",
+      "description": "Discover the enchanting beauty of Kashmir on a 5-night, 6-day journey through snow-capped mountains, tranquil lakes, lush valleys, and breathtaking Himalayan landscapes. From the scenic charm of Srinagar and the golden meadows of Sonamarg to the mountain adventures of Gulmarg, the serene beauty of Pahalgam, and a magical houseboat stay on Dal Lake, experience the timeless allure of paradise on Earth.",
+      "days": [
+        {
+          "day": 1,
+          "date": "",
+          "title": "Arrival in Srinagar",
+          "description": "Arrive at Srinagar Airport, meet the representative and transfer to the hotel. Enjoy local sightseeing if time permits.",
+          "activities": [
+            {
+              "time": "As per arrival",
+              "title": "Arrival at Srinagar Airport",
+              "description": "Meet and greet on arrival, followed by a transfer to the hotel."
+            },
+            {
+              "time": "",
+              "title": "Hotel check-in and local sightseeing",
+              "description": "Check in to the hotel and enjoy local sightseeing, subject to arrival time."
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "date": "",
+          "title": "Sonamarg Excursion",
+          "description": "Explore Sonamarg’s mountain scenery and the Thajiwas Glacier area, subject to weather and local conditions.",
+          "activities": [
+            {
+              "time": "Morning",
+              "title": "Breakfast and drive to Sonamarg",
+              "description": "Have breakfast before travelling to Sonamarg."
+            },
+            {
+              "time": "",
+              "title": "Thajiwas Glacier area",
+              "description": "Enjoy the scenic valley and glacier surroundings, subject to access and weather."
+            },
+            {
+              "time": "Evening",
+              "title": "Return to Srinagar",
+              "description": "Return to the hotel in Srinagar."
+            }
+          ]
+        },
+        {
+          "day": 3,
+          "date": "",
+          "title": "Gulmarg Excursion",
+          "description": "Discover Gulmarg’s mountain landscapes and meadows, with an optional Gondola ride subject to availability and weather.",
+          "activities": [
+            {
+              "time": "Morning",
+              "title": "Breakfast and drive to Gulmarg",
+              "description": "Have breakfast and travel to Gulmarg."
+            },
+            {
+              "time": "",
+              "title": "Gondola ride and meadow visit",
+              "description": "Enjoy the mountain scenery and meadows; Gondola tickets and operation are subject to availability and weather."
+            },
+            {
+              "time": "Evening",
+              "title": "Return to Srinagar",
+              "description": "Return to the hotel in Srinagar."
+            }
+          ]
+        },
+        {
+          "day": 4,
+          "date": "",
+          "title": "Pahalgam Valley",
+          "description": "Travel to Pahalgam via the saffron fields and Apple Garden area, with visits to Betaab Valley and Aru Valley as conditions allow.",
+          "activities": [
+            {
+              "time": "Morning",
+              "title": "Breakfast and drive to Pahalgam",
+              "description": "Depart after breakfast for Pahalgam."
+            },
+            {
+              "time": "",
+              "title": "Saffron fields, Apple Garden and valley visits",
+              "description": "Enjoy sightseeing stops and visit Betaab Valley and Aru Valley, subject to season, weather and local access."
+            },
+            {
+              "time": "Evening",
+              "title": "Hotel check-in",
+              "description": "Check in to the hotel in Pahalgam."
+            }
+          ]
+        },
+        {
+          "day": 5,
+          "date": "",
+          "title": "Dal Lake Houseboat Experience",
+          "description": "Return to Srinagar for a houseboat stay on Dal Lake and enjoy a one-hour Shikara ride.",
+          "activities": [
+            {
+              "time": "Morning",
+              "title": "Breakfast and transfer to Srinagar",
+              "description": "Depart Pahalgam after breakfast and travel to Srinagar."
+            },
+            {
+              "time": "",
+              "title": "Shikara ride on Dal Lake",
+              "description": "Enjoy the included one-hour Shikara ride."
+            },
+            {
+              "time": "Evening",
+              "title": "Houseboat stay",
+              "description": "Check in to the Dal Lake houseboat for the night."
+            }
+          ]
+        },
+        {
+          "day": 6,
+          "date": "",
+          "title": "Departure from Srinagar",
+          "description": "After breakfast, transfer to Srinagar Airport or Railway Station for departure.",
+          "activities": [
+            {
+              "time": "Morning",
+              "title": "Breakfast and check-out",
+              "description": "Have breakfast and check out according to departure timing."
+            },
+            {
+              "time": "As per departure",
+              "title": "Airport or railway station transfer",
+              "description": "Transfer to Srinagar Airport or Railway Station."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

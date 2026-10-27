@@ -637,128 +637,6 @@
     });
   })();
 
-  const itineraryModal = document.querySelector("#dubai-itinerary-modal");
-  if (itineraryModal) {
-    const itineraryOpeners = document.querySelectorAll("[data-itinerary-open]");
-    const itineraryCloseButton = itineraryModal.querySelector(".itinerary-modal__close");
-    const itineraryOverlay = itineraryModal.querySelector(".itinerary-modal__overlay");
-    const itineraryPlanLink = itineraryModal.querySelector(".itinerary-modal__cta");
-    let itineraryOpener = null;
-    let bodyWasLocked = false;
-
-    function openItineraryModal(opener) {
-      itineraryOpener = opener;
-      bodyWasLocked = document.body.classList.contains("locked");
-      itineraryModal.hidden = false;
-      document.body.classList.add("locked");
-      itineraryCloseButton.focus();
-    }
-
-    function closeItineraryModal(restoreFocus) {
-      itineraryModal.hidden = true;
-      if (!bodyWasLocked) {
-        document.body.classList.remove("locked");
-      }
-      if (restoreFocus && itineraryOpener) {
-        itineraryOpener.focus();
-      }
-    }
-
-    itineraryOpeners.forEach(function (opener) {
-      opener.addEventListener("click", function () {
-        openItineraryModal(opener);
-      });
-    });
-
-    itineraryCloseButton.addEventListener("click", function () {
-      closeItineraryModal(true);
-    });
-
-    itineraryModal.addEventListener("click", function (event) {
-      if (event.target === itineraryOverlay) {
-        closeItineraryModal(true);
-      }
-    });
-
-    itineraryModal.addEventListener("keydown", function (event) {
-      if (event.key === "Escape") {
-        event.preventDefault();
-        closeItineraryModal(true);
-        return;
-      }
-
-      if (event.key === "Tab") {
-        const focusableElements = Array.from(
-          itineraryModal.querySelectorAll("button, a[href], [tabindex]:not([tabindex='-1'])")
-        ).filter(function (element) {
-          return !element.disabled && element.getClientRects().length > 0;
-        });
-        if (focusableElements.length) {
-          const currentIndex = focusableElements.indexOf(document.activeElement);
-          const direction = event.shiftKey ? -1 : 1;
-          const nextIndex = currentIndex === -1
-            ? (event.shiftKey ? focusableElements.length - 1 : 0)
-            : (currentIndex + direction + focusableElements.length) % focusableElements.length;
-
-          event.preventDefault();
-          focusableElements[nextIndex].focus();
-        }
-      }
-    });
-
-    itineraryPlanLink.addEventListener("click", function (event) {
-      event.preventDefault();
-
-      const travelEnquiryForm = document.querySelector("#travel-enquiry-form");
-      if (!travelEnquiryForm) {
-        window.location.hash = "plan-your-trip";
-        closeItineraryModal(false);
-        return;
-      }
-
-      const destinationInput = travelEnquiryForm.querySelector("#travel-destination");
-      const departureDateInput = travelEnquiryForm.querySelector("#travel-departure");
-      const returnDateInput = travelEnquiryForm.querySelector("#travel-return");
-      const requirementsInput = travelEnquiryForm.querySelector("#travel-requirements");
-
-      destinationInput.value = "Dubai, UAE";
-      destinationInput.dispatchEvent(new Event("input", { bubbles: true }));
-      destinationInput.dispatchEvent(new Event("change", { bubbles: true }));
-
-      departureDateInput.value = "2027-01-17";
-      departureDateInput.dispatchEvent(new Event("input", { bubbles: true }));
-      departureDateInput.dispatchEvent(new Event("change", { bubbles: true }));
-
-      returnDateInput.value = "2027-01-24";
-      returnDateInput.dispatchEvent(new Event("input", { bubbles: true }));
-      returnDateInput.dispatchEvent(new Event("change", { bubbles: true }));
-
-      if (!requirementsInput.value.trim()) {
-        requirementsInput.value = "Interested in the Dubai 2027 itinerary.";
-        requirementsInput.dispatchEvent(new Event("input", { bubbles: true }));
-      }
-
-      bodyWasLocked = false;
-      closeItineraryModal(false);
-      if (window.location.hash !== itineraryPlanLink.getAttribute("href")) {
-        window.history.replaceState(null, "", itineraryPlanLink.getAttribute("href"));
-      }
-
-      window.requestAnimationFrame(function () {
-        const travelSection = document.querySelector("#plan-your-trip");
-        const stickyHeader = document.querySelector(".sticky-header--cloned.active");
-        const headerOffset = stickyHeader ? stickyHeader.getBoundingClientRect().height : 0;
-        const sectionTop = window.pageYOffset + travelSection.getBoundingClientRect().top;
-
-        window.scrollTo({
-          top: Math.max(0, sectionTop - headerOffset - 16),
-          behavior: "smooth"
-        });
-        destinationInput.focus({ preventScroll: true });
-      });
-    });
-  }
-
   const travelEnquiryForm = document.querySelector("#travel-enquiry-form");
   if (travelEnquiryForm) {
     let travelFormSubmitted = false;
@@ -942,156 +820,376 @@
   }
 
   const videoGalleryModal = document.getElementById("video-gallery-modal");
-  if (videoGalleryModal) {
-    const videoGalleryModalContent = videoGalleryModal.querySelector(".video-gallery-modal__content");
+  if (videoGalleryModal && videoGalleryModal.dataset.initialized !== "true") {
+    videoGalleryModal.dataset.initialized = "true";
+    const destinations = {
+      "tamil-nadu": {
+        id: "tamil-nadu",
+        name: "Tamil Nadu",
+        videos: [
+          {
+            id: "culture-of-tamil-nadu",
+            title: "Culture of Tamil Nadu",
+            thumbnail: "assets/images/video-gallery/tamil-nadu/culture-of-tamil-nadu.webp",
+            youtubeId: "MRvKJdjPx28"
+          },
+          {
+            id: "the-craftsman-with-the-tiles",
+            title: "Making of Athangudi Tiles | Handicrafts of Karaikudi",
+            thumbnail: "assets/images/video-gallery/tamil-nadu/the-craftsman-with-the-tiles.webp",
+            youtubeId: "TZu2u0cx75U"
+          },
+          {
+            id: "chettinad-kandangi-saree",
+            title: "Traditional Handloom weaving of Chettinad Kandangi Saree",
+            thumbnail: "assets/images/video-gallery/tamil-nadu/chettinad-kandangi-saree.webp",
+            youtubeId: "wK5EtQifYAI"
+          },
+          {
+            id: "thanjavur-thalaiyatti-bommai",
+            title: "Making of Thanjavur Thalaiyatti Bommai",
+            thumbnail: "assets/images/video-gallery/tamil-nadu/thanjavur-thalaiyatti-bommai.webp",
+            youtubeId: "sSeVp0qJ6Dg"
+          },
+          {
+            id: "making-of-veena",
+            title: "Making of Veena",
+            thumbnail: "assets/images/video-gallery/tamil-nadu/making-of-veena.webp",
+            youtubeId: "Kc5GKqmX4vI"
+          },
+          {
+            id: "treasures-of-thanjavur",
+            title: "Treasures of Thanjavur",
+            thumbnail: "assets/images/video-gallery/tamil-nadu/treasures-of-thanjavur.webp",
+            youtubeId: "KGJVxARvm7c"
+          }
+        ]
+      },
+      keralam: {
+        id: "keralam",
+        name: "Keralam",
+        videos: [
+          {
+            id: "keralam-backwaters",
+            title: "Keralam’s Tranquil Backwaters",
+            thumbnail: "assets/images/video-gallery/keralam.jpg",
+            youtubeId: "REPLACE_WITH_KERALAM_BACKWATERS_VIDEO_ID"
+          },
+          {
+            id: "keralam-green-escapes",
+            title: "Keralam’s Green Escapes",
+            thumbnail: "assets/images/video-gallery/keralam-green-escapes.jpg",
+            youtubeId: "REPLACE_WITH_KERALAM_GREEN_ESCAPES_VIDEO_ID"
+          }
+        ]
+      }
+    };
     const videoGalleryTitle = document.getElementById("video-gallery-modal-title");
-    const videoGalleryDescription = document.querySelector(".video-gallery-modal__description");
     const videoGalleryCloseButton = videoGalleryModal.querySelector(".video-gallery-modal__close");
+    const videoGalleryPlayer = videoGalleryModal.querySelector(".video-gallery-modal__player");
+    const videoGalleryThumbnails = videoGalleryModal.querySelector(".video-gallery-modal__thumbnails");
     const videoGalleryOverlay = videoGalleryModal.querySelector(".video-gallery-modal__overlay");
-    const videoGalleryMedia = videoGalleryModal.querySelector(".video-gallery-modal__media");
-    const videoGalleryPlaceholder = '<div class="video-gallery-modal__placeholder"><span class="video-gallery-modal__badge">Video Placeholder</span><span class="video-gallery-modal__state">Video coming soon</span></div>';
+    let activeCard = null;
+    let activeDestination = null;
+    let wasBodyLocked = false;
+    let closeTimeoutId = null;
 
-    function resetVideoGalleryModal() {
-      if (videoGalleryMedia) {
-        const currentVideo = videoGalleryMedia.querySelector("video");
-        if (currentVideo) {
-          currentVideo.pause();
-          currentVideo.removeAttribute("src");
-          currentVideo.load();
-          currentVideo.remove();
-        }
-        const currentIframe = videoGalleryMedia.querySelector("iframe");
-        if (currentIframe) {
-          currentIframe.remove();
-        }
-        videoGalleryMedia.innerHTML = "";
-        videoGalleryMedia.innerHTML = videoGalleryPlaceholder;
+    function syncVideoGalleryDimensions() {
+      if (window.matchMedia("(max-width: 767px)").matches) {
+        videoGalleryPlayer.style.maxWidth = "";
+        videoGalleryThumbnails.style.height = "";
+        return;
       }
-      if (videoGalleryTitle) {
-        videoGalleryTitle.textContent = "Video Preview";
-      }
-      if (videoGalleryDescription) {
-        videoGalleryDescription.textContent = "This placeholder will be replaced when the final media source is available.";
+
+      const maxPlayerHeight = Math.max(0, Math.min(450, window.innerHeight - 220));
+      videoGalleryPlayer.style.maxWidth = `${Math.min(800, maxPlayerHeight * 16 / 9)}px`;
+      const playerHeight = videoGalleryPlayer.offsetHeight;
+      if (playerHeight) {
+        videoGalleryThumbnails.style.height = `${playerHeight}px`;
       }
     }
 
-  function openVideoGalleryModal(card) {
-    if (!card) {
-      return;
-    }
+    function stopVideoPlayback() {
+      if (!videoGalleryPlayer) {
+        return;
+      }
 
-    const title = card.dataset.videoTitle || "Video Preview";
-    const description = card.dataset.videoDescription || "Video coming soon.";
-    const videoType = card.dataset.videoType || "";
-    const videoId = card.dataset.videoId || "";
-    const videoSrc = card.dataset.videoSrc || "";
-
-    if (videoGalleryTitle) {
-      videoGalleryTitle.textContent = title;
-    }
-    if (videoGalleryDescription) {
-      videoGalleryDescription.textContent = description;
-    }
-
-    if (videoGalleryMedia) {
-      const currentVideo = videoGalleryMedia.querySelector("video");
+      const currentVideo = videoGalleryPlayer.querySelector("video");
       if (currentVideo) {
         currentVideo.pause();
         currentVideo.removeAttribute("src");
+        currentVideo.querySelectorAll("source").forEach(function (source) {
+          source.removeAttribute("src");
+        });
         currentVideo.load();
-        currentVideo.remove();
       }
-      const currentIframe = videoGalleryMedia.querySelector("iframe");
-      if (currentIframe) {
-        currentIframe.remove();
-      }
-      videoGalleryMedia.innerHTML = "";
 
-      if (videoType === "youtube" && videoId) {
-        const iframe = document.createElement("iframe");
-        iframe.src = `https://www.youtube.com/embed/${videoId}`;
-        iframe.title = title;
-        iframe.loading = "lazy";
-        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-        iframe.allowFullscreen = true;
-        iframe.referrerPolicy = "strict-origin-when-cross-origin";
-        videoGalleryMedia.appendChild(iframe);
-      } else if (videoType === "mp4" && videoSrc) {
-        const video = document.createElement("video");
-        const source = document.createElement("source");
-        source.src = videoSrc;
-        source.type = "video/mp4";
-        video.controls = true;
-        video.preload = "metadata";
-        video.playsInline = true;
-        video.appendChild(source);
-        videoGalleryMedia.appendChild(video);
-      } else {
-        videoGalleryMedia.innerHTML = videoGalleryPlaceholder;
+      videoGalleryPlayer.querySelectorAll("iframe").forEach(function (iframe) {
+        iframe.src = "about:blank";
+        iframe.remove();
+      });
+
+      videoGalleryPlayer.querySelectorAll("video").forEach(function (video) {
+        video.remove();
+      });
+    }
+
+    function showVideoPlaceholder(message) {
+      const placeholder = document.createElement("div");
+      placeholder.className = "video-gallery-modal__placeholder";
+
+      const icon = document.createElement("span");
+      icon.className = "video-gallery-modal__placeholder-icon";
+      icon.setAttribute("aria-hidden", "true");
+
+      const state = document.createElement("span");
+      state.className = "video-gallery-modal__state";
+      state.textContent = message || "Video coming soon";
+
+      placeholder.append(icon, state);
+      videoGalleryPlayer.replaceChildren(placeholder);
+    }
+
+    function renderVideoThumbnails(destination) {
+      videoGalleryThumbnails.replaceChildren();
+      destination.videos.forEach(function (video, index) {
+        const button = document.createElement("button");
+        button.className = "video-gallery-modal__thumbnail-button";
+        button.type = "button";
+        button.dataset.videoIndex = String(index);
+        button.setAttribute("aria-label", `Play ${video.title}`);
+        button.setAttribute("aria-pressed", "false");
+
+        const image = document.createElement("img");
+        image.src = video.thumbnail;
+        image.alt = `${video.title} thumbnail`;
+        image.loading = "lazy";
+        image.decoding = "async";
+        image.addEventListener("error", function () {
+          image.hidden = true;
+        });
+
+        const playIndicator = document.createElement("span");
+        playIndicator.className = "video-gallery-modal__thumbnail-play";
+        playIndicator.setAttribute("aria-hidden", "true");
+
+        const title = document.createElement("span");
+        title.className = "video-gallery-modal__thumbnail-title";
+        title.textContent = video.title;
+
+        button.append(image, playIndicator, title);
+        videoGalleryThumbnails.appendChild(button);
+      });
+    }
+
+    function scrollSelectedThumbnail(button) {
+      if (videoGalleryModal.hidden || !videoGalleryModal.classList.contains("is-open")) {
+        return;
+      }
+
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const behavior = reducedMotion ? "auto" : "smooth";
+      const containerBounds = videoGalleryThumbnails.getBoundingClientRect();
+      const buttonBounds = button.getBoundingClientRect();
+
+      if (window.matchMedia("(max-width: 767px)").matches) {
+        if (buttonBounds.left < containerBounds.left) {
+          videoGalleryThumbnails.scrollTo({
+            left: videoGalleryThumbnails.scrollLeft + buttonBounds.left - containerBounds.left,
+            behavior: behavior
+          });
+        } else if (buttonBounds.right > containerBounds.right) {
+          videoGalleryThumbnails.scrollTo({
+            left: videoGalleryThumbnails.scrollLeft + buttonBounds.right - containerBounds.right,
+            behavior: behavior
+          });
+        }
+        return;
+      }
+
+      if (buttonBounds.top < containerBounds.top) {
+        videoGalleryThumbnails.scrollTo({
+          top: videoGalleryThumbnails.scrollTop + buttonBounds.top - containerBounds.top,
+          behavior: behavior
+        });
+      } else if (buttonBounds.bottom > containerBounds.bottom) {
+        videoGalleryThumbnails.scrollTo({
+          top: videoGalleryThumbnails.scrollTop + buttonBounds.bottom - containerBounds.bottom,
+          behavior: behavior
+        });
       }
     }
 
-    videoGalleryModal.hidden = false;
-    videoGalleryModal.setAttribute("aria-hidden", "false");
-    document.body.classList.add("locked");
-
-    setTimeout(function () {
-      if (videoGalleryModalContent) {
-        videoGalleryModalContent.focus();
+    function selectVideo(index) {
+      if (!activeDestination || !activeDestination.videos[index]) {
+        return;
       }
-    }, 0);
-  }
 
-  function closeVideoGalleryModal() {
-    resetVideoGalleryModal();
-    videoGalleryModal.hidden = true;
-    videoGalleryModal.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("locked");
-  }
+      stopVideoPlayback();
+      const video = activeDestination.videos[index];
+      videoGalleryTitle.textContent = `Now playing: ${video.title}`;
+      videoGalleryThumbnails.querySelectorAll(".video-gallery-modal__thumbnail-button")
+        .forEach(function (button, buttonIndex) {
+          const isSelected = buttonIndex === index;
+          button.setAttribute("aria-pressed", String(isSelected));
+          button.classList.toggle("is-selected", isSelected);
+        });
 
-    document.querySelectorAll(".video-card__play").forEach(function (button) {
-      button.addEventListener("click", function (event) {
-        event.stopPropagation();
-        const card = button.closest(".video-card");
-        openVideoGalleryModal(card);
+      const selectedThumbnail = videoGalleryThumbnails.querySelector(
+        `[data-video-index="${index}"]`
+      );
+      scrollSelectedThumbnail(selectedThumbnail);
+
+      const isValidYoutubeId = /^[A-Za-z0-9_-]{11}$/.test(video.youtubeId);
+      if (!isValidYoutubeId) {
+        showVideoPlaceholder("Video coming soon");
+        return;
+      }
+
+      const iframe = document.createElement("iframe");
+      iframe.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(video.youtubeId)}?autoplay=1&rel=0`;
+      iframe.title = video.title;
+      iframe.loading = "eager";
+      iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      iframe.allowFullscreen = true;
+      iframe.referrerPolicy = "strict-origin-when-cross-origin";
+      iframe.addEventListener("error", function () {
+        iframe.remove();
+        showVideoPlaceholder("This video is temporarily unavailable.");
       });
+      videoGalleryPlayer.replaceChildren(iframe);
+    }
+
+    function openVideoGalleryModal(card) {
+      const destination = destinations[card.dataset.destinationId];
+      if (!destination) {
+        return;
+      }
+
+      window.clearTimeout(closeTimeoutId);
+      activeCard = card;
+      activeDestination = destination;
+      renderVideoThumbnails(destination);
+      selectVideo(0);
+
+      if (videoGalleryModal.hidden || !videoGalleryModal.classList.contains("is-open")) {
+        wasBodyLocked = document.body.classList.contains("locked");
+        document.body.classList.add("locked");
+      }
+      videoGalleryModal.hidden = false;
+      videoGalleryModal.setAttribute("aria-hidden", "false");
+      window.requestAnimationFrame(function () {
+        videoGalleryModal.classList.add("is-open");
+        videoGalleryCloseButton.focus();
+        syncVideoGalleryDimensions();
+        scrollSelectedThumbnail(videoGalleryThumbnails.querySelector(".is-selected"));
+      });
+    }
+
+    function closeVideoGalleryModal() {
+      if (videoGalleryModal.hidden) {
+        return;
+      }
+
+      videoGalleryModal.classList.remove("is-open");
+      videoGalleryModal.setAttribute("aria-hidden", "true");
+      stopVideoPlayback();
+      showVideoPlaceholder();
+      if (!wasBodyLocked) {
+        document.body.classList.remove("locked");
+      }
+      if (activeCard) {
+        activeCard.focus();
+      }
+
+      closeTimeoutId = window.setTimeout(function () {
+        videoGalleryModal.hidden = true;
+      }, 220);
+    }
+
+    document.addEventListener("click", function (event) {
+      const card = event.target.closest(".video-card");
+      if (card) {
+        openVideoGalleryModal(card);
+      }
     });
 
-    document.querySelectorAll(".video-card").forEach(function (card) {
-      card.addEventListener("click", function (event) {
-        if (event.target.closest(".video-card__play")) {
-          return;
-        }
-        openVideoGalleryModal(card);
-      });
-
-      card.addEventListener("keydown", function (event) {
-        const isTriggerKey = event.key === "Enter" || event.key === " ";
-        if (isTriggerKey) {
-          event.preventDefault();
-          openVideoGalleryModal(card);
-        }
-      });
-    });
-
-    if (videoGalleryCloseButton) {
-      videoGalleryCloseButton.addEventListener("click", closeVideoGalleryModal);
-    }
-
-    if (videoGalleryOverlay) {
-      videoGalleryOverlay.addEventListener("click", closeVideoGalleryModal);
-    }
-
-    videoGalleryModal.addEventListener("click", function (event) {
-      if (event.target === videoGalleryModal) {
-        closeVideoGalleryModal();
+    videoGalleryThumbnails.addEventListener("click", function (event) {
+      const button = event.target.closest(".video-gallery-modal__thumbnail-button");
+      if (button) {
+        selectVideo(Number(button.dataset.videoIndex));
       }
     });
 
     document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape" && !videoGalleryModal.hidden) {
+      const card = event.target.closest(".video-card");
+      if (card && (event.key === "Enter" || event.key === " ")) {
+        event.preventDefault();
+        openVideoGalleryModal(card);
+        return;
+      }
+
+      if (videoGalleryModal.hidden) {
+        return;
+      }
+
+      if (event.key === "Escape") {
+        closeVideoGalleryModal();
+        return;
+      }
+
+      const thumbnailButton = event.target.closest(".video-gallery-modal__thumbnail-button");
+      if (thumbnailButton && (event.key === "ArrowRight" || event.key === "ArrowLeft")) {
+        event.preventDefault();
+        const currentIndex = Number(thumbnailButton.dataset.videoIndex);
+        const direction = event.key === "ArrowRight" ? 1 : -1;
+        const videoCount = activeDestination.videos.length;
+        const nextIndex = (currentIndex + direction + videoCount) % videoCount;
+        selectVideo(nextIndex);
+        videoGalleryThumbnails.querySelector(`[data-video-index="${nextIndex}"]`).focus();
+        return;
+      }
+
+      if (event.key === "Tab") {
+        const focusableElements = videoGalleryModal.querySelectorAll(
+          "button:not([disabled]), iframe, [href], [tabindex]:not([tabindex='-1'])"
+        );
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        if (event.shiftKey && document.activeElement === firstElement) {
+          event.preventDefault();
+          lastElement.focus();
+        } else if (!event.shiftKey && document.activeElement === lastElement) {
+          event.preventDefault();
+          firstElement.focus();
+        }
+      }
+    });
+
+    videoGalleryModal.addEventListener("click", function (event) {
+      if (event.target === videoGalleryOverlay || event.target === videoGalleryModal) {
         closeVideoGalleryModal();
       }
+    });
+
+    videoGalleryCloseButton.addEventListener("click", closeVideoGalleryModal);
+    window.addEventListener("resize", syncVideoGalleryDimensions);
+
+    if ("ResizeObserver" in window) {
+      new ResizeObserver(syncVideoGalleryDimensions).observe(videoGalleryPlayer);
+    }
+
+    videoGalleryModal.querySelectorAll("img").forEach(function (image) {
+      image.addEventListener("error", function () {
+        image.hidden = true;
+      });
+    });
+
+    document.querySelectorAll(".video-card__poster").forEach(function (image) {
+      image.addEventListener("error", function () {
+        image.hidden = true;
+      });
     });
   }
 })(jQuery);
