@@ -215,6 +215,13 @@ h6 {
   animation: MoveScaleUpInitial 0.3s forwards, MoveScaleUpEnd 0.3s forwards 0.3s;
 }
 
+.enquire-btn {
+  background-color: var(--adhvan-base) !important;
+  color: var(--adhvan-white) !important;
+  padding: 0 15px;
+  border-radius: 4px;
+}
+
 @keyframes MoveScaleUpInitial {
   to {
     transform: translate3d(0, -105%, 0) scale3d(1, 2, 1);
@@ -2101,10 +2108,10 @@ h6 {
 }
 
 .main-header--two .main-menu .main-menu__list>li>a {
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 188%;
   color: var(--adhvan-black);
   text-shadow: 0 0 0.1px currentColor;
@@ -2120,7 +2127,7 @@ h6 {
 }
 
 .main-header--two .main-menu .main-menu__list>li+li {
-  margin-left: 35px;
+  margin-left: 20px;
 }
 
 @media (max-width: 1240px) {
@@ -3466,7 +3473,8 @@ h6 {
   position: relative;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  background: #fff; /*linear-gradient(135deg, rgba(var(--adhvan-base-rgb), 0.88), rgba(0, 0, 0, 0.78));*/
+  background: #fff;
+  /*linear-gradient(135deg, rgba(var(--adhvan-base-rgb), 0.88), rgba(0, 0, 0, 0.78));*/
   border-top-left-radius: 28px;
   border-top-right-radius: 28px;
 }
@@ -4866,13 +4874,17 @@ h6 {
   padding: 0;
   background: transparent;
   opacity: 0;
-  visibility: visible;
+  visibility: hidden;
   pointer-events: none;
   transition: opacity 0.35s ease;
 }
 
-.itinerary-tour-slide:hover .itinerary-tour-slide__overlay,
-.itinerary-tour-slide:focus-within .itinerary-tour-slide__overlay {
+.mySwiper .swiper-slide-active.itinerary-tour-slide .itinerary-tour-slide__overlay {
+  visibility: visible;
+}
+
+.mySwiper .swiper-slide-active.itinerary-tour-slide:hover .itinerary-tour-slide__overlay,
+.mySwiper .swiper-slide-active.itinerary-tour-slide:focus-within .itinerary-tour-slide__overlay {
   opacity: 1;
   visibility: visible;
 }
@@ -4898,7 +4910,7 @@ h6 {
   white-space: nowrap;
   cursor: pointer;
   opacity: 0;
-  visibility: visible;
+  visibility: hidden;
   pointer-events: none;
   transform: translateY(15px);
   transition:
@@ -4908,14 +4920,17 @@ h6 {
     color 0.3s ease;
 }
 
-.itinerary-tour-slide:hover .itinerary-tour-slide__cta,
-.itinerary-tour-slide:focus-within .itinerary-tour-slide__cta,
-.swiper-slide.itinerary-tour-slide.swiper-slide-active {
+.mySwiper .swiper-slide-active.itinerary-tour-slide .itinerary-tour-slide__cta {
+  visibility: visible;
+}
+
+.mySwiper .swiper-slide-active.itinerary-tour-slide:hover .itinerary-tour-slide__cta,
+.mySwiper .swiper-slide-active.itinerary-tour-slide:focus-within .itinerary-tour-slide__cta {
   opacity: 1;
-  visibility: visible;         
+  visibility: visible;
   pointer-events: auto;
   transform: translateY(0);
-} 
+}
 
 .itinerary-tour-slide__cta:hover {
   background: #ffffff;
@@ -4976,7 +4991,7 @@ h6 {
 
 /* Card arrangement */
 .mySwiper {
-  /* overflow: hidden; */
+  overflow: hidden;
   padding: 35px 0 45px;
 }
 
@@ -5487,7 +5502,7 @@ h6 {
 }
 
 .itinerary-modal__eyebrow {
-  margin: 0 0 8px;
+  margin: 0 0 4px;
   color: var(--adhvan-base);
   font-size: 11px;
   font-weight: 700;
@@ -5510,11 +5525,87 @@ h6 {
   line-height: 1.65;
 }
 
+.itinerary-modal__title {
+  margin-bottom: 0;
+}
+
 .itinerary-modal__subtitle {
-  margin: 8px 0 0;
-  color: var(--adhvan-text2);
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  border-radius: 10px;
+  color: var(--adhvan-base, #1a5d4b);
   font-size: 14px;
+  margin: 8px 0 0;
   line-height: 1.5;
+}
+
+.itinerary-duration__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+}
+
+.itinerary-duration__item strong {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.itinerary-duration__divider {
+  width: 1px;
+  height: 26px;
+  background: #dce5df;
+}
+
+.itinerary-duration__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+}
+
+.itinerary-duration__icon svg {
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.itinerary-duration__icon--day {
+  color: #bd7b08;
+  background: #fff0c2;
+}
+
+.itinerary-duration__icon--night {
+  color: #465bb5;
+  background: #e6eaff;
+}
+
+@media (max-width: 480px) {
+  .itinerary-modal__subtitle {
+    gap: 9px;
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+
+  .itinerary-duration__item {
+    gap: 5px;
+  }
+
+  .itinerary-duration__item strong {
+    font-size: 14px;
+  }
+
+  .itinerary-duration__icon {
+    width: 26px;
+    height: 26px;
+  }
 }
 
 .itinerary-modal__close {
@@ -6056,7 +6147,9 @@ h6 {
   gap: 28px;
   width: 100%;
   min-width: 0;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(var(--adhvan-base-rgb), 0.5);
+  padding-bottom: 15px;
 }
 
 .itinerary-modal__gallery,
@@ -6593,9 +6686,9 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 50px;
-  padding: 0 28px;
-  border-radius: 999px;
+  /* min-height: 50px; */
+  padding: 5px 20px;
+  border-radius: 8px;
   background-color: var(--adhvan-base);
   box-shadow: 0 5px 14px rgba(var(--adhvan-base-rgb), 0.18);
   letter-spacing: 0.01em;
@@ -6738,7 +6831,9 @@ h6 {
     grid-template-columns: minmax(0, 1fr);
     align-items: start;
     gap: 18px;
-    margin-bottom: 24px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(var(--adhvan-base-rgb), 0.5);
+    padding-bottom: 10px;
   }
 
   .itinerary-modal__gallery,
@@ -6812,7 +6907,9 @@ h6 {
 
   .itinerary-modal__intro-layout {
     gap: 16px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(var(--adhvan-base-rgb), 0.5);
+    padding-bottom: 15px;
   }
 
   .itinerary-modal__gallery-thumbnails {
@@ -7018,4 +7115,42 @@ h6 {
   .partner-card:hover .partner-photo {
     transform: none;
   }
+}
+
+/* ==========================================
+   VIEW ITINERARY ONLY ON ACTIVE SLIDE
+========================================== */
+
+/* Hide every itinerary overlay and button */
+.mySwiper .itinerary-tour-slide .itinerary-tour-slide__overlay {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+.mySwiper .itinerary-tour-slide .itinerary-tour-slide__cta {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: translateY(15px);
+}
+
+/* Show overlay and button on the active slide only */
+.mySwiper .itinerary-tour-slide.swiper-slide-active .itinerary-tour-slide__overlay {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+.mySwiper .itinerary-tour-slide.swiper-slide-active .itinerary-tour-slide__cta {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: translateY(0) !important;
+}
+
+/* Button hover styling */
+.mySwiper .itinerary-tour-slide.swiper-slide-active .itinerary-tour-slide__cta:hover {
+  background: #ffffff;
+  color: var(--adhvan-base, #106046);
 }

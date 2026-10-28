@@ -8,15 +8,14 @@
   const closeButton = modal.querySelector(".itinerary-modal__close");
   const overlay = modal.querySelector(".itinerary-modal__overlay");
   const titleElement = modal.querySelector("#itinerary-modal-title");
-  const eyebrowElement = modal.querySelector("#itinerary-modal-eyebrow");
   const subtitleElement = modal.querySelector("#itinerary-modal-subtitle");
   const introElement = modal.querySelector("#itinerary-modal-intro");
   const bodyElement = modal.querySelector("#itinerary-modal-body");
   const planLink = modal.querySelector(".itinerary-modal__cta");
 
-  if (!closeButton || !overlay || !titleElement || !eyebrowElement || !subtitleElement
+  if (!closeButton || !overlay || !titleElement || !subtitleElement
     || !introElement || !bodyElement || !planLink) {
-    console.error("The itinerary modal is missing required elements."); 
+    console.error("The itinerary modal is missing required elements.");
     return;
   }
 
@@ -326,7 +325,36 @@
 
   function renderItinerary(itinerary, opener) {
     titleElement.textContent = itinerary.title;
-    subtitleElement.textContent = itinerary.duration.days + " Days / " + itinerary.duration.nights + " Nights";
+    // subtitleElement.textContent = itinerary.duration.days + " Days / " + itinerary.duration.nights + " Nights";
+
+    subtitleElement.innerHTML = `
+      <span class="itinerary-duration__item">
+        <span class="itinerary-duration__icon itinerary-duration__icon--day">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2 M12 20v2 M2 12h2 M20 12h2"></path>
+            <path d="m4.93 4.93 1.42 1.42 M17.65 17.65l1.42 1.42"></path>
+            <path d="m19.07 4.93-1.42 1.42 M6.35 17.65l-1.42 1.42"></path>
+          </svg>
+        </span>
+        <strong>${itinerary.duration.days}</strong>
+        <span>Days</span>
+      </span>
+
+      <span class="itinerary-duration__divider"></span>
+
+      <span class="itinerary-duration__item">
+        <span class="itinerary-duration__icon itinerary-duration__icon--night">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.9 13A9 9 0 0 1 11 3.1
+              9 9 0 1 0 20.9 13Z"></path>
+          </svg>
+        </span>
+        <strong>${itinerary.duration.nights}</strong>
+        <span>Nights</span>
+      </span>
+    `;
+
     introElement.textContent = itinerary.intro || "";
     introElement.hidden = !itinerary.intro;
     bodyElement.replaceChildren();

@@ -187,10 +187,12 @@
                             <li><a href="#testimonials-two">Testimonials</a></li>
                             <li><a href="#gallery-two">Gallery</a></li>
                             <li><a href="#video-gallery">Video Gallery</a></li>
-                            <li><a href="#plan-your-trip">Plan Your Trip</a></li>
-                            <li><a href="#why-choose-two">Why Choose Us</a></li>
+                            <!-- <li><a href="#plan-your-trip">Plan Your Trip</a></li> -->
+                            <!-- <li><a href="#why-choose-two">Why Choose Us</a></li> -->
                             <li><a href="#about-two">About</a></li>
                             <li><a href="#footer-contact">Contact</a></li>
+                            <li><a href="#plan-your-trip" class="enquire-btn"><i
+                                        class="fab fa-whatsapp pe-2"></i>Enquire</a></li>
                         </ul>
                     </nav>
                     <div class="main-header__right">
@@ -220,7 +222,7 @@
                             <p class="hero-two__tagline bw-split-in-right">Expert guidance at every step—whether it's
                                 family vacations, corporate trips, or international journeys. Plan your trip today and
                                 receive a free custom itinerary. <a href="#plan-your-trip" class="adhvan-btn"><span><i
-                                            class="fab fa-whatsapp pe-2"></i>For Enquire</span></a></p>
+                                            class="fab fa-whatsapp pe-2"></i>Enquire</span></a></p>
                             <div class="hero-two__box">
                                 <div class="hero-two__box__shape"><img src="assets/images/shapes/arrow-2-1.png"
                                         alt="shape"></div>
@@ -283,10 +285,10 @@
                         <div class="swiper-slide itinerary-tour-slide"
                             data-itinerary-images="assets/images/tours/Itineraries/Pongal/1.webp,assets/images/tours/Itineraries/Pongal/2.webp,assets/images/tours/Itineraries/Pongal/3.webp,assets/images/tours/Itineraries/Pongal/4.webp,assets/images/tours/Itineraries/Pongal/5.webp">
                             <img src="assets/images/tours/pongal.webp" alt="Pongal Festival">
-                            <div class="itinerary-tour-slide__overlay">
-                                <button class="itinerary-tour-slide__cta" type="button" data-itinerary-open
-                                    data-itinerary-id="tamil-nadu-five-senses-jan-2027" aria-haspopup="dialog"
-                                    aria-controls="itinerary-modal">
+                            <div class="itinerary-tour-slide__overlay" aria-hidden="true">
+                                <button class="itinerary-tour-slide__cta" type="button"
+                                    data-itinerary-id="tamil-nadu-five-senses-jan-2027" data-itinerary-open
+                                    aria-haspopup="dialog" aria-controls="pongal-itinerary-modal">
                                     View Itinerary
                                 </button>
                             </div>
@@ -296,10 +298,10 @@
                             alt="Kashmir_Winter_Packages_Travel_Poster">
                             <img src="assets/images/tours/Kashmir_Winter_Packages_Travel_Poster.webp"
                                 alt="Kashmir_Winter_Packages_Travel_Poster">
-                            <div class="itinerary-tour-slide__overlay">
-                                <button class="itinerary-tour-slide__cta" type="button" data-itinerary-open
-                                    data-itinerary-id="kashmir-winter-packages" aria-haspopup="dialog"
-                                    aria-controls="itinerary-modal">
+                            <div class="itinerary-tour-slide__overlay" aria-hidden="true">
+                                <button class="itinerary-tour-slide__cta" type="button"
+                                    data-itinerary-id="kashmir-winter-packages" data-itinerary-open
+                                    aria-haspopup="dialog" aria-controls="kashmir-itinerary-modal">
                                     View Itinerary
                                 </button>
                             </div>
@@ -336,21 +338,21 @@
             <div class="itinerary-modal__content" tabindex="-1">
                 <header class="itinerary-modal__header">
                     <div>
-                        <p class="itinerary-modal__eyebrow" id="itinerary-modal-eyebrow"></p>
-                        <h4 id="itinerary-modal-title"></h4>
-                        <p class="itinerary-modal__subtitle" id="itinerary-modal-subtitle"></p>
+                        <h4 class="itinerary-modal__title" id="itinerary-modal-title"></h4>
+                        <div class="itinerary-modal__subtitle" id="itinerary-modal-subtitle"></div>
                         <p class="itinerary-modal__intro" id="itinerary-modal-intro" hidden></p>
                     </div>
+                    <a class="adhvan-btn itinerary-modal__cta" href="#plan-your-trip">
+                        <span>Plan This Trip</span>
+                    </a>
                     <button class="itinerary-modal__close" type="button" aria-label="Close itinerary">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </header>
                 <div class="itinerary-modal__body" id="itinerary-modal-body"></div>
-                <footer class="itinerary-modal__footer">
-                    <a class="adhvan-btn itinerary-modal__cta" href="#plan-your-trip">
-                        <span>Plan This Trip</span>
-                    </a>
-                </footer>
+                <!-- <footer class="itinerary-modal__footer">
+                    
+                </footer> -->
             </div>
         </div>
 
@@ -744,7 +746,8 @@
                         aria-controls="video-gallery-modal" aria-label="Watch Discover the Beauty of Tamil Nadu"
                         data-destination-id="tamil-nadu">
                         <div class="video-card__media video-card__media--image">
-                            <img class="video-card__poster" src="assets/images/video-gallery/tamil-nadu/tamil-nadu-tourism.png"
+                            <img class="video-card__poster"
+                                src="assets/images/video-gallery/tamil-nadu/tamil-nadu-tourism.png"
                                 alt="An ornate Dravidian temple gopuram in Tamil Nadu" loading="lazy" decoding="async">
                             <div class="video-card__overlay"></div>
                             <span class="video-card__play" aria-hidden="true"><i></i></span>
@@ -1212,6 +1215,21 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
+        function syncItineraryButtons(swiperInstance) {
+            var activeSlide = swiperInstance.slides[swiperInstance.activeIndex];
+            swiperInstance.el.querySelectorAll(".swiper-slide.itinerary-tour-slide").forEach(function (slide) {
+                var active = slide === activeSlide;
+                var overlay = slide.querySelector(".itinerary-tour-slide__overlay");
+                var button = slide.querySelector("[data-itinerary-open]");
+                if (!overlay || !button) return;
+
+                overlay.setAttribute("aria-hidden", String(!active));
+                button.setAttribute("aria-hidden", String(!active));
+                button.tabIndex = active ? 0 : -1;
+                button.disabled = !active;
+            });
+        }
+
         var swiper = new Swiper(".mySwiper", {
             slidesPerView: 3,
             spaceBetween: 30,
@@ -1232,6 +1250,12 @@
                 0: { slidesPerView: 1 },
                 768: { slidesPerView: 2 },
                 1024: { slidesPerView: 3 }
+            },
+            on: {
+                init: syncItineraryButtons,
+                slideChange: syncItineraryButtons,
+                slideChangeTransitionEnd: syncItineraryButtons,
+                loopFix: syncItineraryButtons
             }
         });
     </script>
