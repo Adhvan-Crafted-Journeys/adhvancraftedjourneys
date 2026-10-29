@@ -639,6 +639,7 @@
 
   const travelEnquiryForm = document.querySelector("#travel-enquiry-form");
   if (travelEnquiryForm) {
+    const whatsappNumber = "919597229511";
     let travelFormSubmitted = false;
     const travelFormFields = Array.from(
       travelEnquiryForm.querySelectorAll("input, select, textarea")
@@ -751,9 +752,13 @@
       const lines = [
         "Hello Adhvan Crafted Journeys,",
         "",
-        "I would like to plan a trip.",
+        String(values.get("tripType")) === "Visa Assistance"
+          ? "I would like to enquire about visa assistance."
+          : "I would like to plan a trip.",
         "",
-        "*Travel Enquiry*",
+        String(values.get("tripType")) === "Visa Assistance"
+          ? "*Visa Assistance Enquiry*"
+          : "*Travel Enquiry*",
         "",
         `Name: ${String(values.get("name")).trim()}`,
         `WhatsApp: ${String(values.get("phone")).trim()}`,
@@ -774,7 +779,6 @@
     }
 
     function openWhatsApp(message) {
-      const whatsappNumber = "9597229511";
       const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
       window.open(whatsappUrl, "_blank", "noopener,noreferrer");
     }
@@ -816,6 +820,22 @@
       openWhatsApp(buildWhatsAppMessage(travelEnquiryForm));
       status.textContent = "Your enquiry is ready in WhatsApp. Please tap Send to contact our travel team.";
       status.hidden = false;
+    });
+  }
+
+  const visaAssistanceCta = document.querySelector(".visa-assistance__button--primary");
+  if (visaAssistanceCta && travelEnquiryForm) {
+    visaAssistanceCta.addEventListener("click", function (event) {
+      event.preventDefault();
+      const tripTypeInput = travelEnquiryForm.querySelector("#travel-type");
+      tripTypeInput.value = "Visa Assistance";
+      tripTypeInput.dispatchEvent(new Event("change", { bubbles: true }));
+
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      document.querySelector("#plan-your-trip").scrollIntoView({
+        behavior: reducedMotion ? "auto" : "smooth",
+        block: "start"
+      });
     });
   }
 
