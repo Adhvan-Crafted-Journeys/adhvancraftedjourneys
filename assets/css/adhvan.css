@@ -4706,6 +4706,11 @@ h6 {
   z-index: 9999;
 }
 
+.preloader img {
+  height: 50%;
+  width: 50%;
+}
+
 .loaderInner {
   width: 70px;
   height: 60px;
@@ -7751,5 +7756,141 @@ h6 {
 @media (prefers-reduced-motion: reduce) {
   .visa-assistance__button {
     transition: none;
+  }
+}
+
+/* Adhvan Travel Services cards inside the existing itinerary modal */
+#itinerary-modal-body[data-modal-type="services"] .itinerary-modal__services-section>h3 {
+  margin: 1.5rem 0 1rem;
+}
+
+#itinerary-modal-body .itinerary-modal__services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+#itinerary-modal-body .itinerary-modal__service-card {
+  min-width: 0;
+  padding: 1.25rem 1rem;
+  border: 1px solid rgba(22, 128, 49, .16);
+  border-radius: 14px;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0 5px 18px rgba(20, 55, 35, .045);
+}
+
+#itinerary-modal-body .itinerary-modal__service-icon {
+  display: inline-flex;
+  width: 46px;
+  height: 46px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: .75rem;
+  color: #168031;
+  border-radius: 50%;
+  background: rgba(78, 164, 45, .10);
+}
+
+#itinerary-modal-body .itinerary-modal__service-icon svg {
+  width: 25px;
+  height: 25px;
+}
+
+#itinerary-modal-body .itinerary-modal__service-title {
+  margin: 0 0 .5rem;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+#itinerary-modal-body .itinerary-modal__service-description {
+  margin: 0;
+  color: #68736b;
+  font-size: .875rem;
+  line-height: 1.6;
+}
+
+#itinerary-modal-body .itinerary-modal__services-cta {
+  margin-top: 1.75rem;
+  text-align: center;
+}
+
+#itinerary-modal-body .itinerary-modal__services-cta h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+#itinerary-modal-body .itinerary-modal__services-contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .75rem 1.25rem;
+  margin: .75rem 0 1rem;
+}
+
+#itinerary-modal-body .itinerary-modal__services-contact a {
+  color: #168031;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+@media (max-width: 767px) {
+  #itinerary-modal-body .itinerary-modal__services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .75rem;
+  }
+
+  #itinerary-modal-body .itinerary-modal__service-card {
+    padding: 1rem .75rem;
+  }
+
+  #itinerary-modal-body .itinerary-modal__service-title {
+    font-size: .9rem;
+  }
+
+  #itinerary-modal-body .itinerary-modal__service-description {
+    font-size: .8rem;
+  }
+}
+
+@media (max-width: 420px) {
+  #itinerary-modal-body .itinerary-modal__services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Dynamic fields: two-column responsive layout */
+#travel-dynamic-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 24px;
+  align-items: start;
+}
+
+/* Customer details: three fields in one row on desktop */
+.travel-enquiry__customer-details {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* Keep labels and inputs aligned */
+.travel-enquiry__field {
+  min-width: 0;
+}
+
+.travel-enquiry__field input,
+.travel-enquiry__field select,
+.travel-enquiry__field textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Tablet and mobile */
+@media (max-width: 768px) {
+
+  #travel-dynamic-fields,
+  .travel-enquiry__customer-details {
+    grid-template-columns: 1fr;
   }
 }

@@ -1,391 +1,111 @@
 {
   "itineraries": [
     {
-      "id": "dubai-2027",
-      "title": "Dubai 2027",
-      "duration": {
-        "days": 8,
-        "nights": 7
-      },
-      "description": "Discover Dubai through a guided city tour featuring photo stops and drives past landmarks including Dubai Frame, Palm Jumeirah and the Museum of the Future. The itinerary also includes an evening dhow cruise, visits to Burj Khalifa and Global Village, and a choice between the Dolphin Show and the Museum of the Future, subject to the stated supplement and advance-booking conditions. An Abu Dhabi tour is offered as an alternative to a leisure day at an additional supplement, with listed stops including BAPS Temple, Sheikh Zayed Grand Mosque, Ferrari World and the Corniche. The journey also features Miracle Garden, a desert safari with listed camp activities, and time for shopping before departure.",
-      "days": [
+      "id": "adhvan-travel-services",
+      "title": "Adhvan Travel Services",
+      "tag-line": "Your Journey, Crafted with Care",
+      "sub-title": "Complete Travel Solutions Under One Roof",
+      "description": "Discover complete travel solutions with Adhvan Crafted Journeys, including flight bookings, domestic and international tour packages, hotel reservations, visa assistance, passport services, travel insurance, forex services, and transportation.",
+      "services": [
         {
-          "day": 1,
-          "date": "",
-          "title": "Arrival in Dubai",
-          "activities": [
+          "id": "flight-bookings",
+          "title": "Flight Bookings",
+          "description": "Explore domestic and international passenger flights, including one-way and round-trip bookings.",
+          "icon": "plane"
+        },
+        {
+          "id": "tour-packages",
+          "title": "Tour Packages",
+          "description": "Discover customized domestic and international holidays for families, couples, corporate groups, educational institutions, spiritual journeys, and group travel.",
+          "icon": "palmtree",
+          "subcategories": [
             {
-              "time": "",
-              "title": "Meet & greet at DXB airport exit.",
-              "description": "Meet the tour representative at the designated arrival exit of Dubai International Airport for a welcome and assistance."
+              "id": "family-packages",
+              "title": "Family Packages",
+              "description": "Create memorable family holidays with personalized itineraries.",
+              "icon": "users"
             },
             {
-              "time": "",
-              "title": "Transfer by 50-seater AC deluxe coach with tour guide.",
-              "description": "Travel by 50-seater air-conditioned deluxe coach with the tour guide accompanying the group."
+              "id": "couples-packages",
+              "title": "Couples Packages",
+              "description": "Enjoy romantic getaways and customized holidays for couples.",
+              "icon": "heart"
             },
             {
-              "time": "",
-              "title": "Standard hotel check-in at 3:00 PM.",
-              "description": "Complete the hotel check-in process from the stated standard check-in time of 3:00 PM."
+              "id": "corporate-mice-travel",
+              "title": "Corporate & MICE Travel",
+              "description": "Organize meetings, incentives, conferences, exhibitions, and corporate trips.",
+              "icon": "users"
             },
             {
-              "time": "",
-              "title": "Evening Dhow Cruise Dinner at Marina.",
-              "description": "Board the dhow for an evening cruise and dinner around Dubai Marina."
+              "id": "educational-college-tours",
+              "title": "Educational & College Tours",
+              "description": "Plan educational trips and memorable tours for schools and colleges.",
+              "icon": "graduation-cap"
             },
             {
-              "time": "",
-              "title": "2-hour sailing.",
-              "description": "The dhow cruise is scheduled to sail for two hours."
+              "id": "spiritual-temple-tours",
+              "title": "Spiritual & Temple Tours",
+              "description": "Plan meaningful spiritual journeys and temple pilgrimages.",
+              "icon": "landmark"
             },
             {
-              "time": "",
-              "title": "International buffet dinner.",
-              "description": "Dinner is arranged in an international buffet format; specific dishes are not listed."
-            },
-            {
-              "time": "",
-              "title": "Upper deck seating.",
-              "description": "Seating on the dhow is arranged on the upper deck."
-            },
-            {
-              "time": "",
-              "title": "Tanoura dance.",
-              "description": "Watch a Tanoura dance performance during the evening programme."
-            },
-            {
-              "time": "",
-              "title": "Return to hotel.",
-              "description": "Travel back to the hotel after the day's scheduled activities."
+              "id": "group-incentive-trips",
+              "title": "Group & Incentive Trips",
+              "description": "Create memorable group holidays and incentive travel experiences.",
+              "icon": "users-round"
             }
           ]
         },
         {
-          "day": 2,
-          "date": "",
-          "title": "Dubai City Tour",
-          "activities": [
-            {
-              "time": "",
-              "title": "Breakfast.",
-              "description": "Breakfast is scheduled before the day's activities."
-            },
-            {
-              "time": "",
-              "title": "Transfer by 50-seater AC deluxe coach with tour guide.",
-              "description": "Travel by 50-seater air-conditioned deluxe coach with the tour guide accompanying the group."
-            },
-            {
-              "time": "",
-              "title": "Dubai city tour.",
-              "description": "Explore Dubai on a city sightseeing tour with the group."
-            },
-            {
-              "time": "",
-              "title": "Photo stop at Dubai Frame.",
-              "description": "Pause at Dubai Frame for a photo opportunity."
-            },
-            {
-              "time": "",
-              "title": "Drive through Palm Jumeirah.",
-              "description": "Take a sightseeing drive through Palm Jumeirah."
-            },
-            {
-              "time": "",
-              "title": "Photo stop at Jumeirah Public Beach.",
-              "description": "Pause at Jumeirah Public Beach for a photo opportunity."
-            },
-            {
-              "time": "",
-              "title": "Photo stop at Museum of the Future.",
-              "description": "Pause near the Museum of the Future for a photo opportunity."
-            },
-            {
-              "time": "",
-              "title": "Proceed to Dubai Mall.",
-              "description": "Continue to Dubai Mall as the next stop on the day's itinerary."
-            },
-            {
-              "time": "",
-              "title": "Return to hotel.",
-              "description": "Travel back to the hotel after the day's scheduled activities."
-            }
-          ]
+          "id": "hotel-reservations",
+          "title": "Hotel Reservations",
+          "description": "Find accommodation options ranging from 3-star and 4-star hotels to luxury 5-star properties.",
+          "icon": "hotel"
         },
         {
-          "day": 3,
-          "date": "",
-          "title": "Burj Khalifa",
-          "activities": [
-            {
-              "time": "",
-              "title": "Breakfast.",
-              "description": "Breakfast is scheduled before the day's activities."
-            },
-            {
-              "time": "",
-              "title": "One-way transfer from hotel to Dubai World Trade Centre.",
-              "description": "Travel one way from the hotel to Dubai World Trade Centre."
-            },
-            {
-              "time": "",
-              "title": "Evening transfer with tour guide.",
-              "description": "An evening transfer is arranged with the tour guide accompanying the group."
-            },
-            {
-              "time": "",
-              "title": "Burj Khalifa — Level 124/125.",
-              "description": "Visit the Burj Khalifa's 124th and 125th levels as listed in the itinerary."
-            },
-            {
-              "time": "",
-              "title": "Non-peak entrance ticket.",
-              "description": "The listed entrance ticket is for a non-peak visit period."
-            },
-            {
-              "time": "",
-              "title": "Return to hotel.",
-              "description": "Travel back to the hotel after the day's scheduled activities."
-            }
-          ]
+          "id": "visa-assistance",
+          "title": "Visa Assistance",
+          "description": "Get guidance on visa applications and travel documentation requirements.",
+          "icon": "file-check"
         },
         {
-          "day": 4,
-          "date": "",
-          "title": "Global Village",
-          "activities": [
-            {
-              "time": "",
-              "title": "Breakfast.",
-              "description": "Breakfast is scheduled before the day's activities."
-            },
-            {
-              "time": "",
-              "title": "One-way transfer from hotel to Dubai World Trade Centre.",
-              "description": "Travel one way from the hotel to Dubai World Trade Centre."
-            },
-            {
-              "time": "",
-              "title": "Evening transfer with tour guide.",
-              "description": "An evening transfer is arranged with the tour guide accompanying the group."
-            },
-            {
-              "time": "",
-              "title": "Global Village entrance ticket.",
-              "description": "An entrance ticket is listed for the Global Village visit."
-            },
-            {
-              "time": "",
-              "title": "Return to hotel.",
-              "description": "Travel back to the hotel after the day's scheduled activities."
-            }
-          ]
+          "id": "passport-services",
+          "title": "Passport Services",
+          "description": "Get assistance with new passport applications, renewals, and related procedures.",
+          "icon": "book-open"
         },
         {
-          "day": 5,
-          "date": "",
-          "title": "Dolphin Show / Museum of the Future",
-          "activities": [
-            {
-              "time": "",
-              "title": "Breakfast.",
-              "description": "Breakfast is scheduled before the day's activities."
-            },
-            {
-              "time": "",
-              "title": "One-way transfer from hotel to Dubai World Trade Centre.",
-              "description": "Travel one way from the hotel to Dubai World Trade Centre."
-            },
-            {
-              "time": "",
-              "title": "Evening transfer with tour guide.",
-              "description": "An evening transfer is arranged with the tour guide accompanying the group."
-            },
-            {
-              "time": "",
-              "title": "Dolphin Show OR Museum of the Future.",
-              "description": "Choose either the Dolphin Show or the Museum of the Future; the selected option is subject to the stated supplement and advance-booking conditions."
-            },
-            {
-              "time": "",
-              "title": "Supplement cost applies.",
-              "description": "An additional supplement applies to the selected optional activity; the amount is not specified here."
-            },
-            {
-              "time": "",
-              "title": "Subject to pre-booking 50 days prior to arrival.",
-              "description": "The selected activity is subject to pre-booking 50 days before arrival."
-            },
-            {
-              "time": "",
-              "title": "Return to hotel.",
-              "description": "Travel back to the hotel after the day's scheduled activities."
-            }
-          ]
+          "id": "travel-insurance",
+          "title": "Travel Insurance",
+          "description": "Explore insurance options for domestic and international travel.",
+          "icon": "shield-check"
         },
         {
-          "day": 6,
-          "date": "",
-          "title": "Leisure / Abu Dhabi Tour",
-          "activities": [
-            {
-              "time": "",
-              "title": "Breakfast.",
-              "description": "Breakfast is scheduled before the day's activities."
-            },
-            {
-              "time": "",
-              "title": "Free day for leisure OR Abu Dhabi tour with supplement cost.",
-              "description": "Choose a free day at leisure or opt for the Abu Dhabi tour, which carries a supplement."
-            },
-            {
-              "time": "",
-              "title": "Transfer with tour guide.",
-              "description": "A transfer is arranged with the tour guide accompanying the group; the transport mode is not specified."
-            },
-            {
-              "time": "",
-              "title": "BAPS Temple.",
-              "description": "Visit BAPS Temple as a listed stop on the Abu Dhabi tour."
-            },
-            {
-              "time": "",
-              "title": "Drive through Sheikh Zayed Grand Mosque.",
-              "description": "Take a drive past Sheikh Zayed Grand Mosque as part of the sightseeing route."
-            },
-            {
-              "time": "",
-              "title": "Ferrari World entrance.",
-              "description": "Ferrari World entrance is listed as part of the Abu Dhabi tour; ticket details are not specified."
-            },
-            {
-              "time": "",
-              "title": "Drive through Abu Dhabi Corniche.",
-              "description": "Take a sightseeing drive along Abu Dhabi Corniche."
-            },
-            {
-              "time": "",
-              "title": "Return to hotel.",
-              "description": "Travel back to the hotel after the day's scheduled activities."
-            }
-          ]
+          "id": "forex-services",
+          "title": "Forex Services",
+          "description": "Get assistance with foreign currency requirements for destinations worldwide.",
+          "icon": "banknote"
         },
         {
-          "day": 7,
-          "date": "",
-          "title": "Miracle Garden & Desert Safari",
-          "activities": [
-            {
-              "time": "",
-              "title": "Breakfast.",
-              "description": "Breakfast is scheduled before the day's activities."
-            },
-            {
-              "time": "",
-              "title": "Transfer by 50-seater AC deluxe coach with guide.",
-              "description": "Travel by 50-seater air-conditioned deluxe coach with a guide accompanying the group."
-            },
-            {
-              "time": "",
-              "title": "Miracle Garden entrance.",
-              "description": "Entrance to Miracle Garden is listed for the visit."
-            },
-            {
-              "time": "",
-              "title": "Desert Safari experience.",
-              "description": "Take part in the listed desert safari experience."
-            },
-            {
-              "time": "",
-              "title": "6 persons per SUV.",
-              "description": "The vehicle arrangement is listed for groups of six people per SUV."
-            },
-            {
-              "time": "",
-              "title": "Dune bash.",
-              "description": "Experience a drive over the desert dunes as part of the safari."
-            },
-            {
-              "time": "",
-              "title": "Sunset stop.",
-              "description": "Pause in the desert around sunset during the safari."
-            },
-            {
-              "time": "",
-              "title": "Camel ride.",
-              "description": "Take the camel ride listed as part of the safari activities."
-            },
-            {
-              "time": "",
-              "title": "Sand board.",
-              "description": "Try sandboarding as part of the desert safari activities."
-            },
-            {
-              "time": "",
-              "title": "BBQ dinner.",
-              "description": "Dinner is arranged as a barbecue meal; specific dishes are not listed."
-            },
-            {
-              "time": "",
-              "title": "Arabic coffee with dates at camp entrance.",
-              "description": "Arabic coffee and dates are listed for guests at the camp entrance."
-            },
-            {
-              "time": "",
-              "title": "Belly dance.",
-              "description": "Watch a belly dance performance during the camp programme."
-            },
-            {
-              "time": "",
-              "title": "Tanoura dance.",
-              "description": "Watch a Tanoura dance performance during the evening programme."
-            },
-            {
-              "time": "",
-              "title": "Fire show.",
-              "description": "Watch a fire performance during the camp programme."
-            },
-            {
-              "time": "",
-              "title": "Return to hotel.",
-              "description": "Travel back to the hotel after the day's scheduled activities."
-            }
-          ]
-        },
-        {
-          "day": 8,
-          "date": "",
-          "title": "Shopping & Departure",
-          "activities": [
-            {
-              "time": "",
-              "title": "Breakfast.",
-              "description": "Breakfast is scheduled before the day's activities."
-            },
-            {
-              "time": "",
-              "title": "Checkout.",
-              "description": "Complete the hotel checkout process before departure."
-            },
-            {
-              "time": "",
-              "title": "Transfer by 50-seater AC deluxe coach with guide.",
-              "description": "Travel by 50-seater air-conditioned deluxe coach with a guide accompanying the group."
-            },
-            {
-              "time": "",
-              "title": "Shopping at Gold Souq / Meena Bazar.",
-              "description": "Allow time to browse the shops at Gold Souq or Meena Bazar."
-            },
-            {
-              "time": "",
-              "title": "Transfer to DXB airport for departure.",
-              "description": "Travel by transfer to Dubai International Airport for the departure."
-            }
-          ]
+          "id": "transportation",
+          "title": "Transportation",
+          "description": "Arrange cars, taxis, buses, coaches, airport transfers, and other ground transportation.",
+          "icon": "car"
         }
-      ]
+      ],
+      "cta": {
+        "title": "Let's Plan Your Next Journey!",
+        "buttonText": "Enquire",
+        "action": "plan-trip"
+      },
+      "contact": {
+        "phone": [
+          "9597229511",
+          "9884670944"
+        ],
+        "email": "adhvan.journeys@gmail.com"
+      }
     },
     {
       "id": "tamil-nadu-five-senses-jan-2027",
@@ -1049,6 +769,466 @@
               "time": "As per departure",
               "title": "Airport or railway station transfer",
               "description": "Transfer to Srinagar Airport or Railway Station."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jewels-of-japan-cherry-blossom-2027",
+      "title": "Jewels of Japan – Cherry Blossom Special 2027",
+      "duration": {
+        "days": 8,
+        "nights": 7
+      },
+      "tag-line": "Experience the Magic of Japan's Cherry Blossom Season",
+      "sub-title": "Explore Japan",
+      "description": "Experience the magical beauty of Japan during cherry blossom season on a 7-night, 8-day journey through Tokyo, Mt. Fuji, Hakone, Hamamatsu, Kyoto, Osaka, Hiroshima, Nara, and Kansai. Discover Tokyo's cultural landmarks and immersive digital art at teamLab Planets, admire the majestic Mt. Fuji, enjoy a scenic Lake Ashi cruise and Owakudani Ropeway, explore Kyoto's historic temples and Arashiyama Bamboo Grove, travel aboard the famous Shinkansen Bullet Train to Hiroshima, and discover Nara's deer park and Osaka's vibrant shopping streets. Enjoy Japan's breathtaking Sakura landscapes, authentic sushi tasting, and unforgettable cultural experiences.",
+      "days": [
+        {
+          "day": 1,
+          "date": "",
+          "title": "Arrival in Tokyo",
+          "description": "Arrive in Tokyo, Japan's vibrant capital, and experience the immersive digital art world of teamLab Planets before enjoying your first dinner in Japan.",
+          "activities": [
+            {
+              "time": "As per arrival",
+              "title": "Arrival at Tokyo Airport",
+              "description": "Meet and greet by the local representative and guide, followed by a transfer to the hotel for check-in."
+            },
+            {
+              "time": "Afternoon",
+              "title": "teamLab Planets Experience",
+              "description": "Explore immersive digital art installations where art, technology, light, and sound come together."
+            },
+            {
+              "time": "Evening",
+              "title": "Dinner and Overnight Stay",
+              "description": "Enjoy dinner and return to the hotel for an overnight stay in Tokyo."
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "date": "",
+          "title": "Tokyo City Tour",
+          "description": "Discover Tokyo's cultural heritage, traditional shopping streets, panoramic city views, and iconic landmarks, including Sensoji Temple, Ueno Park, Tokyo Skytree, and Shibuya Crossing.",
+          "activities": [
+            {
+              "time": "Morning",
+              "title": "Sensoji Temple and Nakamise Street",
+              "description": "Visit Tokyo's oldest famous Buddhist temple and explore Nakamise Street, lined with souvenir shops and local speciality stores."
+            },
+            {
+              "time": "Afternoon",
+              "title": "Ueno Park and Tokyo Skytree",
+              "description": "Explore Ueno Park and enjoy spectacular panoramic views of Tokyo from the iconic Tokyo Skytree."
+            },
+            {
+              "time": "Evening",
+              "title": "Shibuya Crossing and Hachiko Statue",
+              "description": "Experience the famous Shibuya Crossing and visit the Hachiko Memorial Statue before dinner and returning to the hotel."
+            }
+          ]
+        },
+        {
+          "day": 3,
+          "date": "",
+          "title": "Tokyo – Mt. Fuji – Hakone – Hamamatsu",
+          "description": "Journey towards majestic Mt. Fuji, enjoy the scenic beauty of the Fuji region, cruise across Lake Ashi, and experience the Owakudani Ropeway before continuing to Hamamatsu.",
+          "activities": [
+            {
+              "time": "Morning",
+              "title": "Journey to Mt. Fuji",
+              "description": "Check out after breakfast and travel towards the Mt. Fuji region. Visit Mt. Fuji 5th Station, subject to weather and road conditions."
+            },
+            {
+              "time": "Afternoon",
+              "title": "Lake Ashi Cruise",
+              "description": "Enjoy a scenic cruise on Lake Ashi, surrounded by picturesque mountain and lakeside landscapes."
+            },
+            {
+              "time": "",
+              "title": "Owakudani Ropeway",
+              "description": "Experience the ropeway over the volcanic valley and enjoy panoramic views of the Hakone region."
+            },
+            {
+              "time": "Evening",
+              "title": "Transfer to Hamamatsu",
+              "description": "Continue by coach to Hamamatsu, check in to the hotel, enjoy dinner, and stay overnight."
+            }
+          ]
+        },
+        {
+          "day": 4,
+          "date": "",
+          "title": "Hamamatsu – Kyoto – Osaka",
+          "description": "Discover Kyoto's timeless cultural heritage with a Japanese sushi tasting experience, a visit to Kiyomizudera Temple, and a stroll through the historic Gion district before travelling to Osaka.",
+          "activities": [
+            {
+              "time": "Morning",
+              "title": "Travel to Kyoto",
+              "description": "Check out after breakfast and proceed by coach to Kyoto, Japan's historic cultural capital."
+            },
+            {
+              "time": "Afternoon",
+              "title": "Japanese Sushi Tasting and Kiyomizudera Temple",
+              "description": "Enjoy lunch with a sushi tasting experience, followed by a visit to Kiyomizudera Temple, renowned for its impressive wooden stage and beautiful views."
+            },
+            {
+              "time": "",
+              "title": "Gion District",
+              "description": "Explore Kyoto's traditional entertainment district, known for its historic streets and traditional wooden houses."
+            },
+            {
+              "time": "Evening",
+              "title": "Transfer to Osaka",
+              "description": "Travel by coach to Osaka, enjoy dinner, check in to the hotel, and stay overnight."
+            }
+          ]
+        },
+        {
+          "day": 5,
+          "date": "",
+          "title": "Osaka – Kyoto City Tour",
+          "description": "Explore Kyoto's seasonal landscapes aboard the Sagano Romantic Train, walk through the Arashiyama Bamboo Grove, admire the Golden Pavilion, and discover the iconic Fushimi Inari Shrine.",
+          "activities": [
+            {
+              "time": "Morning",
+              "title": "Sagano Romantic Train",
+              "description": "Enjoy a scenic railway journey along the Hozugawa River through picturesque landscapes."
+            },
+            {
+              "time": "",
+              "title": "Arashiyama Bamboo Grove",
+              "description": "Walk among towering bamboo along the famous pathways of the Arashiyama Bamboo Grove."
+            },
+            {
+              "time": "Afternoon",
+              "title": "Kinkakuji Temple – Golden Pavilion",
+              "description": "Visit the renowned Golden Pavilion, famous for its striking golden exterior reflected in the surrounding pond."
+            },
+            {
+              "time": "",
+              "title": "Fushimi Inari Shrine",
+              "description": "Explore the iconic shrine, known for its thousands of vibrant vermilion torii gates winding through the forested hillside."
+            },
+            {
+              "time": "Evening",
+              "title": "Return to Osaka",
+              "description": "Return by coach to Osaka, enjoy dinner, and stay overnight at the hotel."
+            }
+          ]
+        },
+        {
+          "day": 6,
+          "date": "",
+          "title": "Osaka – Hiroshima Day Tour",
+          "description": "Travel aboard Japan's famous Shinkansen Bullet Train to Hiroshima, explore the Hiroshima Peace Memorial Museum, and learn about the city's history and enduring message of peace.",
+          "activities": [
+            {
+              "time": "Morning",
+              "title": "Shinkansen Bullet Train to Hiroshima",
+              "description": "Transfer to Shin-Osaka Station and enjoy a high-speed journey aboard the Shinkansen to Hiroshima."
+            },
+            {
+              "time": "Afternoon",
+              "title": "Hiroshima Peace Memorial Museum",
+              "description": "Visit the museum to learn about the atomic bombing of Hiroshima, its aftermath, and the city's message of peace."
+            },
+            {
+              "time": "Evening",
+              "title": "Return to Osaka",
+              "description": "Travel back to Osaka by Shinkansen, return to the hotel, and relax after the day's sightseeing."
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "date": "",
+          "title": "Osaka – Nara – Kansai",
+          "description": "Discover Nara's cultural treasures and famous free-roaming deer, explore Todaiji Temple, and experience Osaka's historic castle, lively shopping streets, and vibrant Dotonbori district before continuing to Kansai.",
+          "activities": [
+            {
+              "time": "Morning",
+              "title": "Nara Park and Todaiji Temple",
+              "description": "Visit Nara Park, famous for its free-roaming deer, and explore Todaiji Temple, home to the impressive Great Buddha statue."
+            },
+            {
+              "time": "Afternoon",
+              "title": "Osaka Castle",
+              "description": "Visit Osaka Castle, an important historical landmark surrounded by gardens and parkland."
+            },
+            {
+              "time": "",
+              "title": "Shinsaibashi and Dotonbori",
+              "description": "Explore Shinsaibashi's lively shopping district and Dotonbori's colourful signs, bustling streets, and vibrant dining atmosphere."
+            },
+            {
+              "time": "Evening",
+              "title": "Transfer to Kansai",
+              "description": "Enjoy dinner before travelling to the Kansai area for hotel check-in and an overnight stay."
+            }
+          ]
+        },
+        {
+          "day": 8,
+          "date": "",
+          "title": "Departure from Osaka",
+          "description": "Enjoy breakfast, check out from the hotel, and transfer to Osaka International Airport for your onward journey, bringing your memorable Japan cherry blossom tour to an end.",
+          "activities": [
+            {
+              "time": "Morning",
+              "title": "Breakfast and Check-out",
+              "description": "Enjoy breakfast at the hotel and check out according to the scheduled departure time."
+            },
+            {
+              "time": "As per departure",
+              "title": "Transfer to Osaka International Airport",
+              "description": "Proceed to the airport departure terminal, complete the necessary formalities, and board your onward flight."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "france-switzerland-tour-package",
+      "title": "France & Switzerland Tour Package",
+      "duration": {
+        "days": 10,
+        "nights": 9
+      },
+      "tag-line": "Discover Parisian Elegance & Swiss Alpine Beauty",
+      "sub-title": "Explore Your Journey",
+      "description": "Experience the charm of France and the breathtaking beauty of Switzerland on a 9-night, 10-day journey through Paris, Zurich, Lucerne, Interlaken, and Grindelwald. Discover Paris's iconic Eiffel Tower, enjoy a scenic Seine River cruise, explore the Louvre Museum and the magnificent Palace of Versailles, and stroll through the charming Montmartre district. Continue to Switzerland to experience the Lindt Home of Chocolate, admire panoramic Alpine views from Harder Kulm, discover the turquoise waters of Lake Brienz, and explore the picturesque mountain village of Grindelwald. Enjoy an unforgettable European holiday combining culture, history, scenic landscapes, and relaxation.",
+      "days": [
+        {
+          "day": 1,
+          "date": "",
+          "title": "Arrival in Paris",
+          "description": "Arrive in Paris, meet the local representative, and transfer privately to your hotel. Enjoy a relaxing start to your French holiday.",
+          "activities": [
+            {
+              "time": "As per arrival",
+              "title": "Arrival in Paris",
+              "description": "Arrive in Paris and meet the representative for a warm welcome."
+            },
+            {
+              "time": "",
+              "title": "Private Transfer and Hotel Check-in",
+              "description": "Transfer privately to Novotel Paris Centre Tour Eiffel, check in, and relax after your journey."
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "date": "",
+          "title": "Eiffel Tower and Paris City Tour",
+          "description": "Discover Paris's iconic landmarks with a half-day Hop-On Hop-Off tour, enjoy a scenic Seine River cruise, and admire panoramic city views from the Eiffel Tower summit.",
+          "activities": [
+            {
+              "time": "Morning",
+              "title": "Breakfast and Hop-On Hop-Off Tour",
+              "description": "Enjoy breakfast at the hotel and explore Paris's scenic highlights on a half-day Hop-On Hop-Off tour."
+            },
+            {
+              "time": "Afternoon",
+              "title": "Eiffel Tower Summit",
+              "description": "Visit the Eiffel Tower summit and enjoy panoramic views across the beautiful city of Paris."
+            },
+            {
+              "time": "Evening",
+              "title": "Seine River Cruise",
+              "description": "Enjoy a relaxing cruise along the Seine River while admiring Paris's famous landmarks before returning to the hotel."
+            }
+          ]
+        },
+        {
+          "day": 3,
+          "date": "",
+          "title": "Paris Sightseeing and Louvre Museum",
+          "description": "Continue exploring Paris with the remaining Hop-On Hop-Off tour and discover the Louvre Museum, home to one of the world's most celebrated art collections.",
+          "activities": [
+            {
+              "time": "Morning",
+              "title": "Breakfast and Hop-On Hop-Off Tour",
+              "description": "Enjoy breakfast at the hotel and continue the remaining Hop-On Hop-Off sightseeing tour around Paris."
+            },
+            {
+              "time": "Afternoon",
+              "title": "Louvre Museum",
+              "description": "Visit the world-famous Louvre Museum and explore its remarkable collection of art and historical treasures."
+            },
+            {
+              "time": "Evening",
+              "title": "Return to the Hotel",
+              "description": "Return to Novotel Paris Centre Tour Eiffel and enjoy a relaxing evening."
+            }
+          ]
+        },
+        {
+          "day": 4,
+          "date": "",
+          "title": "Palace of Versailles",
+          "description": "Discover the grandeur of French royal history with a visit to the magnificent Palace of Versailles and its beautifully landscaped gardens.",
+          "activities": [
+            {
+              "time": "Morning",
+              "title": "Breakfast and Train to Versailles",
+              "description": "Enjoy breakfast at the hotel and travel by train to Versailles."
+            },
+            {
+              "time": "Afternoon",
+              "title": "Palace of Versailles and Gardens",
+              "description": "Explore the magnificent palace, admire its royal architecture, and stroll through the beautiful gardens."
+            },
+            {
+              "time": "Evening",
+              "title": "Return to Paris",
+              "description": "Travel back to Paris by train and return to the hotel for an overnight stay."
+            }
+          ]
+        },
+        {
+          "day": 5,
+          "date": "",
+          "title": "Montmartre and Luxembourg Gardens",
+          "description": "Explore the artistic charm of Montmartre, visit the beautiful Sacré-Cœur Basilica, and enjoy a peaceful evening stroll through Luxembourg Gardens.",
+          "activities": [
+            {
+              "time": "Morning",
+              "title": "Breakfast and Montmartre",
+              "description": "Enjoy breakfast at the hotel and explore Montmartre, a charming Parisian neighbourhood known for its artistic heritage and picturesque streets."
+            },
+            {
+              "time": "Afternoon",
+              "title": "Sacré-Cœur Basilica",
+              "description": "Visit the iconic Sacré-Cœur Basilica and admire its distinctive architecture and views over Paris."
+            },
+            {
+              "time": "Evening",
+              "title": "Luxembourg Gardens",
+              "description": "Enjoy a relaxing stroll through Luxembourg Gardens before returning to the hotel."
+            }
+          ]
+        },
+        {
+          "day": 6,
+          "date": "",
+          "title": "Paris Leisure Day",
+          "description": "Enjoy a leisurely day in Paris at your own pace. Explore charming streets, discover local cafés, enjoy shopping, or revisit your favourite city attractions.",
+          "activities": [
+            {
+              "time": "Morning",
+              "title": "Breakfast at the Hotel",
+              "description": "Enjoy breakfast and spend the morning relaxing at the hotel or exploring Paris independently."
+            },
+            {
+              "time": "Afternoon",
+              "title": "Explore Paris at Your Own Pace",
+              "description": "Enjoy leisure time for shopping, local cafés, sightseeing, and discovering the city's unique atmosphere."
+            },
+            {
+              "time": "Evening",
+              "title": "Leisure Time in Paris",
+              "description": "Enjoy a relaxing evening in Paris and return to the hotel for an overnight stay."
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "date": "",
+          "title": "Paris – Zurich – Lucerne",
+          "description": "Travel from Paris to Zurich by train, discover the interactive chocolate experience at Lindt Home of Chocolate, and continue to Lucerne using your Swiss Travel Pass.",
+          "activities": [
+            {
+              "time": "Morning",
+              "title": "Breakfast and Hotel Check-out",
+              "description": "Enjoy breakfast, check out from the Paris hotel, and proceed to the railway station."
+            },
+            {
+              "time": "",
+              "title": "Train Journey to Zurich",
+              "description": "Travel by train from Paris to Zurich and begin exploring Switzerland."
+            },
+            {
+              "time": "Afternoon",
+              "title": "Lindt Home of Chocolate",
+              "description": "Visit Lindt Home of Chocolate and enjoy an interactive experience discovering the world of Swiss chocolate."
+            },
+            {
+              "time": "Evening",
+              "title": "Train to Lucerne and Hotel Check-in",
+              "description": "Continue by train to Lucerne using the Swiss Travel Pass, check in to IBIS Lucerne Kriens, and relax."
+            }
+          ]
+        },
+        {
+          "day": 8,
+          "date": "",
+          "title": "Harder Kulm and Lake Brienz",
+          "description": "Discover the spectacular Alpine scenery of Interlaken from Harder Kulm and enjoy the natural beauty of Lake Brienz, famous for its turquoise waters and surrounding mountains.",
+          "activities": [
+            {
+              "time": "Morning",
+              "title": "Breakfast and Train to Interlaken",
+              "description": "Enjoy breakfast at the hotel and travel by train to Interlaken using the Swiss Travel Pass."
+            },
+            {
+              "time": "Afternoon",
+              "title": "Harder Kulm – Top of Interlaken",
+              "description": "Visit Harder Kulm and admire panoramic views of the Swiss Alps, Interlaken, and the surrounding lakes."
+            },
+            {
+              "time": "",
+              "title": "Lake Brienz",
+              "description": "Enjoy a scenic visit to Lake Brienz, renowned for its turquoise waters and beautiful Alpine surroundings."
+            },
+            {
+              "time": "Evening",
+              "title": "Return to Lucerne",
+              "description": "Travel back to Lucerne and relax at IBIS Lucerne Kriens."
+            }
+          ]
+        },
+        {
+          "day": 9,
+          "date": "",
+          "title": "Grindelwald Alpine Village",
+          "description": "Explore Grindelwald, a picturesque Swiss mountain village surrounded by majestic Alpine peaks, charming chalets, and spectacular views of the iconic Eiger mountain.",
+          "activities": [
+            {
+              "time": "Morning",
+              "title": "Breakfast and Train to Grindelwald",
+              "description": "Enjoy breakfast at the hotel and travel by train towards Grindelwald using the Swiss Travel Pass."
+            },
+            {
+              "time": "Afternoon",
+              "title": "Explore Grindelwald",
+              "description": "Discover the charming mountain village, admire traditional Swiss chalets, and enjoy breathtaking views of the surrounding Alps and Eiger mountain."
+            },
+            {
+              "time": "Evening",
+              "title": "Return to Lucerne",
+              "description": "Return to Lucerne by train and relax at IBIS Lucerne Kriens."
+            }
+          ]
+        },
+        {
+          "day": 10,
+          "date": "",
+          "title": "Departure from Zurich",
+          "description": "Enjoy breakfast, check out from the hotel, and travel by train from Lucerne to Zurich Airport for your onward journey, bringing your memorable France and Switzerland holiday to an end.",
+          "activities": [
+            {
+              "time": "Morning",
+              "title": "Breakfast and Hotel Check-out",
+              "description": "Enjoy breakfast at the hotel and check out according to your departure schedule."
+            },
+            {
+              "time": "As per departure",
+              "title": "Train Transfer to Zurich Airport",
+              "description": "Travel by train from Lucerne to Zurich Airport and proceed to the departure terminal for your onward flight."
             }
           ]
         }

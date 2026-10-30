@@ -129,7 +129,8 @@
 
     <!-- Preloader -->
     <div class="preloader">
-        <div class="loaderInner">
+        <img src="assets/images/loader.svg" alt="loader.svg">
+        <!-- <div class="loaderInner">
             <div id="top" class="mask">
                 <div class="plane"></div>
             </div>
@@ -140,7 +141,7 @@
                 <div class="plane"></div>
             </div>
             <p>LOADING...</p>
-        </div>
+        </div> -->
     </div>
 
     <div class="page-wrapper">
@@ -305,9 +306,22 @@
 
                 <div class="swiper mySwiper pt-5">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
+                        <!-- <div class="swiper-slide">
                             <img src="assets/images/tours/ADHVAN_Crafted_Journeys_Service_Showcase.webp"
                                 alt="ADHVAN_Crafted_Journeys_Service_Showcase" />
+                        </div> -->
+                        <div class="swiper-slide itinerary-tour-slide"
+                            data-itinerary-images="assets/images/tours/Itineraries/france-switzerland-tour/1.webp,assets/images/tours/Itineraries/france-switzerland-tour/2.webp,assets/images/tours/Itineraries/france-switzerland-tour/3.webp,assets/images/tours/Itineraries/france-switzerland-tour/4.webp,assets/images/tours/Itineraries/france-switzerland-tour/5.webp"
+                            alt="france-switzerland-tour">
+                            <img src="assets/images/tours/ADHVAN_Crafted_Journeys_Service_Showcase.webp"
+                                alt="ADHVAN_Crafted_Journeys_Service_Showcase" />
+                            <div class="itinerary-tour-slide__overlay" aria-hidden="true">
+                                <button class="itinerary-tour-slide__cta" type="button"
+                                    data-itinerary-id="adhvan-travel-services" data-itinerary-open
+                                    aria-haspopup="dialog" aria-controls="adhvan-travel-services-modal">
+                                    View Itinerary
+                                </button>
+                            </div>
                         </div>
                         <div class="swiper-slide itinerary-tour-slide"
                             data-itinerary-images="assets/images/tours/Itineraries/Pongal/1.webp,assets/images/tours/Itineraries/Pongal/2.webp,assets/images/tours/Itineraries/Pongal/3.webp,assets/images/tours/Itineraries/Pongal/4.webp,assets/images/tours/Itineraries/Pongal/5.webp">
@@ -329,6 +343,33 @@
                                 <button class="itinerary-tour-slide__cta" type="button"
                                     data-itinerary-id="kashmir-winter-packages" data-itinerary-open
                                     aria-haspopup="dialog" aria-controls="kashmir-itinerary-modal">
+                                    View Itinerary
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide itinerary-tour-slide"
+                            data-itinerary-images="assets/images/tours/Itineraries/japan-cherry-blossom/1.webp,assets/images/tours/Itineraries/japan-cherry-blossom/2.webp,assets/images/tours/Itineraries/japan-cherry-blossom/3.webp,assets/images/tours/Itineraries/japan-cherry-blossom/4.webp,assets/images/tours/Itineraries/japan-cherry-blossom/5.webp"
+                            alt="japan-cherry-blossom">
+                            <img src="assets/images/tours/jewels-of-japan-cherry-blossom-2027.webp"
+                                alt="jewels-of-japan-cherry-blossom-2027" />
+                            <div class="itinerary-tour-slide__overlay" aria-hidden="true">
+                                <button class="itinerary-tour-slide__cta" type="button"
+                                    data-itinerary-id="jewels-of-japan-cherry-blossom-2027" data-itinerary-open
+                                    aria-haspopup="dialog" aria-controls="japan-cherry-blossom-itinerary-modal">
+                                    View Itinerary
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide itinerary-tour-slide"
+                            data-itinerary-images="assets/images/tours/Itineraries/france-switzerland-tour/1.webp,assets/images/tours/Itineraries/france-switzerland-tour/2.webp,assets/images/tours/Itineraries/france-switzerland-tour/3.webp,assets/images/tours/Itineraries/france-switzerland-tour/4.webp,assets/images/tours/Itineraries/france-switzerland-tour/5.webp"
+                            alt="france-switzerland-tour">
+                            <img src="assets/images/tours/france-switzerland-tour-package.webp"
+                                alt="france-switzerland-tour-package" />
+                            <div class="itinerary-tour-slide__overlay" aria-hidden="true">
+                                <button class="itinerary-tour-slide__cta" type="button"
+                                    data-itinerary-id="france-switzerland-tour-package" data-itinerary-open
+                                    aria-haspopup="dialog"
+                                    aria-controls="france-switzerland-tour-package-itinerary-modal">
                                     View Itinerary
                                 </button>
                             </div>
@@ -1145,6 +1186,7 @@
             </div>
         </div>
 
+
         <!-- Plan Your Trip -->
         <section class="travel-enquiry section-bg-white" id="plan-your-trip">
             <div class="container">
@@ -1156,113 +1198,99 @@
                         journey around you.
                     </p>
                 </div>
+
                 <form class="travel-enquiry__form" id="travel-enquiry-form" novalidate>
-                    <div class="travel-enquiry__field">
-                        <label for="travel-name">Full Name <span aria-hidden="true">*</span></label>
-                        <input id="travel-name" name="name" type="text" autocomplete="name" required
-                            aria-describedby="travel-name-error" />
-                        <span class="travel-enquiry__error" id="travel-name-error" aria-live="polite" hidden></span>
-                    </div>
-                    <div class="travel-enquiry__field">
-                        <label for="travel-phone">WhatsApp Number
-                            <span aria-hidden="true">*</span></label>
-                        <input id="travel-phone" name="phone" type="tel" autocomplete="tel"
-                            placeholder="e.g. +91 95972 29511" required aria-describedby="travel-phone-error" />
-                        <span class="travel-enquiry__error" id="travel-phone-error" aria-live="polite" hidden></span>
-                    </div>
-                    <div class="travel-enquiry__field">
-                        <label for="travel-email">Email Address <span aria-hidden="true">*</span></label>
-                        <input id="travel-email" name="email" type="email" autocomplete="email" required
-                            aria-describedby="travel-email-error" />
-                        <span class="travel-enquiry__error" id="travel-email-error" aria-live="polite" hidden></span>
-                    </div>
-                    <div class="travel-enquiry__field">
-                        <label for="travel-destination">Destination <span aria-hidden="true">*</span></label>
-                        <input id="travel-destination" name="destination" type="text" autocomplete="off" required
-                            aria-describedby="travel-destination-error" />
-                        <span class="travel-enquiry__error" id="travel-destination-error" aria-live="polite"
-                            hidden></span>
-                    </div>
-                    <div class="travel-enquiry__field">
-                        <label for="travel-departure">Departure Date <span aria-hidden="true">*</span></label>
-                        <input id="travel-departure" name="departure" type="date" required
-                            aria-describedby="travel-departure-error" />
-                        <span class="travel-enquiry__error" id="travel-departure-error" aria-live="polite"
-                            hidden></span>
-                    </div>
-                    <div class="travel-enquiry__field">
-                        <label for="travel-return">Return Date <span aria-hidden="true">*</span></label>
-                        <input id="travel-return" name="return" type="date" required
-                            aria-describedby="travel-return-error" />
-                        <span class="travel-enquiry__error" id="travel-return-error" aria-live="polite" hidden></span>
-                    </div>
-                    <div class="travel-enquiry__field">
-                        <label for="travel-adults">Adults <span aria-hidden="true">*</span></label>
-                        <input id="travel-adults" name="adults" type="number" min="1" step="1" inputmode="numeric"
-                            required aria-describedby="travel-adults-error" />
-                        <span class="travel-enquiry__error" id="travel-adults-error" aria-live="polite" hidden></span>
-                    </div>
-                    <div class="travel-enquiry__field">
-                        <label for="travel-children">Children</label>
-                        <input id="travel-children" name="children" type="number" min="0" step="1" inputmode="numeric"
-                            aria-describedby="travel-children-error" />
-                        <span class="travel-enquiry__error" id="travel-children-error" aria-live="polite" hidden></span>
-                    </div>
-                    <div class="travel-enquiry__field">
-                        <label for="travel-type">Trip Type <span aria-hidden="true">*</span></label>
-                        <select id="travel-type" name="tripType" required aria-describedby="travel-type-error">
-                            <option value="" selected disabled>
-                                Select a trip type
-                            </option>
-                            <option>Family Holiday</option>
-                            <option>Honeymoon</option>
-                            <option>Couple</option>
-                            <option>Solo Travel</option>
-                            <option>Group Tour</option>
-                            <option>Corporate Travel</option>
-                            <option>Luxury Travel</option>
-                            <option>Visa Assistance</option>
-                            <option>Other</option>
-                        </select>
-                        <span class="travel-enquiry__error" id="travel-type-error" aria-live="polite" hidden></span>
-                    </div>
-                    <div class="travel-enquiry__field">
-                        <label for="travel-budget">Approximate Budget
-                            <span aria-hidden="true">*</span></label>
-                        <select id="travel-budget" name="budget" required aria-describedby="travel-budget-error">
-                            <option value="" selected disabled>
-                                Select a budget
-                            </option>
-                            <option>Under ₹50,000</option>
-                            <option>₹50,000 – ₹1 Lakh</option>
-                            <option>₹1 Lakh – ₹2 Lakh</option>
-                            <option>₹2 Lakh – ₹5 Lakh</option>
-                            <option>₹5 Lakh+</option>
-                            <option>Not Sure Yet</option>
-                        </select>
-                        <span class="travel-enquiry__error" id="travel-budget-error" aria-live="polite" hidden></span>
-                    </div>
+                    <!-- Service Category -->
                     <div class="travel-enquiry__field travel-enquiry__field--wide">
-                        <label for="travel-requirements">Additional Requirements</label>
+                        <label for="travel-service">
+                            Service Category <span aria-hidden="true">*</span>
+                        </label>
+
+                        <select id="travel-service" name="serviceCategory" required
+                            aria-describedby="travel-service-error">
+                            <option value="" selected disabled>
+                                Select a service
+                            </option>
+                            <option value="flight-bookings">Flight Bookings</option>
+                            <option value="tour-packages">Tour Packages</option>
+                            <option value="hotel-reservations">Hotel Reservations</option>
+                            <option value="visa-assistance">Visa Assistance</option>
+                            <option value="passport-services">Passport Services</option>
+                            <option value="travel-insurance">Travel Insurance</option>
+                            <option value="forex-services">Forex Services</option>
+                            <option value="transportation">Transportation</option>
+                        </select>
+
+                        <span class="travel-enquiry__error" id="travel-service-error" aria-live="polite" hidden></span>
+                    </div>
+
+                    <!-- Tour Subcategory -->
+                    <!-- <div class="travel-enquiry__field" id="travel-subcategory-wrapper"
+                        hidden>
+                        <label for="travel-subcategory">
+                            Tour Type <span aria-hidden="true">*</span>
+                        </label>
+
+                        <select id="travel-subcategory" name="serviceSubcategory"
+                            aria-describedby="travel-subcategory-error">
+                            <option value="" selected disabled>
+                                Select a tour type
+                            </option>
+                            <option value="family-packages">Family Packages</option>
+                            <option value="couples-packages">Couples Packages</option>
+                            <option value="corporate-mice-travel">
+                                Corporate &amp; MICE Travel
+                            </option>
+                            <option value="educational-college-tours">
+                                Educational &amp; College Tours
+                            </option>
+                            <option value="spiritual-temple-tours">
+                                Spiritual &amp; Temple Tours
+                            </option>
+                            <option value="group-incentive-trips">
+                                Group &amp; Incentive Trips
+                            </option>
+                        </select>
+
+                        <span class="travel-enquiry__error" id="travel-subcategory-error" aria-live="polite"
+                            hidden></span>
+                    </div> -->
+
+                    <!-- Dynamic Service-Specific Fields -->
+                    <div id="travel-dynamic-fields" class="travel-enquiry__dynamic-fields travel-enquiry__field--wide"></div>
+
+                    <!-- Additional Requirements -->
+                    <div class="travel-enquiry__field travel-enquiry__field--wide">
+                        <label for="travel-requirements">
+                            Additional Requirements
+                        </label>
+
                         <textarea id="travel-requirements" name="requirements" rows="4"
+                            placeholder="Tell us about any special requests or preferences..."
                             aria-describedby="travel-requirements-error"></textarea>
+
                         <span class="travel-enquiry__error" id="travel-requirements-error" aria-live="polite"
                             hidden></span>
                     </div>
+
+                    <!-- Submit -->
                     <div class="travel-enquiry__actions">
                         <button class="adhvan-btn travel-enquiry__submit" type="submit">
-                            <span>Get My Travel Plan</span>
+                            <span>Submit Enquiry via WhatsApp</span>
                         </button>
+
                         <p class="travel-enquiry__note">
                             Your enquiry will open in WhatsApp with the details
-                            filled in.
+                            filled in. Please tap Send to contact our travel team.
                         </p>
+
                         <p class="travel-enquiry__status" id="travel-enquiry-status" role="status" aria-live="polite"
                             hidden></p>
                     </div>
                 </form>
             </div>
         </section>
+
 
         <!-- Why Choose Section -->
         <section class="why-choose-two section-bg-green" id="why-choose-two">

@@ -83,6 +83,32 @@
       }
       ids.add(itinerary.id);
 
+      // Service showcase entries share the existing modal and data loader.
+      if (Array.isArray(itinerary.services)) {
+        validateOptionalStrings(itinerary, ["tag-line", "sub-title", "description"], path);
+        itinerary.services.forEach(function (service, serviceIndex) {
+          const servicePath = path + ".services[" + serviceIndex + "]";
+          requireRecord(service, servicePath);
+          requireString(service.id, servicePath + ".id");
+          requireString(service.title, servicePath + ".title");
+          requireString(service.description, servicePath + ".description");
+          requireString(service.icon, servicePath + ".icon");
+        });
+        if (itinerary.cta !== undefined) {
+          validateOptionalStrings(requireRecord(itinerary.cta, path + ".cta"),
+            ["title", "buttonText", "action"], path + ".cta");
+        }
+        if (itinerary.contact !== undefined) {
+          const contact = requireRecord(itinerary.contact, path + ".contact");
+          if (contact.phone !== undefined && (!Array.isArray(contact.phone)
+            || contact.phone.some(function (phone) { return typeof phone !== "string"; }))) {
+            throw new Error(path + ".contact.phone must be an array of strings.");
+          }
+          validateOptionalStrings(contact, ["email"], path + ".contact");
+        }
+        return;
+      }
+
       const duration = requireRecord(itinerary.duration, path + ".duration");
       ["days", "nights"].forEach(function (field) {
         const minimum = field === "days" ? 1 : 0;
@@ -323,8 +349,91 @@
     section.appendChild(list);
   }
 
+  function renderServices(parent, itinerary) {
+    const section = createSection(parent, itinerary["sub-title"] || "Our Services", "itinerary-modal__services-section");
+    const grid = element("div", "itinerary-modal__services-grid");
+    (itinerary.services || []).forEach(function (service) {
+      const card = element("article", "itinerary-modal__service-card");
+      const iconWrap = element("span", "itinerary-modal__service-icon");
+      iconWrap.setAttribute("aria-hidden", "true");
+      iconWrap.appendChild(createServiceIcon(service.icon));
+      card.appendChild(iconWrap);
+      card.appendChild(element("h4", "itinerary-modal__service-title", service.title));
+      card.appendChild(element("p", "itinerary-modal__service-description", service.description));
+      grid.appendChild(card);
+    });
+    section.appendChild(grid);
+
+    if (itinerary.cta && itinerary.cta.title) {
+      const cta = element("div", "itinerary-modal__services-cta");
+      cta.appendChild(element("h3", "", itinerary.cta.title));
+      parent.appendChild(cta);
+    }
+
+    if (itinerary.contact) {
+      const contact = element("div", "itinerary-modal__services-contact");
+      (itinerary.contact.phone || []).forEach(function (phone) {
+        const link = element("a", "", phone);
+        link.href = "tel:" + phone.replace(/[^+\d]/g, "");
+        contact.appendChild(link);
+      });
+      if (itinerary.contact.email) {
+        const email = element("a", "", itinerary.contact.email);
+        email.href = "mailto:" + itinerary.contact.email;
+        contact.appendChild(email);
+      }
+      parent.appendChild(contact);
+    }
+  }
+
+  function createServiceIcon(iconName) {
+    const icons = {
+      "plane": "fas fa-plane",
+      "palmtree": "fas fa-umbrella-beach",
+      "hotel": "fas fa-hotel",
+      "file-check": "fas fa-file-alt",
+      "book-open": "fas fa-passport",
+      "shield-check": "fas fa-shield-alt",
+      "banknote": "fas fa-money-bill-wave",
+      "car": "fas fa-car",
+      "bus": "fas fa-bus",
+      "users": "fas fa-users",
+      "graduation-cap": "fas fa-graduation-cap",
+      "landmark": "fas fa-landmark",
+      "users-round": "fas fa-user-friends"
+    };
+
+    const icon = document.createElement("i");
+    icon.className = icons[iconName] || icons.plane;
+    icon.setAttribute("aria-hidden", "true");
+
+    return icon;
+  }
+
   function renderItinerary(itinerary, opener) {
     titleElement.textContent = itinerary.title;
+    if (Array.isArray(itinerary.services)) {
+      subtitleElement.textContent = itinerary["sub-title"] || "";
+      introElement.textContent = "";
+      introElement.hidden = true;
+      bodyElement.replaceChildren();
+      const overview = element("section", "itinerary-modal__package-overview");
+      if (itinerary["tag-line"]) {
+        overview.appendChild(element("p", "itinerary-modal__package-eyebrow", itinerary["tag-line"]));
+      }
+      if (itinerary.description) {
+        overview.appendChild(element("p", "itinerary-modal__package-description", itinerary.description));
+      }
+      bodyElement.appendChild(overview);
+      renderServices(bodyElement, itinerary);
+      const ctaText = planLink.querySelector("span");
+      if (ctaText) ctaText.textContent = (itinerary.cta && itinerary.cta.buttonText) || "Plan Your Journey";
+      bodyElement.setAttribute("data-modal-type", "services");
+      return;
+    }
+    bodyElement.removeAttribute("data-modal-type");
+    const ctaText = planLink.querySelector("span");
+    if (ctaText) ctaText.textContent = "Plan This Trip";
     // subtitleElement.textContent = itinerary.duration.days + " Days / " + itinerary.duration.nights + " Nights";
 
     subtitleElement.innerHTML = `
@@ -401,6 +510,7 @@
     status.setAttribute("role", "status");
     status.setAttribute("aria-live", "polite");
     bodyElement.replaceChildren(status);
+    bodyElement.removeAttribute("data-modal-type");
     bodyElement.setAttribute("aria-busy", state === "loading" ? "true" : "false");
   }
 
@@ -487,7 +597,7 @@
     }
 
     const enquiry = activeItinerary && activeItinerary.enquiry;
-    if (activeItinerary) {
+    if (activeItinerary && !Array.isArray(activeItinerary.services)) {
       [
         ["#travel-destination", activeItinerary.title],
         ["#travel-departure", enquiry && enquiry.departureDate],
