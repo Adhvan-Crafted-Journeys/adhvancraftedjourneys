@@ -7860,6 +7860,13 @@ h6 {
   }
 }
 
+@media (max-width: 575px) {
+  #itinerary-modal-body .itinerary-modal__services-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: .75rem;
+  }
+}
+
 /* Dynamic fields: two-column responsive layout */
 #travel-dynamic-fields {
   display: grid;
