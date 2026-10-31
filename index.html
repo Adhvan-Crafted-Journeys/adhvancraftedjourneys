@@ -407,12 +407,14 @@
                 <header class="itinerary-modal__header">
                     <div>
                         <h4 class="itinerary-modal__title" id="itinerary-modal-title"></h4>
-                        <div class="itinerary-modal__subtitle" id="itinerary-modal-subtitle"></div>
                         <p class="itinerary-modal__intro" id="itinerary-modal-intro" hidden></p>
+                        <div class="d-flex align-items-center justify-content-between">
+                        <div class="itinerary-modal__subtitle" id="itinerary-modal-subtitle"></div>
+                        <a class="adhvan-btn itinerary-modal__cta" href="#plan-your-trip">
+                            <span>Plan This Trip</span>
+                        </a>
+                        </div>
                     </div>
-                    <a class="adhvan-btn itinerary-modal__cta" href="#plan-your-trip">
-                        <span>Plan This Trip</span>
-                    </a>
                     <button class="itinerary-modal__close" type="button" aria-label="Close itinerary">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -1257,7 +1259,8 @@
                     </div> -->
 
                     <!-- Dynamic Service-Specific Fields -->
-                    <div id="travel-dynamic-fields" class="travel-enquiry__dynamic-fields travel-enquiry__field--wide"></div>
+                    <div id="travel-dynamic-fields" class="travel-enquiry__dynamic-fields travel-enquiry__field--wide">
+                    </div>
 
                     <!-- Additional Requirements -->
                     <div class="travel-enquiry__field travel-enquiry__field--wide">
