@@ -5518,7 +5518,7 @@ h6 {
 .itinerary-modal__header {
   display: flex;
   flex: 0 0 auto;
-  align-items: center;
+  align-items: start;
   justify-content: space-between;
   gap: 24px;
   padding: 15px 30px 15px;
@@ -6819,8 +6819,9 @@ h6 {
   }
 
   .itinerary-modal__cta {
-    width: 100%;
+    width: 65%;
     text-align: center;
+    margin: 8px 0 0;
   }
 
   .itinerary-modal__included {
