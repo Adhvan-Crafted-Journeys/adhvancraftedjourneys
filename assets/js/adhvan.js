@@ -713,6 +713,253 @@
       }
     };
 
+    const successModalConfig = {
+      "flight-bookings": {
+        image: "assets/images/success/flight-bookings.jpg",
+        icon: "fas fa-plane",
+        heading: "Your Flight Enquiry is Received!",
+        description:
+          "Our flight experts will help you explore the best routes and fares. We'll get in touch with you shortly."
+      },
+      "tour-packages": {
+        image: "assets/images/success/tour-packages.jpg",
+        icon: "fas fa-globe-americas",
+        heading: "Your Dream Journey Starts Here!",
+        description:
+          "Let's create a memorable travel experience tailored just for you. Our travel experts will connect with you soon."
+      },
+      "hotel-reservations": {
+        image: "assets/images/success/hotel-reservations.jpg",
+        icon: "fas fa-hotel",
+        heading: "Your Stay Enquiry is Received!",
+        description:
+          "We'll help you find the perfect stay for your journey. Our team will assist you with suitable accommodation options."
+      },
+      "visa-assistance": {
+        image: "assets/images/success/visa-assistance.jpg",
+        icon: "fas fa-passport",
+        heading: "Your Visa Enquiry is Received!",
+        description:
+          "Our team will guide you through the visa assistance process and help you understand the next steps."
+      },
+      "passport-services": {
+        image: "assets/images/success/passport-services.jpg",
+        icon: "fas fa-file-alt",
+        heading: "Your Passport Enquiry is Received!",
+        description:
+          "Thank you for contacting us. Our team will assist you with your passport service requirements."
+      },
+      "travel-insurance": {
+        image: "assets/images/success/travel-insurance.jpg",
+        icon: "fas fa-shield-alt",
+        heading: "Travel with Confidence!",
+        description:
+          "Your travel insurance enquiry has been received. Our team will help you explore suitable coverage options."
+      },
+      "forex-services": {
+        image: "assets/images/success/forex-services.jpg",
+        icon: "fas fa-coins",
+        heading: "Your Forex Enquiry is Received!",
+        description:
+          "We'll help you with your foreign currency requirements and guide you through the available options."
+      },
+      transportation: {
+        image: "assets/images/success/transportation.jpg",
+        icon: "fas fa-bus",
+        heading: "Your Ride Enquiry is Received!",
+        description:
+          "We'll help arrange comfortable and convenient transportation according to your travel requirements."
+      },
+      default: {
+        image: "",
+        icon: "fas fa-check",
+        heading: "Your Enquiry Has Been Received!",
+        description:
+          "Thank you for contacting Adhvan Crafted Journeys. Our team will get in touch with you shortly."
+      }
+    };
+
+    const successModal = document.querySelector("#enquiry-success-modal");
+    const successModalImage = successModal?.querySelector(
+      "#enquiry-success-image"
+    );
+    const successModalImageWrap = successModal?.querySelector(
+      ".enquiry-success-modal__image-wrap"
+    );
+    const successModalCategoryIcon = successModal?.querySelector(
+      "#enquiry-success-category-icon"
+    );
+    const successModalTitle = successModal?.querySelector(
+      "#enquiry-success-title"
+    );
+    const successModalMessage = successModal?.querySelector(
+      "#enquiry-success-message"
+    );
+    const successModalCloseButton = successModal?.querySelector(
+      ".enquiry-success-modal__close"
+    );
+    const successModalContinueButton = successModal?.querySelector(
+      ".enquiry-success-modal__button"
+    );
+    let successModalCloseTimeout;
+    let successModalReturnFocus;
+    let successModalWasBodyLocked = false;
+    let isSuccessModalClosing = false;
+
+    function showEnquirySuccessModal(category) {
+      if (
+        !successModal ||
+        !successModalImage ||
+        !successModalImageWrap ||
+        !successModalCategoryIcon ||
+        !successModalTitle ||
+        !successModalMessage
+      ) {
+        return;
+      }
+
+      const config = successModalConfig[category] || successModalConfig.default;
+      successModalTitle.textContent = config.heading;
+      successModalMessage.textContent = config.description;
+
+      const categoryIcon = document.createElement("i");
+      categoryIcon.className = config.icon;
+      categoryIcon.setAttribute("aria-hidden", "true");
+      successModalCategoryIcon.replaceChildren(categoryIcon);
+
+      successModalImageWrap.classList.remove("has-image");
+      if (config.image) {
+        successModalImage.hidden = false;
+        successModalImage.src = config.image;
+        if (successModalImage.complete && successModalImage.naturalWidth > 0) {
+          successModalImageWrap.classList.add("has-image");
+        }
+      } else {
+        successModalImage.removeAttribute("src");
+        successModalImage.hidden = true;
+      }
+
+      window.clearTimeout(successModalCloseTimeout);
+      isSuccessModalClosing = false;
+      successModalReturnFocus = submitButton || document.activeElement;
+      successModalWasBodyLocked = document.body.classList.contains("locked");
+      document.body.classList.add("locked");
+      successModal.hidden = false;
+      successModal.setAttribute("aria-hidden", "false");
+
+      window.requestAnimationFrame(function () {
+        successModal.classList.add("is-open");
+        successModalCloseButton?.focus();
+      });
+    }
+
+    function closeEnquirySuccessModal() {
+      if (
+        !successModal ||
+        successModal.hidden ||
+        isSuccessModalClosing
+      ) {
+        return;
+      }
+
+      isSuccessModalClosing = true;
+      successModal.classList.remove("is-open");
+      successModal.setAttribute("aria-hidden", "true");
+
+      if (!successModalWasBodyLocked) {
+        document.body.classList.remove("locked");
+      }
+
+      const returnFocus = successModalReturnFocus;
+      if (returnFocus?.isConnected) {
+        returnFocus.focus({ preventScroll: true });
+      } else {
+        serviceInput?.focus({ preventScroll: true });
+      }
+
+      successModalCloseTimeout = window.setTimeout(function () {
+        successModal.hidden = true;
+        isSuccessModalClosing = false;
+      }, 240);
+    }
+
+    if (successModalImage && successModalImageWrap) {
+      successModalImage.addEventListener("load", function () {
+        successModalImageWrap.classList.add("has-image");
+      });
+      successModalImage.addEventListener("error", function () {
+        successModalImage.hidden = true;
+        successModalImageWrap.classList.remove("has-image");
+      });
+    }
+
+    successModalCloseButton?.addEventListener(
+      "click",
+      closeEnquirySuccessModal
+    );
+    successModalContinueButton?.addEventListener(
+      "click",
+      closeEnquirySuccessModal
+    );
+    successModal?.addEventListener("click", function (event) {
+      if (
+        event.target === successModal ||
+        event.target === successModal.querySelector(".enquiry-success-modal__overlay")
+      ) {
+        closeEnquirySuccessModal();
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (!successModal || successModal.hidden || isSuccessModalClosing) {
+        return;
+      }
+
+      if (event.key === "Escape") {
+        event.preventDefault();
+        closeEnquirySuccessModal();
+        return;
+      }
+
+      if (event.key !== "Tab") return;
+
+      const focusableElements = successModal.querySelectorAll(
+        'button:not([disabled]), a[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      );
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+
+      if (!firstElement || !lastElement) {
+        event.preventDefault();
+      } else if (
+        event.shiftKey &&
+        (document.activeElement === firstElement ||
+          !successModal.contains(document.activeElement))
+      ) {
+        event.preventDefault();
+        lastElement.focus();
+      } else if (
+        !event.shiftKey &&
+        (document.activeElement === lastElement ||
+          !successModal.contains(document.activeElement))
+      ) {
+        event.preventDefault();
+        firstElement.focus();
+      }
+    });
+
+    document.addEventListener("focusin", function (event) {
+      if (
+        successModal &&
+        !successModal.hidden &&
+        successModal.classList.contains("is-open") &&
+        !isSuccessModalClosing &&
+        !successModal.contains(event.target)
+      ) {
+        successModalCloseButton?.focus();
+      }
+    });
+
     // Service-specific fields.
 
     const commonCustomerFields = [
@@ -1419,6 +1666,7 @@
       }
 
       try {
+        const submittedCategory = serviceInput.value;
         await submitEnquiry(buildEnquiryPayload());
 
         travelEnquiryForm.reset();
@@ -1441,6 +1689,8 @@
             "Thank you! Your enquiry has been submitted successfully.";
           status.hidden = false;
         }
+
+        showEnquirySuccessModal(submittedCategory);
       } catch {
         if (status) {
           status.textContent =
