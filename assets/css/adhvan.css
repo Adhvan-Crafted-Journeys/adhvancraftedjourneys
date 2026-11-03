@@ -274,7 +274,7 @@ h6 {
 
 .preloader {
   position: fixed;
-  background-color: var(--adhvan-black);
+  background-color: var(--adhvan-white);
   background-position: center center;
   background-repeat: no-repeat;
   top: 0;
@@ -289,6 +289,11 @@ h6 {
   -webkit-box-align: center;
   align-items: center;
   text-align: center;
+}
+
+.preloader img {
+  height: 50%;
+  width: 50%;
 }
 
 /* scroll to top */
@@ -4696,41 +4701,6 @@ h6 {
 /*--------------------------------------------------------
 / 06. Preloader
 /---------------------------------------------------------*/
-.preloader {
-  background: var(--adhvan-black);
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 9999;
-}
-
-.preloader img {
-  height: 50%;
-  width: 50%;
-}
-
-.loaderInner {
-  width: 70px;
-  height: 60px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-}
-
-.mask {
-  position: absolute;
-  border-radius: 2px;
-  overflow: hidden;
-  -webkit-perspective: 1000;
-  perspective: 1000;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
 
 .plane {
   background: var(--adhvan-base);
@@ -4795,21 +4765,6 @@ h6 {
   top: 30px;
   -webkit-transform: skew(-15deg, 0);
   transform: skew(-15deg, 0);
-}
-
-.preloader p {
-  font-family: var(--adhvan-heading-font);
-  color: var(--adhvan-base);
-  position: absolute;
-  left: -3px;
-  top: 50px;
-  text-align: center;
-  font-size: 12px;
-  font-weight: 600;
-  font-style: italic;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin: 0;
 }
 
 /* Main Width */
