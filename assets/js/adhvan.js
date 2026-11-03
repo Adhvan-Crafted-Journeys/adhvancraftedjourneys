@@ -639,8 +639,8 @@
 
   const travelEnquiryForm = document.querySelector("#travel-enquiry-form");
   if (travelEnquiryForm) {
-    const whatsappNumber = "919597229511";
     let travelFormSubmitted = false;
+    let isSubmitting = false;
 
     const serviceInput = travelEnquiryForm.querySelector("#travel-service");
     const subcategoryInput = travelEnquiryForm.querySelector("#travel-subcategory");
@@ -651,9 +651,18 @@
       "#travel-dynamic-fields"
     );
     const status = travelEnquiryForm.querySelector("#travel-enquiry-status");
+    const submitButton = travelEnquiryForm.querySelector(
+      'button[type="submit"]'
+    );
+    const submitButtonLabel = submitButton?.querySelector("span");
+    const originalSubmitLabel = "Submit Enquiry";
+    const submitNote = travelEnquiryForm.querySelector(".travel-enquiry__note");
 
-    const serviceLabels = {
-      "flight-bookings": "Flight Bookings",
+    const enquiryEndpoint =
+      "https://n8n.adhvancraftedjourneys.com/webhook-test/b4b143e3-cd62-4fd1-a4cd-83f27b3fedbd";
+
+    const serviceApiNames = {
+      "flight-bookings": "Flight Booking",
       "tour-packages": "Tour Packages",
       "hotel-reservations": "Hotel Reservations",
       "visa-assistance": "Visa Assistance",
@@ -663,13 +672,45 @@
       transportation: "Transportation"
     };
 
-    const subcategoryLabels = {
-      "family-packages": "Family Packages",
-      "couples-packages": "Couples Packages",
-      "corporate-mice-travel": "Corporate / MICE Travel",
-      "educational-college-tours": "Educational / College Tours",
-      "spiritual-temple-tours": "Spiritual / Temple Tours",
-      "group-incentive-trips": "Group / Incentive Trips"
+    const apiFieldNames = {
+      "flight-bookings": {
+        origin: "from",
+        destination: "destination",
+        departure: "travelDate"
+      },
+      "tour-packages": {
+        tourType: "tourType",
+        region: "packageType",
+        destination: "preferredDestination",
+        departure: "travelDate"
+      },
+      "hotel-reservations": {
+        destination: "cityDestination",
+        hotelCategory: "hotelCategory",
+        checkIn: "checkInDate"
+      },
+      "visa-assistance": {
+        destination: "destinationCountry",
+        visaType: "visaType"
+      },
+      "passport-services": {
+        passportType: "passportServiceType"
+      },
+      "travel-insurance": {
+        destination: "destinationCountry",
+        departure: "travelDate",
+        travellers: "numberOfTravellers"
+      },
+      "forex-services": {
+        currency: "requiredCurrency",
+        amount: "approxAmount"
+      },
+      transportation: {
+        vehicleType: "vehicleType",
+        origin: "pickupLocation",
+        destination: "dropOffLocation",
+        departure: "travelDate"
+      }
     };
 
     // Service-specific fields.
@@ -1097,21 +1138,6 @@
       return true;
     }
 
-    function formatTravelDate(value) {
-      if (!value) return "";
-
-      const date = new Date(`${value}T00:00:00Z`);
-
-      if (Number.isNaN(date.getTime())) return value;
-
-      return new Intl.DateTimeFormat("en-IN", {
-        day: "numeric",
-        month: "long",
-        year: "numeric",
-        timeZone: "UTC"
-      }).format(date);
-    }
-
     function getSelectedText(field) {
       if (!field) return "";
 
@@ -1122,61 +1148,63 @@
       return String(field.value || "").trim();
     }
 
-    function buildWhatsAppMessage(form) {
-      const values = new FormData(form);
-      const category = String(values.get("serviceCategory") || "");
-      const subcategory = String(values.get("serviceSubcategory") || "");
+    function buildEnquiryPayload() {
+      const category = serviceInput.value;
+      const values = new FormData(travelEnquiryForm);
+      const payload = {
+        serviceCategory: serviceApiNames[category],
+        fullName: String(values.get("name") || "").trim(),
+        whatsappNo: String(values.get("phone") || "").trim(),
+        emailId: String(values.get("email") || "").trim(),
+        additionalRequirements: String(values.get("requirements") || "").trim()
+      };
+      const fieldNames = apiFieldNames[category] || {};
 
-      const lines = [
-        "Hello Adhvan Crafted Journeys,",
-        "",
-        `*${serviceLabels[category] || "Travel"} Enquiry*`
-      ];
+      (serviceFields[category] || []).forEach(function (config) {
+        const apiFieldName = fieldNames[config.name];
+        const field = travelEnquiryForm.querySelector(`#${config.id}`);
+        const value = getSelectedText(field);
 
-      if (category === "tour-packages" && subcategory) {
-        lines.push(`Package Category: ${subcategoryLabels[subcategory] || subcategory}`);
-      }
+        if (!apiFieldName || !value) return;
 
-      lines.push(
-        "",
-        `Name: ${String(values.get("name") || "").trim()}`,
-        `WhatsApp: ${String(values.get("phone") || "").trim()}`,
-        `Email: ${String(values.get("email") || "").trim()}`
-      );
-
-      const fields = serviceFields[category] || [];
-
-      fields.forEach(function (config) {
-        const field = form.querySelector(`#${config.id}`);
-
-        if (!field || field.disabled || !String(field.value || "").trim()) {
-          return;
-        }
-
-        let value = getSelectedText(field);
-
-        if (field.type === "date") {
-          value = formatTravelDate(value);
-        }
-
-        lines.push(`${config.label}: ${value}`);
+        payload[apiFieldName] =
+          field.type === "number" ? Number(value) : value;
       });
 
-      const requirements = String(values.get("requirements") || "").trim();
-
-      if (requirements) {
-        lines.push("", "Additional Requirements:", requirements);
-      }
-
-      lines.push("", "Thank you.");
-      return lines.join("\n");
+      return payload;
     }
 
-    function openWhatsApp(message) {
-      const whatsappUrl =
-        `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    async function submitEnquiry(payload) {
+      const response = await fetch(enquiryEndpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+      const responseText = await response.text();
+      const contentType = response.headers.get("content-type") || "";
+      let responseData = null;
 
-      window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+      if (responseText && contentType.includes("application/json")) {
+        try {
+          responseData = JSON.parse(responseText);
+        } catch {
+          throw new Error("The enquiry service returned an invalid response.");
+        }
+      }
+
+      if (!response.ok) {
+        throw new Error("The enquiry could not be submitted.");
+      }
+
+      if (
+        responseData &&
+        typeof responseData === "object" &&
+        (responseData.success === false || responseData.ok === false)
+      ) {
+        throw new Error("The enquiry could not be submitted.");
+      }
     }
 
     function renderServiceFields() {
@@ -1275,12 +1303,12 @@
           showTravelFieldError(field, getTravelFieldError(field));
         });
 
-        if (field.autocomplete) {
-          input.autocomplete = field.autocomplete;
+        if (config.autocomplete) {
+          field.autocomplete = config.autocomplete;
         }
 
-        if (field.placeholder) {
-          input.placeholder = field.placeholder;
+        if (config.placeholder) {
+          field.placeholder = config.placeholder;
         }
 
         ["input", "change"].forEach(function (eventName) {
@@ -1353,8 +1381,22 @@
       });
     });
 
-    travelEnquiryForm.addEventListener("submit", function (event) {
+    if (submitButtonLabel) {
+      submitButtonLabel.textContent = "Submit Enquiry";
+    } else if (submitButton) {
+      submitButton.textContent = "Submit Enquiry";
+    }
+
+    if (submitNote) {
+      submitNote.textContent =
+        "Submit your enquiry and our travel team will get back to you.";
+    }
+
+    travelEnquiryForm.addEventListener("submit", async function (event) {
       event.preventDefault();
+
+      if (isSubmitting) return;
+
       travelFormSubmitted = true;
 
       if (status) {
@@ -1366,13 +1408,55 @@
         return;
       }
 
-      const message = buildWhatsAppMessage(travelEnquiryForm);
-      openWhatsApp(message);
+      isSubmitting = true;
+      if (submitButton) {
+        submitButton.disabled = true;
+      }
+      if (submitButtonLabel) {
+        submitButtonLabel.textContent = "Submitting...";
+      } else if (submitButton) {
+        submitButton.textContent = "Submitting...";
+      }
 
-      if (status) {
-        status.textContent =
-          "Your enquiry is ready in WhatsApp. Please tap Send to contact our travel team.";
-        status.hidden = false;
+      try {
+        await submitEnquiry(buildEnquiryPayload());
+
+        travelEnquiryForm.reset();
+        renderServiceFields();
+        travelFormSubmitted = false;
+        travelEnquiryForm
+          .querySelectorAll(".travel-enquiry__error")
+          .forEach(function (error) {
+            error.textContent = "";
+            error.hidden = true;
+          });
+        travelEnquiryForm
+          .querySelectorAll("[aria-invalid]")
+          .forEach(function (field) {
+            field.removeAttribute("aria-invalid");
+          });
+
+        if (status) {
+          status.textContent =
+            "Thank you! Your enquiry has been submitted successfully.";
+          status.hidden = false;
+        }
+      } catch {
+        if (status) {
+          status.textContent =
+            "We couldn't submit your enquiry right now. Please try again.";
+          status.hidden = false;
+        }
+      } finally {
+        isSubmitting = false;
+        if (submitButton) {
+          submitButton.disabled = false;
+        }
+        if (submitButtonLabel) {
+          submitButtonLabel.textContent = originalSubmitLabel;
+        } else if (submitButton) {
+          submitButton.textContent = originalSubmitLabel;
+        }
       }
     });
 
