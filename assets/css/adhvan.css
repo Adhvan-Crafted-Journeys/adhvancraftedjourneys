@@ -1486,10 +1486,19 @@ h6 {
   font-size: 18px;
   color: var(--adhvan-white);
   cursor: pointer;
+  padding: 0;
+  border: 0;
+  background: transparent;
 }
 
 .mobile-nav__close:hover {
-  color: var(--adhvan-base);
+  color: var(--adhvan-primary);
+}
+
+.mobile-nav__close:focus-visible,
+.mobile-nav__btn:focus-visible {
+  outline: 3px solid var(--adhvan-primary);
+  outline-offset: 4px;
 }
 
 .mobile-nav__content .main-menu__list,
@@ -1595,7 +1604,7 @@ h6 {
 }
 
 .mobile-nav__contact li a:hover {
-  color: var(--adhvan-base);
+  color: var(--adhvan-primary);
 }
 
 .mobile-nav__contact li>i {
@@ -1864,6 +1873,9 @@ h6 {
   flex-wrap: wrap;
   cursor: pointer;
   z-index: 3;
+  padding: 0;
+  border: 0;
+  background: transparent;
 }
 
 .mobile-nav__btn {
@@ -1905,6 +1917,17 @@ h6 {
   width: 100%;
   height: 2px;
   background-color: var(--adhvan-black);
+}
+
+.footer-widget__text a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-widget__text a:hover,
+.footer-widget__text a:focus-visible {
+  color: var(--adhvan-primary);
 }
 
 .mobile-nav__btn span:nth-child(2) {
@@ -7066,6 +7089,10 @@ h6 {
 .travel-enquiry__status {
   color: var(--adhvan-base);
   font-weight: 600;
+}
+
+.travel-enquiry__status--error {
+  color: #b42318;
 }
 
 @media (max-width: 767px) {

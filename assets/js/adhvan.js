@@ -175,27 +175,42 @@
     });
   }
 
-  if ($(".img-popup").length) {
-    var groups = {};
-    $(".img-popup").each(function () {
-      var id = parseInt($(this).attr("data-group"), 10);
-
-      if (!groups[id]) {
-        groups[id] = [];
+  var imageGallery = $(".gallery-two__carousel");
+  if (imageGallery.length && imageGallery.find(".img-popup").length) {
+    var imageGalleryGroups = {};
+    imageGallery.find(".img-popup").each(function () {
+      var group = $(this).attr("data-group") || "default";
+      if (!imageGalleryGroups[group]) {
+        imageGalleryGroups[group] = [];
       }
-
-      groups[id].push(this);
+      imageGalleryGroups[group].push({ src: this.href });
     });
 
-    $.each(groups, function () {
-      $(this).magnificPopup({
-        type: "image",
-        closeOnContentClick: true,
-        closeBtnInside: false,
-        gallery: {
-          enabled: true
-        }
-      });
+    imageGallery.on("click", ".img-popup", function (event) {
+      var group = $(this).attr("data-group") || "default";
+      var items = imageGalleryGroups[group];
+      if (!items) return;
+
+      var index = items.findIndex(function (item) {
+        return item.src === this.href;
+      }, this);
+      if (index < 0) return;
+
+      event.preventDefault();
+      $.magnificPopup.open(
+        {
+          items: items,
+          type: "image",
+          closeOnContentClick: true,
+          closeBtnInside: false,
+          closeOnBgClick: true,
+          enableEscapeKey: true,
+          gallery: {
+            enabled: true
+          }
+        },
+        index
+      );
     });
   }
 
@@ -288,13 +303,93 @@
     e.preventDefault();
   });
 
-  if ($(".mobile-nav__toggler").length) {
-    $(".mobile-nav__toggler").on("click", function (e) {
-      e.preventDefault();
-      $(".mobile-nav__wrapper").toggleClass("expanded");
-      $("body").toggleClass("locked");
+  const mobileNavWrapper = document.querySelector(".mobile-nav__wrapper");
+  const mobileNavToggle = document.querySelector(".mobile-nav__btn");
+  const mobileNavClose = document.querySelector(".mobile-nav__close");
+  const mobileNavContainer = document.querySelector(".mobile-nav__container");
+  let mobileNavWasBodyLocked = false;
+
+  function setMobileNavOpen(isOpen, restoreFocus) {
+    if (!mobileNavWrapper) return;
+
+    mobileNavWrapper.classList.toggle("expanded", isOpen);
+    mobileNavWrapper.setAttribute("aria-hidden", String(!isOpen));
+    mobileNavToggle?.setAttribute("aria-expanded", String(isOpen));
+
+    if (isOpen) {
+      mobileNavWasBodyLocked = document.body.classList.contains("locked");
+      document.body.classList.add("locked");
+      mobileNavClose?.focus();
+      const focusCloseAfterOpen = function (event) {
+        if (event.target !== mobileNavWrapper || event.propertyName !== "transform") return;
+        mobileNavWrapper.removeEventListener("transitionend", focusCloseAfterOpen);
+        if (mobileNavWrapper.classList.contains("expanded")) {
+          mobileNavClose?.focus({ preventScroll: true });
+        }
+      };
+      mobileNavWrapper.addEventListener("transitionend", focusCloseAfterOpen);
+    } else {
+      if (!mobileNavWasBodyLocked) document.body.classList.remove("locked");
+      if (restoreFocus) mobileNavToggle?.focus({ preventScroll: true });
+    }
+  }
+
+  if ($(".mobile-nav__toggler").length && mobileNavWrapper) {
+    $(".mobile-nav__toggler").on("click", function (event) {
+      event.preventDefault();
+      setMobileNavOpen(!mobileNavWrapper.classList.contains("expanded"), true);
     });
   }
+
+  mobileNavContainer?.addEventListener("click", function (event) {
+    if (!(event.target instanceof Element)) return;
+    const link = event.target.closest("a[href]");
+    if (!link || link.matches(".dropdown > a") || link.getAttribute("href") === "#") return;
+    setMobileNavOpen(false, true);
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (!mobileNavWrapper?.classList.contains("expanded")) return;
+
+    if (event.key === "Escape") {
+      event.preventDefault();
+      setMobileNavOpen(false, true);
+      return;
+    }
+
+    if (event.key !== "Tab") return;
+    if (!mobileNavWrapper.contains(document.activeElement)) {
+      event.preventDefault();
+      mobileNavClose?.focus({ preventScroll: true });
+      return;
+    }
+
+    const focusable = Array.from(
+      mobileNavWrapper.querySelectorAll("button:not([disabled]), a[href], [tabindex]:not([tabindex='-1'])")
+    ).filter(function (element) {
+      return element.getClientRects().length > 0;
+    });
+    if (!focusable.length) return;
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
+
+  document.addEventListener("focusin", function (event) {
+    if (
+      mobileNavWrapper?.classList.contains("expanded") &&
+      !mobileNavWrapper.contains(event.target)
+    ) {
+      mobileNavClose?.focus();
+    }
+  });
 
   if ($(".search-toggler").length) {
     $(".search-toggler").on("click", function (e) {
@@ -1612,6 +1707,7 @@
       if (status) {
         status.hidden = true;
         status.textContent = "";
+        status.classList.remove("travel-enquiry__status--error");
       }
     }
 
@@ -1669,6 +1765,7 @@
       if (status) {
         status.hidden = true;
         status.textContent = "";
+        status.classList.remove("travel-enquiry__status--error");
       }
 
       if (!validateTravelForm()) {
@@ -1708,14 +1805,17 @@
           status.textContent =
             "Thank you! Your enquiry has been submitted successfully.";
           status.hidden = false;
+          status.classList.remove("travel-enquiry__status--error");
         }
 
         showEnquirySuccessModal(submittedCategory);
-      } catch {
+      } catch (error) {
+        console.error("Travel enquiry submission failed.", error);
         if (status) {
           status.textContent =
             "We couldn't submit your enquiry right now. Please try again.";
           status.hidden = false;
+          status.classList.add("travel-enquiry__status--error");
         }
       } finally {
         isSubmitting = false;
@@ -2106,6 +2206,16 @@
           event.preventDefault();
           firstElement.focus();
         }
+      }
+    });
+
+    document.addEventListener("focusin", function (event) {
+      if (
+        !videoGalleryModal.hidden &&
+        videoGalleryModal.classList.contains("is-open") &&
+        !videoGalleryModal.contains(event.target)
+      ) {
+        videoGalleryCloseButton.focus();
       }
     });
 

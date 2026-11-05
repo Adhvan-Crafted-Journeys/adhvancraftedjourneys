@@ -72,7 +72,7 @@ const tours = [
         id: "dubai",
         name: "Dubai",
         image: "assets/images/tours/dubai.webp",
-        itinerary: "dubai-itinerary-modal",
+        itinerary: null,
         visible: true
     },
     {
@@ -130,8 +130,9 @@ function renderTours() {
                     class="journey-poster__button"
                     type="button"
                     data-itinerary-open
+                    data-itinerary-id="${tour.id}"
                     aria-haspopup="dialog"
-                    aria-controls="${tour.itinerary}">
+                    aria-controls="itinerary-modal">
                     <span>View Itinerary</span>
                     <span aria-hidden="true">↗</span>
                </button>`

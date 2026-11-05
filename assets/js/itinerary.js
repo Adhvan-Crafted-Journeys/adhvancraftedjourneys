@@ -488,6 +488,7 @@
       bodyWasLocked = document.body.classList.contains("locked");
     }
     modal.hidden = false;
+    modal.setAttribute("aria-hidden", "false");
     document.body.classList.add("locked");
     closeButton.focus();
   }
@@ -495,6 +496,7 @@
   function closeModal(restoreFocus) {
     openRequestId += 1;
     modal.hidden = true;
+    modal.setAttribute("aria-hidden", "true");
     activeItinerary = null;
     bodyElement.setAttribute("aria-busy", "false");
     if (!bodyWasLocked) document.body.classList.remove("locked");
@@ -584,6 +586,12 @@
     } else if (!event.shiftKey && document.activeElement === last) {
       event.preventDefault();
       first.focus();
+    }
+  });
+
+  document.addEventListener("focusin", function (event) {
+    if (!modal.hidden && !modal.contains(event.target)) {
+      closeButton.focus();
     }
   });
 
