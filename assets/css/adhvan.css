@@ -5359,7 +5359,9 @@ h6 {
   outline: 3px solid rgba(var(--adhvan-base-rgb), 0.14);
 }
 
-.travel-enquiry__field [aria-invalid="true"] {
+.travel-enquiry__field input[aria-invalid="true"],
+.travel-enquiry__field select[aria-invalid="true"],
+.travel-enquiry__field textarea[aria-invalid="true"] {
   border-color: #b42318;
 }
 
@@ -5451,7 +5453,7 @@ h6 {
 
 .enquiry-success-modal__image-wrap {
   position: relative;
-  height: 190px;
+  height: 250px;
   overflow: hidden;
   background:
     radial-gradient(ellipse at 82% 10%, rgba(171, 230, 215, 0.72), transparent 40%),

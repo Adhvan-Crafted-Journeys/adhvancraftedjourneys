@@ -659,7 +659,7 @@
     const submitNote = travelEnquiryForm.querySelector(".travel-enquiry__note");
 
     const enquiryEndpoint =
-      "https://n8n.adhvancraftedjourneys.com/webhook-test/b4b143e3-cd62-4fd1-a4cd-83f27b3fedbd";
+      "https://n8n.adhvancraftedjourneys.com/webhook/b4b143e3-cd62-4fd1-a4cd-83f27b3fedbd";
 
     const serviceApiNames = {
       "flight-bookings": "Flight Booking",
@@ -715,57 +715,57 @@
 
     const successModalConfig = {
       "flight-bookings": {
-        image: "assets/images/success/flight-bookings.jpg",
+        image: "assets/images/services/flight-bookings.webp",
         icon: "fas fa-plane",
         heading: "Your Flight Enquiry is Received!",
         description:
           "Our flight experts will help you explore the best routes and fares. We'll get in touch with you shortly."
       },
       "tour-packages": {
-        image: "assets/images/success/tour-packages.jpg",
+        image: "assets/images/services/tour-packages.webp",
         icon: "fas fa-globe-americas",
         heading: "Your Dream Journey Starts Here!",
         description:
           "Let's create a memorable travel experience tailored just for you. Our travel experts will connect with you soon."
       },
       "hotel-reservations": {
-        image: "assets/images/success/hotel-reservations.jpg",
+        image: "assets/images/services/hotel-reservations.webp",
         icon: "fas fa-hotel",
         heading: "Your Stay Enquiry is Received!",
         description:
           "We'll help you find the perfect stay for your journey. Our team will assist you with suitable accommodation options."
       },
       "visa-assistance": {
-        image: "assets/images/success/visa-assistance.jpg",
+        image: "assets/images/services/visa-assistance.webp",
         icon: "fas fa-passport",
         heading: "Your Visa Enquiry is Received!",
         description:
           "Our team will guide you through the visa assistance process and help you understand the next steps."
       },
       "passport-services": {
-        image: "assets/images/success/passport-services.jpg",
+        image: "assets/images/services/passport-services.webp",
         icon: "fas fa-file-alt",
         heading: "Your Passport Enquiry is Received!",
         description:
           "Thank you for contacting us. Our team will assist you with your passport service requirements."
       },
       "travel-insurance": {
-        image: "assets/images/success/travel-insurance.jpg",
+        image: "assets/images/services/travel-insurance.webp",
         icon: "fas fa-shield-alt",
         heading: "Travel with Confidence!",
         description:
           "Your travel insurance enquiry has been received. Our team will help you explore suitable coverage options."
       },
       "forex-services": {
-        image: "assets/images/success/forex-services.jpg",
-        icon: "fas fa-coins",
+        image: "assets/images/services/forex-services.webp",
+        icon: "fas fa-hand-holding-usd",
         heading: "Your Forex Enquiry is Received!",
         description:
           "We'll help you with your foreign currency requirements and guide you through the available options."
       },
       transportation: {
-        image: "assets/images/success/transportation.jpg",
-        icon: "fas fa-bus",
+        image: "assets/images/services/transportation.webp",
+        icon: "fas fa-shuttle-van",
         heading: "Your Ride Enquiry is Received!",
         description:
           "We'll help arrange comfortable and convenient transportation according to your travel requirements."
@@ -1271,7 +1271,12 @@
     function showTravelFieldError(field, message) {
       const error = getFieldErrorElement(field);
 
-      field.setAttribute("aria-invalid", message ? "true" : "false");
+      if (message) {
+        field.setAttribute("aria-invalid", "true");
+      } else {
+        field.removeAttribute("aria-invalid");
+      }
+
       error.textContent = message;
       error.hidden = !message;
     }
@@ -1286,6 +1291,13 @@
       }
 
       const value = String(field.value || "").trim();
+
+      if (
+        field === serviceInput &&
+        !Object.prototype.hasOwnProperty.call(serviceApiNames, value)
+      ) {
+        return "Please select service category.";
+      }
 
       if (field.required && !value.trim()) {
         const label =
@@ -1586,8 +1598,16 @@
     }
 
     function updateServiceFields() {
+      const shouldValidateService =
+        travelFormSubmitted ||
+        serviceInput.getAttribute("aria-invalid") === "true";
+
       renderServiceFields();
       travelFormSubmitted = false;
+
+      if (shouldValidateService) {
+        showTravelFieldError(serviceInput, getTravelFieldError(serviceInput));
+      }
 
       if (status) {
         status.hidden = true;
