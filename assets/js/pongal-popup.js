@@ -14,19 +14,19 @@
 
     const dialog = overlay.querySelector('[role="dialog"]');
     const closeButton = overlay.querySelector(".adhvan-campaign__close");
-    const whatsappLink = document.getElementById("adhvanPongalWhatsApp");
-    if (!dialog || !closeButton || !whatsappLink) return;
+    // const whatsappLink = document.getElementById("adhvanPongalWhatsApp");
+    // if (!dialog || !closeButton || !whatsappLink) return;
 
-    const message = [
-      "Hello Adhvan Crafted Journeys!",
-      "I am interested in your Tamil Nadu Pongal tour packages.",
-      "Please share details, availability and pricing for:",
-      "1. Tamil Nadu – A Timeless Journey (5 Nights / 6 Days, 11–16 January 2027)",
-      "2. Enchanting Tamil Nadu (10 Nights / 11 Days, 10–20 January 2027)",
-      "I am a domestic/international traveller."
-    ].join("\n");
-    whatsappLink.href =
-      `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    // const message = [
+    //   "Hello Adhvan Crafted Journeys!",
+    //   "I am interested in your Tamil Nadu Pongal tour packages.",
+    //   "Please share details, availability and pricing for:",
+    //   "1. Tamil Nadu – A Timeless Journey (5 Nights / 6 Days, 11–16 January 2027)",
+    //   "2. Enchanting Tamil Nadu (10 Nights / 11 Days, 10–20 January 2027)",
+    //   "I am a domestic/international traveller."
+    // ].join("\n");
+    // whatsappLink.href =
+    //   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
     let previouslyFocused = null;
     let isOpen = false;
@@ -50,6 +50,12 @@
         previouslyFocused.focus();
       }
     }
+
+    overlay.querySelectorAll("[data-popup-close]").forEach(function (link) {
+      link.addEventListener("click", function () {
+        closePopup();
+      });
+    });
 
     closeButton.addEventListener("click", closePopup);
     overlay.addEventListener("click", (event) => {
