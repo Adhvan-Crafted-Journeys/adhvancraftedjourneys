@@ -1,0 +1,346 @@
+/* Adhvan Pongal popup — single shared image, two text-only package choices */
+.adhvan-campaign,
+.adhvan-campaign * {
+  box-sizing: border-box;
+}
+
+.adhvan-campaign {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(13, 24, 19, .68);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .28s ease, visibility .28s ease;
+}
+
+.adhvan-campaign.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.adhvan-campaign__dialog {
+  position: relative;
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  width: min(100%, 992px);
+  max-height: 90vh;
+  overflow: auto;
+  border-radius: 18px;
+  background: #f7f3e9;
+  box-shadow: 0 24px 90px rgba(0, 0, 0, .34);
+  transform: translateY(16px) scale(.985);
+  transition: transform .28s ease;
+}
+
+.adhvan-campaign.is-open .adhvan-campaign__dialog {
+  transform: translateY(0) scale(1);
+}
+
+.adhvan-campaign__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 3;
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .95);
+  color: #203f32;
+  font: 30px/1 Arial, sans-serif;
+  cursor: pointer;
+}
+
+.adhvan-campaign__visual {
+  min-height: 590px;
+  background: #e8dfce;
+  overflow: hidden;
+}
+
+.adhvan-campaign__visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.adhvan-campaign__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 18px 36px;
+  color: #263d32;
+}
+
+.adhvan-popup__branding {
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 5px 20px 14px;
+  border-bottom: 1px solid #204b39;
+}
+
+.adhvan-popup__logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.adhvan-popup__logo {
+  display: block;
+  object-fit: contain;
+  max-width: 42%;
+  height: 48px;
+}
+
+.adhvan-logo {
+  width: 180px;
+}
+
+.tourism-logo {
+  width: 140px;
+}
+
+.adhvan-popup__multiply {
+  font-size: 25px;
+  color: #b58a43;
+  font-weight: 400;
+}
+
+.adhvan-popup__collaboration {
+  margin: 9px 0 0;
+  font: 11px/1.45 Arial, sans-serif;
+  color: #946638;
+}
+
+@media (max-width: 600px) {
+  .adhvan-popup__logos {
+    gap: 12px;
+  }
+
+  .adhvan-popup__logo {
+    height: 38px;
+  }
+
+  .adhvan-popup__branding {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+}
+
+
+.adhvan-campaign__brand {
+  margin-bottom: 22px;
+  color: #20513d;
+  font: 600 21px Georgia, serif;
+  letter-spacing: 3px;
+}
+
+.adhvan-campaign__brand small {
+  display: block;
+  margin-top: 5px;
+  font: italic 12px Georgia, serif;
+  letter-spacing: 1px;
+}
+
+.adhvan-campaign__eyebrow {
+  color: #a47a35;
+  font: 700 10px Arial, sans-serif;
+  letter-spacing: 2px;
+}
+
+.adhvan-campaign__content h2 {
+  margin: 9px 0;
+  color: #204b39;
+  font: 600 clamp(27px, 3vw, 37px)/1.12 Georgia, serif;
+}
+
+.adhvan-campaign__tagline {
+  margin: 0 0 9px;
+  color: #8b6235;
+  font: 600 15px/1.4 Georgia, serif;
+}
+
+.adhvan-campaign__description {
+  margin: 0 0 16px;
+  color: #55564e;
+  font: 13px/1.6 Arial, sans-serif;
+}
+
+.adhvan-campaign__package-list {
+  display: grid;
+  gap: 10px;
+}
+
+.adhvan-package {
+  padding: 13px 15px;
+  border: 1px solid #ded3bd;
+  border-left: 4px solid #b78b43;
+  border-radius: 8px;
+  background: #fffdf8;
+}
+
+.adhvan-package__heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.adhvan-package__duration {
+  color: #9b7134;
+  font: 700 9px Arial, sans-serif;
+  letter-spacing: 1px;
+}
+
+.adhvan-package h3 {
+  margin: 5px 0 0;
+  color: #204b39;
+  font: 600 17px/1.2 Georgia, serif;
+}
+
+.adhvan-package__number {
+  color: #d6c8ad;
+  font: 600 23px Georgia, serif;
+}
+
+.adhvan-package__meta,
+.adhvan-package__places {
+  margin: 5px 0 0;
+  color: #56564e;
+  font: 11px/1.45 Arial, sans-serif;
+}
+
+.adhvan-package__action {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.adhvan-package__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  margin-top: 10px;
+  margin-left: auto;
+  padding: 8px 14px;
+
+  border: 1px solid #20513d;
+  border-radius: 5px;
+  background: transparent;
+  color: #20513d;
+
+  font: 600 12px Arial, sans-serif;
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.adhvan-package__link:hover {
+  background: #20513d;
+  color: #ffffff;
+  border-color: #20513d;
+}
+
+.adhvan-package__link span {
+  transition: transform 0.25s ease;
+}
+
+.adhvan-package__link:hover span {
+  transform: translateX(3px);
+}
+
+.adhvan-campaign__whatsapp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 15px;
+  padding: 13px 14px;
+  border-radius: 6px;
+  background: #204b39;
+  color: #fff;
+  text-decoration: none;
+  font: 700 12px Arial, sans-serif;
+}
+
+.adhvan-campaign__whatsapp:hover {
+  background: #153829;
+}
+
+.adhvan-campaign__footnote {
+  margin-top: 12px;
+  color: #777064;
+  text-align: center;
+  font: italic 10px Georgia, serif;
+}
+
+body.adhvan-popup-open {
+  overflow: hidden;
+}
+
+@media (max-width: 700px) {
+  .adhvan-campaign {
+    padding: 10px;
+  }
+
+  .adhvan-campaign__dialog {
+    display: flex;
+    flex-direction: column;
+    width: min(100%, 460px);
+    max-height: 94dvh;
+    border-radius: 14px;
+  }
+
+  .adhvan-campaign__visual {
+    min-height: 0;
+    height: 180px;
+    flex: 0 0 180px;
+  }
+
+  .adhvan-campaign__visual img {
+    object-position: center 43%;
+  }
+
+  .adhvan-campaign__content {
+    padding: 20px 18px 18px;
+  }
+
+  .adhvan-campaign__brand {
+    margin-bottom: 12px;
+    font-size: 17px;
+  }
+
+  .adhvan-campaign__content h2 {
+    font-size: 27px;
+  }
+
+  .adhvan-campaign__description {
+    font-size: 12px;
+    margin-bottom: 11px;
+  }
+
+  .adhvan-package {
+    padding: 11px 12px;
+  }
+
+  .adhvan-package h3 {
+    font-size: 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .adhvan-campaign,
+  .adhvan-campaign__dialog {
+    transition: none;
+  }
+}

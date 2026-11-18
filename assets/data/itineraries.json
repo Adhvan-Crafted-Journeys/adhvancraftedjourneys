@@ -464,40 +464,41 @@
     },
     {
       "id": "tamil-nadu-pongal-heritage-tour-domestic",
-      "title": "Tamil Nadu Pongal Heritage Tour (Domestic)",
+      "category": "Domestic",
+      "title": "Tamil Nadu – A Timeless Journey",
       "duration": {
         "days": 6,
         "nights": 5
       },
-      "tag-line": "Cultural Heritage & Traditional Experience",
-      "sub-title": "Explore Your Journey",
-      "description": "Experience the cultural heritage and traditional celebrations of Tamil Nadu on a 5-night, 6-day journey through Trichy, Thanjavur, and Madurai. Discover the magnificent Sri Ranganathaswamy Temple and Jambukeshwarar Temple, explore the ancient irrigation marvel of Kallanai, and uncover the architectural grandeur of Brihadeeswarar Temple and Thanjavur Maratha Palace. Experience traditional crafts, including Thanjavur veena making, doll making, handloom weaving, and Tanjore painting. Celebrate the spirit of Pongal through village traditions and paddy harvest experiences. Continue to Madurai to discover the archaeological heritage of Keeladi, visit Thirumalai Nayakkar Palace, and seek blessings at the iconic Meenakshi Amman Temple. Enjoy an unforgettable journey through Tamil Nadu's history, culture, spirituality, and living traditions.",
+      "tag-line": "Experience the Stories, Culture and Heritage Beauty of the South.",
+      "sub-title": "Cultural Heritage & Traditional Experience",
+      "description": "Discover the cultural richness of Tamil Nadu through ancient temples, historic irrigation systems, traditional crafts, Pongal celebrations and archaeological exploration. Explore Trichy, Thanjavur and Madurai on this memorable heritage journey.",
       "days": [
         {
           "day": 1,
           "date": "2027-01-11",
-          "title": "Arrival in Trichy | Srirangam & Jambukeshwarar Temple",
-          "description": "Arrive in Tiruchirappalli and begin your Tamil Nadu heritage journey. Explore two renowned temples and experience the spiritual atmosphere of Trichy.",
+          "title": "Arrival in Trichy | Srirangam & Jambukeshwar Temple",
+          "description": "Arrive in Tiruchirappalli (Trichy), explore its renowned temples and enjoy a comfortable overnight stay.",
           "activities": [
             {
               "time": "Morning",
               "title": "Arrival in Trichy",
-              "description": "Arrive at Tiruchirappalli (Trichy) in the morning, meet your representative, and transfer to the hotel. Leave your luggage at the hotel and proceed for breakfast."
+              "description": "Arrive at Tiruchirappalli (Trichy) and transfer to the hotel. Leave your luggage and proceed for breakfast."
+            },
+            {
+              "time": "Morning",
+              "title": "Hotel Check-in",
+              "description": "Return to the hotel for check-in, subject to the hotel's check-in time, and take some time to rest."
             },
             {
               "time": "Afternoon",
-              "title": "Hotel Check-in and Srirangam Temple",
-              "description": "Return to the hotel for check-in, subject to the hotel's check-in time, and take some time to rest. Later, proceed to Srirangam to visit the renowned Sri Ranganathaswamy Temple."
+              "title": "Srirangam Temple",
+              "description": "Visit the renowned Sri Ranganathaswamy Temple at Srirangam."
             },
             {
               "time": "Evening",
               "title": "Jambukeshwarar Temple",
-              "description": "Visit Jambukeshwarar Temple and experience its spiritual significance before returning to the hotel."
-            },
-            {
-              "time": "Night",
-              "title": "Overnight Stay in Trichy",
-              "description": "Return to the hotel and enjoy an overnight stay in Trichy."
+              "description": "Visit Jambukeshwarar Temple before returning to the hotel."
             }
           ]
         },
@@ -505,12 +506,12 @@
           "day": 2,
           "date": "2027-01-12",
           "title": "Trichy to Thanjavur | Ancient Irrigation & Traditional Crafts",
-          "description": "Travel from Trichy to Thanjavur and discover the region's remarkable irrigation heritage, traditional craftsmanship, and cultural traditions.",
+          "description": "Travel to Thanjavur and discover the region's ancient irrigation heritage and traditional craftsmanship.",
           "activities": [
             {
               "time": "Morning",
-              "title": "Breakfast and Departure to Thanjavur",
-              "description": "After breakfast, check out from the hotel and proceed towards Thanjavur."
+              "title": "Departure to Thanjavur",
+              "description": "After breakfast, check out and proceed to Thanjavur."
             },
             {
               "time": "En Route",
@@ -519,18 +520,13 @@
             },
             {
               "time": "Afternoon",
-              "title": "Arrival and Hotel Check-in",
-              "description": "Continue to Thanjavur, check in to the hotel, and relax."
+              "title": "Hotel Check-in",
+              "description": "Continue to Thanjavur and check in to the hotel."
             },
             {
-              "time": "Evening",
+              "time": "Afternoon",
               "title": "Traditional Craft Centres",
-              "description": "Visit local traditional craft centres to learn about the making of Thanjavur veenas, traditional dolls, and handloom weaving."
-            },
-            {
-              "time": "Night",
-              "title": "Overnight Stay in Thanjavur",
-              "description": "Return to the hotel for an overnight stay in Thanjavur."
+              "description": "Visit local traditional craft centres to learn about the making of Thanjavur veenas, traditional dolls and handloom weaving."
             }
           ]
         },
@@ -538,32 +534,27 @@
           "day": 3,
           "date": "2027-01-13",
           "title": "Thanjavur | Chola & Maratha Heritage",
-          "description": "Explore the magnificent architectural and cultural heritage of Thanjavur, including its celebrated Chola temple, royal palace, historic library, and traditional art forms.",
+          "description": "Explore Thanjavur's architectural, royal and artistic heritage through its iconic temple, palace and traditional art forms.",
           "activities": [
             {
               "time": "Morning",
-              "title": "Brihadeeswarar Temple",
-              "description": "After breakfast, visit the Brihadeeswarar Temple, a celebrated example of Chola architecture and one of Tamil Nadu's most remarkable historical monuments."
+              "title": "Brihadeeshwarar Temple",
+              "description": "After breakfast, visit the celebrated Brihadeeshwarar Temple, an outstanding example of Chola architecture."
+            },
+            {
+              "time": "Morning",
+              "title": "Thanjavur Maratha Palace",
+              "description": "Explore Thanjavur Maratha Palace and Saraswathi Mahal Library to learn about the region's royal history, art and literary heritage."
             },
             {
               "time": "Afternoon",
-              "title": "Thanjavur Maratha Palace & Saraswathi Mahal Library",
-              "description": "Continue to Thanjavur Maratha Palace and Saraswathi Mahal Library to learn about the region's royal history, art, and literary heritage."
-            },
-            {
-              "time": "Afternoon",
-              "title": "Thanjavur Royal Heritage Experience",
+              "title": "Thanjavur Royal Heritage",
               "description": "A meeting with a member of the Thanjavur royal family may be arranged, subject to availability and prior confirmation."
             },
             {
-              "time": "Evening",
+              "time": "Afternoon",
               "title": "Tanjore Painting Workshop",
               "description": "Visit a Tanjore painting workshop and learn about this distinctive traditional art form."
-            },
-            {
-              "time": "Night",
-              "title": "Overnight Stay in Thanjavur",
-              "description": "Return to the hotel for an overnight stay in Thanjavur."
             }
           ]
         },
@@ -571,32 +562,27 @@
           "day": 4,
           "date": "2027-01-14",
           "title": "Pongal Celebrations | Village & Paddy Harvest Experience",
-          "description": "Celebrate the spirit of Thai Pongal and experience the agricultural traditions, rural lifestyle, and local customs of Tamil Nadu through an immersive village experience.",
+          "description": "Experience the spirit of Tamil Nadu's harvest festival through traditional Pongal celebrations, village life and agricultural activities.",
           "activities": [
             {
               "time": "Morning",
-              "title": "Traditional Pongal Celebrations",
+              "title": "Pongal Celebrations",
               "description": "Participate in Pongal celebrations and experience the traditions associated with this harvest festival."
             },
             {
-              "time": "Afternoon",
-              "title": "Traditional Village Experience",
-              "description": "Visit a nearby village for an introduction to rural life, local customs, and traditional community practices."
+              "time": "Morning",
+              "title": "Village Experience",
+              "description": "Visit a nearby village for an introduction to rural life and local customs."
             },
             {
               "time": "Afternoon",
-              "title": "Paddy Cultivation & Harvest Experience",
+              "title": "Paddy Harvest Experience",
               "description": "Learn about paddy cultivation and the harvesting process, with activities subject to local conditions and seasonal availability."
             },
             {
-              "time": "Evening",
+              "time": "Afternoon",
               "title": "Local Community Interaction",
-              "description": "Interact with local community members and gain an understanding of the relationship between agriculture, harvest, and Pongal traditions."
-            },
-            {
-              "time": "Night",
-              "title": "Overnight Stay in Thanjavur",
-              "description": "Return to the hotel for an overnight stay in Thanjavur."
+              "description": "Interact with local community members and understand the relationship between agriculture, harvest and Pongal traditions."
             }
           ]
         },
@@ -604,32 +590,27 @@
           "day": 5,
           "date": "2027-01-15",
           "title": "Thanjavur to Madurai | Keeladi & Madurai Heritage",
-          "description": "Travel from Thanjavur to Madurai and discover the archaeological history of the region, followed by an exploration of Madurai's royal heritage and local food culture.",
+          "description": "Travel to Madurai and discover the archaeological history of Keeladi along with Madurai's cultural heritage.",
           "activities": [
             {
               "time": "Morning",
-              "title": "Breakfast and Departure to Madurai",
-              "description": "After breakfast, check out from the hotel and proceed to Madurai."
+              "title": "Departure to Madurai",
+              "description": "After breakfast, check out and proceed to Madurai."
             },
             {
-              "time": "Afternoon",
+              "time": "En Route",
               "title": "Keeladi Archaeological Site",
               "description": "Visit the Keeladi excavation site to learn about archaeological discoveries and the ancient history of the region."
             },
             {
               "time": "Afternoon",
-              "title": "Arrival and Hotel Check-in",
+              "title": "Hotel Check-in",
               "description": "Continue to Madurai and transfer to the hotel for check-in."
             },
             {
               "time": "Evening",
-              "title": "Thirumalai Nayakkar Palace & Local Food Culture",
-              "description": "Visit the magnificent Thirumalai Nayakkar Palace and experience Madurai's local food culture."
-            },
-            {
-              "time": "Night",
-              "title": "Overnight Stay in Madurai",
-              "description": "Return to the hotel for an overnight stay in Madurai."
+              "title": "Thirumalai Nayakkar Palace",
+              "description": "Visit Thirumalai Nayakkar Palace and experience Madurai's local food culture."
             }
           ]
         },
@@ -637,22 +618,17 @@
           "day": 6,
           "date": "2027-01-16",
           "title": "Madurai | Meenakshi Temple & Departure",
-          "description": "Conclude your Tamil Nadu heritage journey with a visit to the iconic Meenakshi Amman Temple before transferring to Madurai Airport for your return journey.",
+          "description": "Conclude your Tamil Nadu heritage journey with a visit to the iconic Meenakshi Amman Temple before departure.",
           "activities": [
             {
               "time": "Morning",
-              "title": "Breakfast and Hotel Check-out",
-              "description": "Enjoy breakfast at the hotel and complete the check-out formalities."
-            },
-            {
-              "time": "Morning",
               "title": "Meenakshi Amman Temple",
-              "description": "Visit the iconic Madurai Meenakshi Amman Temple and admire its magnificent architecture and spiritual significance."
+              "description": "After breakfast, visit the iconic Madurai Meenakshi Amman Temple."
             },
             {
-              "time": "As per departure",
-              "title": "Transfer to Madurai Airport",
-              "description": "After the temple visit, transfer to Madurai Airport for your return journey, bringing your memorable Tamil Nadu heritage experience to an end."
+              "time": "Departure",
+              "title": "Airport Transfer",
+              "description": "After the temple visit, transfer to Madurai Airport for the return journey."
             }
           ]
         }

@@ -195,16 +195,27 @@
 
 
   function renderDestinationGallery(parent, opener, itinerary) {
-    const slide = opener.closest(".itinerary-tour-slide");
-    if (!slide) return;
+    // Find the nearest element containing itinerary images.
+    const imageContainer = opener.closest("[data-itinerary-images]");
+    if (!imageContainer) return;
 
     // Read image paths from data-itinerary-images.
-    const imagePaths = (slide.dataset.itineraryImages || "")
+    const imagePaths = (imageContainer.dataset.itineraryImages || "")
       .split(",")
       .map(function (path) {
         return path.trim();
       })
       .filter(Boolean);
+
+    // Fallback: use images already inside the container.
+    if (!imagePaths.length) {
+      imageContainer.querySelectorAll("img").forEach(function (image) {
+        const src = image.getAttribute("src");
+        if (src) imagePaths.push(src);
+      });
+    }
+
+    if (!imagePaths.length) return;
 
     // Fallback: use images already inside the slide.
     if (!imagePaths.length) {
