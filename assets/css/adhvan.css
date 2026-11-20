@@ -8835,6 +8835,36 @@ h6 {
   align-items: start;
 }
 
+#travel-dynamic-fields .iti {
+  width: 100%;
+}
+
+#travel-dynamic-fields .iti__country-list {
+  z-index: 1055;
+}
+
+/* Input and textarea placeholder */
+.travel-enquiry__field input::placeholder,
+.travel-enquiry__field textarea::placeholder {
+  color: #999999;
+  opacity: 1;
+}
+
+/* Select default/placeholder option */
+.travel-enquiry__field select:invalid {
+  color: #999999;
+}
+
+/* Selected options */
+.travel-enquiry__field select option {
+  color: #222222;
+}
+
+/* Default option */
+.travel-enquiry__field select option[value=""] {
+  color: #999999;
+}
+
 /* Customer details: three fields in one row on desktop */
 .travel-enquiry__customer-details {
   display: grid;
@@ -8860,5 +8890,80 @@ h6 {
   #travel-dynamic-fields,
   .travel-enquiry__customer-details {
     grid-template-columns: 1fr;
+  }
+}
+
+.adhvan-affiliations {
+  padding: 55px 0;
+  background: #f7faf8;
+  border-top: 1px solid rgba(16, 96, 70, 0.08);
+  border-bottom: 1px solid rgba(16, 96, 70, 0.08);
+}
+
+.adhvan-affiliations__heading {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.adhvan-affiliations__heading h3 {
+  color: #106046;
+  font-size: 27px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.adhvan-affiliations__logos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.adhvan-affiliations__item {
+  min-height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 30px;
+}
+
+.adhvan-affiliations__item+.adhvan-affiliations__item {
+  border-left: 1px solid #dfe8e3;
+}
+
+.adhvan-affiliations__item img {
+  max-width: 190px;
+  width: 100%;
+  height: 75px;
+  object-fit: contain;
+}
+
+@media (max-width: 767px) {
+  .adhvan-affiliations {
+    padding: 40px 0;
+  }
+
+  .adhvan-affiliations__heading h2 {
+    font-size: 22px;
+  }
+
+  .adhvan-affiliations__logos {
+    grid-template-columns: 1fr;
+    max-width: 300px;
+  }
+
+  .adhvan-affiliations__item {
+    min-height: 95px;
+    padding: 15px;
+  }
+
+  .adhvan-affiliations__item+.adhvan-affiliations__item {
+    border-left: 0;
+    border-top: 1px solid #dfe8e3;
+  }
+
+  .adhvan-affiliations__item img {
+    max-width: 180px;
   }
 }
