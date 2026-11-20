@@ -252,14 +252,12 @@
                             <li><a href="#about-two">About</a></li>
                             <li><a href="#footer-contact">Contact</a></li>
                             <li>
-                                <a href="#plan-your-trip" class="enquire-btn"><i
-                                        class="fab fa-whatsapp pe-2"></i>Enquire</a>
+                                <a href="#plan-your-trip" class="enquire-btn"><span>Enquire</span></a>
                             </li>
                         </ul>
                     </nav>
                     <div class="main-header__right">
-                        <a href="#plan-your-trip" class="enquire-btn"><i
-                                class="fab fa-whatsapp pe-2"></i><span>Enquire</span></a>
+                        <a href="#plan-your-trip" class="enquire-btn"><span>Enquire</span></a>
                         <button class="mobile-nav__btn mobile-nav__toggler" type="button" aria-label="Open navigation"
                             aria-controls="mobile-navigation" aria-expanded="false">
                             <span></span><span></span><span></span>
@@ -319,11 +317,13 @@
 
                     <!-- CTA Buttons -->
                     <div class="adhvan-hero__actions">
-                        <a href="#tours-two" class="adhvan-hero__btn adhvan-hero__btn--primary">
-                            <i class="fas fa-plane"></i>
-                            Explore Tours
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
+                        <button class="adhvan-btn travel-enquiry__submit" type="submit">
+                            <a href="#tours-two" class="text-white">
+                                <span><i class="fas fa-plane"></i>
+                                    Explore Tours
+                                    <i class="fas fa-arrow-right"></i></span>
+                            </a>
+                        </button>
                         <a href="#plan-your-trip" class="adhvan-hero__btn adhvan-hero__btn--outline">
                             <i class="far fa-calendar-alt"></i>
                             Plan Your Trip
@@ -815,8 +815,8 @@
             <div class="testimonials-one__bg" style="
                   background-image: url(assets/images/shapes/page-header-bg-shape.png);
                "></div>
-            <div class="container">
-                <div class="sec-title text-center pt-5">
+            <div class="container text-center">
+                <div class="sec-title pt-5">
                     <h2 class="sec-title__tagline bw-split-in-right pt-4">
                         What Our Travelers Say
                     </h2>
@@ -1010,6 +1010,11 @@
                         </div>
                     </div>
                 </div>
+                <button class="adhvan-btn travel-enquiry__submit mt-4" type="submit">
+                    <a href="https://g.page/r/Cf0bP0476bxcEAI/review" target="_blank" class="text-white">
+                        <span><i class="fab fa-telegram-plane"></i> Share Your Travel Story with Adhvan</span>
+                    </a>
+                </button>
             </div>
             <div class="destination-two__element-two travhub-splax"
                 data-para-options='{"orientation": "up", "scale": 1.9, "overflow": true}'>
@@ -1018,12 +1023,6 @@
             <div class="destination-two__element-one travhub-splax"
                 data-para-options='{"orientation": "up", "scale": 1.9, "overflow": true}'>
                 <img src="assets/images/shapes/counter-2-shape.png" alt="Counter shape" />
-            </div>
-            <div class="google-review-btn">
-                <a href="https://g.page/r/Cf0bP0476bxcEAI/review" target="_blank">
-                    <img src="./assets/images/review-icon.webp" alt="" />
-                    Share Your Travel Story with Adhvan
-                </a>
             </div>
         </section>
 
@@ -1820,36 +1819,8 @@
             <div class="enquiry-success-modal__body">
                 <div class="enquiry-success-modal__category-icon" id="enquiry-success-category-icon" aria-hidden="true">
                 </div>
-                <!-- <div class="enquiry-success-modal__icon" aria-hidden="true">
-                    <i class="fas fa-check"></i>
-                </div> -->
-                <!-- <p class="enquiry-success-modal__eyebrow">Enquiry received</p> -->
                 <h2 class="enquiry-success-modal__title" id="enquiry-success-title"></h2>
                 <p class="enquiry-success-modal__message" id="enquiry-success-message"></p>
-
-                <!-- <section class="enquiry-success-modal__next" aria-labelledby="enquiry-success-next-title">
-                    <h3 id="enquiry-success-next-title">What's Next?</h3>
-                    <ol>
-                        <li>
-                            <span class="enquiry-success-modal__next-icon" aria-hidden="true">
-                                <i class="fas fa-check"></i>
-                            </span>
-                            <span><strong>Enquiry Received</strong><small>We've successfully received your enquiry.</small></span>
-                        </li>
-                        <li>
-                            <span class="enquiry-success-modal__next-icon" aria-hidden="true">
-                                <i class="fas fa-user-tie"></i>
-                            </span>
-                            <span><strong>Expert Assistance</strong><small>Our team will review your requirements.</small></span>
-                        </li>
-                        <li>
-                            <span class="enquiry-success-modal__next-icon" aria-hidden="true">
-                                <i class="fas fa-phone-alt"></i>
-                            </span>
-                            <span><strong>Stay Connected</strong><small>Our travel experts will contact you shortly.</small></span>
-                        </li>
-                    </ol>
-                </section> -->
 
                 <button class="enquiry-success-modal__button" type="button">
                     Continue Exploring
@@ -1863,7 +1834,6 @@
         </div>
     </div>
 
-    <!-- Adhvan Pongal Campaign Popup: add before </body> on the homepage -->
     <div class="adhvan-campaign" id="adhvanPongalPopup" aria-hidden="true">
         <div class="adhvan-campaign__dialog" role="dialog" aria-modal="true" aria-labelledby="adhvanPongalTitle"
             aria-describedby="adhvanPongalDescription" tabindex="-1">
@@ -1883,13 +1853,13 @@
 
                         <!-- <span class="adhvan-popup__multiply">&times;</span> -->
 
-                        <img src="assets/images/tamil-nadu-tourism.png" alt="Tamil Nadu Tourism"
-                            class="adhvan-popup__logo tourism-logo" />
+                        <!-- <img src="assets/images/tamil-nadu-tourism.png" alt="Tamil Nadu Tourism"
+                            class="adhvan-popup__logo tourism-logo" /> -->
                     </div>
 
-                    <p class="adhvan-popup__collaboration">
+                    <!-- <p class="adhvan-popup__collaboration">
                         Adhvan Crafted Journeys in association with Tamil Nadu Tourism Development Corporation
-                    </p>
+                    </p> -->
                 </div>
                 <h2 id="adhvanPongalTitle">Pongal Celebration</h2>
                 <p class="adhvan-campaign__tagline">A Journey into Culture, Heritage and Tradition of Tamil Nadu</p>
@@ -1940,7 +1910,7 @@
                 </div>
 
                 <a class="adhvan-campaign__whatsapp" href="#plan-your-trip" data-popup-close rel="noopener noreferrer">
-                    <i class="fab fa-whatsapp"></i>Enquire
+                    Enquire
                 </a>
                 <span class="adhvan-campaign__footnote">For domestic &amp; international travellers · Travel Beyond the
                     Ordinary.</span>
