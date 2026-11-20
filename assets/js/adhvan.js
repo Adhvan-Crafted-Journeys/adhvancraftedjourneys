@@ -1,6 +1,38 @@
 (function ($) {
   "use strict";
 
+  document.addEventListener("DOMContentLoaded", function () {
+    const heroSwiperElement = document.querySelector(".adhvan-hero__swiper");
+
+    if (!heroSwiperElement || typeof Swiper === "undefined") return;
+
+    new Swiper(heroSwiperElement, {
+      slidesPerView: "auto",
+      centeredSlides: true,
+      spaceBetween: -110,
+      loop: true,
+      speed: 1000,
+      breakpoints: {
+        768: {
+          spaceBetween: -115
+        },
+        992: {
+          spaceBetween: -100
+        },
+        1200: {
+          spaceBetween: -110
+        }
+      },
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true
+      },
+      allowTouchMove: true,
+      grabCursor: true
+    });
+  });
+
   let dynamicyearElm = $(".dynamic-year");
   if (dynamicyearElm.length) {
     let currentYear = new Date().getFullYear();
