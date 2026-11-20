@@ -1841,6 +1841,20 @@
         }
 
         showEnquirySuccessModal(submittedCategory);
+
+        try {
+          const tracking = window.adhvanTracking;
+          if (typeof tracking?.track !== "function") {
+            console.warn("Lead conversion tracking is unavailable.");
+          } else {
+            tracking.track("generate_lead", {
+              form_name: travelEnquiryForm.id || "travel-enquiry-form",
+              service_type: submittedCategory
+            });
+          }
+        } catch {
+          console.warn("Lead conversion tracking failed.");
+        }
       } catch (error) {
         console.error("Travel enquiry submission failed.", error);
         if (status) {
