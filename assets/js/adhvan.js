@@ -1,6 +1,38 @@
 (function ($) {
   "use strict";
 
+  function initializePreloader() {
+    const preloader = document.querySelector(".preloader");
+    if (!preloader) return;
+
+    let isHidden = false;
+
+    function hidePreloader() {
+      if (isHidden) return;
+      isHidden = true;
+      preloader.classList.add("is-ready");
+      window.setTimeout(function () {
+        preloader.remove();
+      }, 220);
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", function () {
+        window.requestAnimationFrame(function () {
+          window.requestAnimationFrame(hidePreloader);
+        });
+      }, { once: true });
+    } else {
+      window.requestAnimationFrame(function () {
+        window.requestAnimationFrame(hidePreloader);
+      });
+    }
+
+    window.setTimeout(hidePreloader, 1500);
+  }
+
+  initializePreloader();
+
   document.addEventListener("DOMContentLoaded", function () {
     const faqButtons = document.querySelectorAll(".adhvan-faq__button");
 
@@ -42,30 +74,37 @@
 
     if (!heroSwiperElement || typeof Swiper === "undefined") return;
 
-    new Swiper(heroSwiperElement, {
-      slidesPerView: "auto",
-      centeredSlides: true,
-      spaceBetween: -110,
-      loop: true,
-      speed: 1000,
-      breakpoints: {
-        768: {
-          spaceBetween: -115
-        },
-        992: {
-          spaceBetween: -100
-        },
-        1200: {
-          spaceBetween: -110
-        }
-      },
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true
-      },
-      allowTouchMove: true,
-      grabCursor: true
+    window.requestAnimationFrame(function () {
+      window.requestAnimationFrame(function () {
+        new Swiper(heroSwiperElement, {
+          slidesPerView: "auto",
+          centeredSlides: true,
+          spaceBetween: -110,
+          loop: true,
+          roundLengths: true,
+          observer: false,
+          observeParents: false,
+          speed: 1000,
+          breakpoints: {
+            768: {
+              spaceBetween: -115
+            },
+            992: {
+              spaceBetween: -100
+            },
+            1200: {
+              spaceBetween: -110
+            }
+          },
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true
+          },
+          allowTouchMove: true,
+          grabCursor: true
+        });
+      });
     });
   });
 
@@ -654,10 +693,6 @@
 
   // window load event
   $(window).on("load", function () {
-    var preload = $('.preloader');
-    if (preload.length > 0) {
-      preload.delay(3000).fadeOut('slow');
-    }
     thmOwlInit();
     adhvanSlickInit();
     adhvanPara();

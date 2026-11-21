@@ -385,11 +385,36 @@ h6 {
   -webkit-box-align: center;
   align-items: center;
   text-align: center;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 180ms ease, visibility 0s linear 180ms;
+  animation: preloader-fallback 1500ms linear forwards;
 }
 
 .preloader img {
   height: 50%;
   width: 50%;
+}
+
+.preloader.is-ready {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@keyframes preloader-fallback {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .preloader {
+    animation-duration: 300ms;
+    transition-duration: 1ms;
+  }
 }
 
 /* scroll to top */
@@ -2643,6 +2668,58 @@ h6 {
 
 .adhvan-hero__swiper .swiper-wrapper {
   align-items: center;
+}
+
+.adhvan-hero .adhvan-hero__swiper:not(.swiper-initialized) .swiper-wrapper {
+  display: block;
+  width: 100%;
+}
+
+.adhvan-hero .adhvan-hero__swiper:not(.swiper-initialized) .swiper-slide {
+  flex: 0 0 auto;
+  opacity: 0.9;
+  transform: translateY(20px) scale(0.84);
+}
+
+.adhvan-hero .adhvan-hero__swiper:not(.swiper-initialized) .swiper-slide:not(:first-child) {
+  display: none;
+}
+
+.adhvan-hero .adhvan-hero__swiper:not(.swiper-initialized) .swiper-slide:first-child {
+  margin-right: auto;
+  margin-left: auto;
+  z-index: 3;
+  opacity: 1;
+  transform: scale(1.03);
+}
+
+.adhvan-hero .adhvan-hero__swiper:not(.swiper-initialized) > .swiper-wrapper > .swiper-slide:first-child {
+  z-index: 3;
+  opacity: 1;
+  transform: scale(1.03) !important;
+}
+
+.adhvan-hero .adhvan-hero__swiper:not(.swiper-initialized) .swiper-slide:last-child,
+.adhvan-hero .adhvan-hero__swiper:not(.swiper-initialized) .swiper-slide:nth-child(2) {
+  z-index: 2;
+}
+
+.adhvan-hero .adhvan-hero__swiper:not(.swiper-initialized) .swiper-slide:first-child .adhvan-hero__destination {
+  transform: rotate(3deg);
+  box-shadow: 0 20px 42px rgba(16, 96, 70, 0.24);
+}
+
+.adhvan-hero .adhvan-hero__swiper:not(.swiper-initialized) > .swiper-wrapper > .swiper-slide:first-child .adhvan-hero__destination {
+  transform: rotate(3deg) !important;
+  box-shadow: 0 20px 42px rgba(16, 96, 70, 0.24) !important;
+}
+
+.adhvan-hero .adhvan-hero__swiper:not(.swiper-initialized) .swiper-slide:nth-child(2) .adhvan-hero__destination {
+  transform: rotate(5deg);
+}
+
+.adhvan-hero .adhvan-hero__swiper:not(.swiper-initialized) .swiper-slide:last-child .adhvan-hero__destination {
+  transform: rotate(-5deg);
 }
 
 .adhvan-hero__swiper .swiper-slide {
