@@ -656,7 +656,7 @@
   $(window).on("load", function () {
     var preload = $('.preloader');
     if (preload.length > 0) {
-      preload.delay(5000).fadeOut('slow');
+      preload.delay(3000).fadeOut('slow');
     }
     thmOwlInit();
     adhvanSlickInit();

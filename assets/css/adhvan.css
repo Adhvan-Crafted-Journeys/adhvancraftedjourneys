@@ -42,6 +42,42 @@
 /*--------------------------------------------------------------
 # Common
 --------------------------------------------------------------*/
+
+/* =========================================
+   CUSTOM SCROLLBAR
+========================================= */
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F6F3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #106046;
+  border-radius: 20px;
+  border: 2px solid #F1F6F3;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0B4935;
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #106046 #F1F6F3;
+}
+
+/* Optional: smooth page scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--adhvan-font);
   color: var(--adhvan-text);
@@ -9104,6 +9140,7 @@ h6 {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .adhvan-faq__icon::before,
   .adhvan-faq__icon::after,
   .adhvan-faq__panel {
