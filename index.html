@@ -67,78 +67,90 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "TravelAgency",
-        "@id": "https://www.adhvancraftedjourneys.com/#travelagency",
-        "name": "Adhvan Crafted Journeys",
-        "url": "https://www.adhvancraftedjourneys.com/",
-        "logo": "https://www.adhvancraftedjourneys.com/assets/images/adhvan-green-logo.png",
-        "image": "https://www.adhvancraftedjourneys.com/assets/images/ADHVAN_Crafted_Journeys_Service_Showcase.webp",
-        "description": "Adhvan Crafted Journeys is a Chennai-based travel agency offering customized domestic and international tour packages, visa services, flights, hotels and complete travel planning.",
-        "telephone": "+91-95972-29511",
-        "email": "adhvan.journeys@gmail.com",
-        "priceRange": "$$",
-        "currenciesAccepted": "INR",
-        "openingHoursSpecification": [
+        "@graph": [
             {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": [
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                    "Saturday"
+                "@type": "TravelAgency",
+                "@id": "https://www.adhvancraftedjourneys.com/#travelagency",
+                "name": "Adhvan Crafted Journeys",
+                "url": "https://www.adhvancraftedjourneys.com/",
+                "logo": "https://www.adhvancraftedjourneys.com/assets/images/adhvan-green-logo.png",
+                "image": "https://www.adhvancraftedjourneys.com/assets/images/ADHVAN_Crafted_Journeys_Service_Showcase.webp",
+                "description": "Adhvan Crafted Journeys is a Chennai-based travel agency offering customized domestic and international tour packages, visa services, flights, hotels and complete travel planning.",
+                "telephone": "+91-95972 29511",
+                "email": "adhvan.journeys@gmail.com",
+                "currenciesAccepted": "INR",
+                "openingHoursSpecification": [
+                    {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": [
+                            "Monday",
+                            "Tuesday",
+                            "Wednesday",
+                            "Thursday",
+                            "Friday",
+                            "Saturday"
+                        ],
+                        "opens": "10:00",
+                        "closes": "19:00"
+                    }
                 ],
-                "opens": "09:00",
-                "closes": "19:00"
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "AP 876, 2nd St, 12th Main Rd, H Block, Anna Nagar",
+                    "addressLocality": "Chennai",
+                    "addressRegion": "Tamil Nadu",
+                    "postalCode": "600040",
+                    "addressCountry": "IN"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 13.085958429720122,
+                    "longitude": 80.20322835109751
+                },
+                "areaServed": {
+                    "@type": "City",
+                    "name": "Chennai"
+                },
+                "founder": {
+                    "@type": "Person",
+                    "name": "Ms. Geetanjali Subin"
+                },
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+91-95972 29511",
+                    "contactType": "customer service",
+                    "email": "adhvan.journeys@gmail.com",
+                    "availableLanguage": [
+                        "English",
+                        "Tamil"
+                    ]
+                },
+                "knowsAbout": [
+                    "Customized tour packages",
+                    "Domestic tourism",
+                    "International travel",
+                    "Visa assistance",
+                    "Flight bookings",
+                    "Hotel reservations",
+                    "Travel insurance",
+                    "Forex services",
+                    "Corporate travel"
+                ],
+                "sameAs": [
+                    "https://www.facebook.com/people/Adhvan-Crafted-Journeys/61578139054083/",
+                    "https://www.instagram.com/adhvan_journeyss/",
+                    "https://www.linkedin.com/company/adhvan-crafted-journeys/"
+                ]
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://www.adhvancraftedjourneys.com/#website",
+                "url": "https://www.adhvancraftedjourneys.com/",
+                "name": "Adhvan Crafted Journeys",
+                "publisher": {
+                    "@id": "https://www.adhvancraftedjourneys.com/#travelagency"
+                }
             }
-        ],
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Anna Nagar",
-            "addressLocality": "Chennai",
-            "addressRegion": "Tamil Nadu",
-            "postalCode": "600040",
-            "addressCountry": "IN"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 13.085,
-            "longitude": 80.2101
-        },
-        "areaServed": {
-            "@type": "City",
-            "name": "Chennai"
-        },
-        "founder": {
-            "@type": "Person",
-            "name": "Ms. Geetanjali Subin"
-        },
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+91-95972-29511",
-            "contactType": "customer service",
-            "email": "adhvan.journeys@gmail.com",
-            "availableLanguage": [
-                "English",
-                "Tamil"
-            ]
-        },
-        "knowsAbout": [
-            "Customized tour packages",
-            "Domestic tourism",
-            "International travel",
-            "Visa assistance",
-            "Flight bookings",
-            "Hotel reservations",
-            "Travel insurance",
-            "Forex services",
-            "Corporate travel"
-        ],
-        "sameAs": [
-            "https://www.facebook.com/people/Adhvan-Crafted-Journeys/61578139054083/",
-            "https://www.instagram.com/adhvan_journeyss/",
-            "https://www.linkedin.com/company/adhvan-crafted-journeys/"
         ]
     }
     </script>
@@ -205,7 +217,7 @@
                     <ul class="list-unstyled topbar-two__info">
                         <li class="topbar-two__info__item">
                             <i class="icon-pin-3 topbar-two__info__icon"></i>
-                            <span>AP 876, 2nd st, 12th Main Rd, H Block, Anna Nagar, Chennai - 600 040.</span>
+                            <span>AP 876, 2nd St, 12th Main Rd, H Block, Anna Nagar, Chennai - 600 040, Tamil Nadu, India</span>
                         </li>
                         <li class="topbar-two__info__item">
                             <i class="icon-phone topbar-two__info__icon"></i>
@@ -1649,8 +1661,8 @@
                                         href="mailto:adhvan.journeys@gmail.com">adhvan.journeys@gmail.com</a>
                                 </p>
                                 <p class="footer-widget__text">
-                                    <i class="icon-pin-3 topbar-two__info__icon"></i><span class="ps-3">AP 876, 2nd st,
-                                        12th Main Rd, H Block, Anna Nagar, Chennai - 600 040</span>
+                                    <i class="icon-pin-3 topbar-two__info__icon"></i><span class="ps-3">AP 876, 2nd St,
+                                        12th Main Rd, H Block, Anna Nagar, Chennai - 600 040, Tamil Nadu, India</span>
                                 </p>
                             </div>
                         </div>
@@ -1803,7 +1815,7 @@
                         href="mailto:adhvan.journeys@gmail.com">adhvan.journeys@gmail.com</a>
                 </li>
                 <li>
-                    <i class="fas fa-map-marker-alt"></i><span>Anna Nagar, Chennai - 600 040.</span>
+                    <i class="fas fa-map-marker-alt"></i><span>AP 876, 2nd St, 12th Main Rd, H Block, Anna Nagar, Chennai - 600 040, Tamil Nadu, India</span>
                 </li>
             </ul>
             <div class="mobile-nav__social">
