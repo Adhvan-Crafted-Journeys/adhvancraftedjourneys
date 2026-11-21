@@ -2,6 +2,42 @@
   "use strict";
 
   document.addEventListener("DOMContentLoaded", function () {
+    const faqButtons = document.querySelectorAll(".adhvan-faq__button");
+
+    faqButtons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        const isExpanded = button.getAttribute("aria-expanded") === "true";
+        const panelId = button.getAttribute("aria-controls");
+        const panel = document.getElementById(panelId);
+
+        faqButtons.forEach(function (otherButton) {
+          const otherPanelId = otherButton.getAttribute("aria-controls");
+          const otherPanel = document.getElementById(otherPanelId);
+
+          otherButton.setAttribute("aria-expanded", "false");
+          if (otherPanel) {
+            otherPanel.classList.remove("is-open");
+            window.setTimeout(function () {
+              if (otherPanel.classList.contains("is-open")) return;
+              otherPanel.hidden = true;
+            }, 260);
+          }
+        });
+
+        if (!isExpanded) {
+          button.setAttribute("aria-expanded", "true");
+          if (panel) {
+            panel.hidden = false;
+            window.requestAnimationFrame(function () {
+              panel.classList.add("is-open");
+            });
+          }
+        }
+      });
+    });
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
     const heroSwiperElement = document.querySelector(".adhvan-hero__swiper");
 
     if (!heroSwiperElement || typeof Swiper === "undefined") return;
