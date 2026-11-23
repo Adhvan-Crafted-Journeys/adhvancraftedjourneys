@@ -598,48 +598,6 @@
     }
   }
 
-  function adhvanSlickInit() {
-    // slick slider
-    let adhvanslickCarousel = $(".adhvan-slick__carousel");
-    if (adhvanslickCarousel.length) {
-      adhvanslickCarousel.each(function () {
-        let elm = $(this);
-        let options = elm.data("slick-options");
-        let adhvanslickCarousel = elm.slick(
-          "object" === typeof options ? options : JSON.parse(options)
-        );
-      });
-    }
-    let adhvanslickCarouselCounter = $(".adhvan-slick__custome-counter");
-    if (adhvanslickCarouselCounter.length) {
-      adhvanslickCarouselCounter.each(function () {
-        let elm = $(this);
-        let options = elm.data("slick-options");
-        let currentSlide;
-        let slidesCount;
-        let sliderCounter = document.createElement('div');
-        sliderCounter.classList.add('adhvan-slick__counter');
-
-        let updateSliderCounter = function (slick, currentIndex) {
-          currentSlide = slick.slickCurrentSlide() + 1;
-          slidesCount = slick.slideCount;
-          $(sliderCounter).html('<span class="adhvan-slick__counter__active">' + currentSlide + '</span>' + '' + '<span>' + slidesCount + '</span>')
-        };
-        elm.on('init', function (event, slick) {
-          elm.append(sliderCounter);
-          updateSliderCounter(slick);
-        });
-        elm.on('afterChange', function (event, slick, currentSlide) {
-          updateSliderCounter(slick, currentSlide);
-        });
-
-        let adhvanslickCarousel = elm.slick(
-          "object" === typeof options ? options : JSON.parse(options)
-        );
-      });
-    }
-  }
-
   function adhvanPara() {
     let adhvanParaElm = $(".adhvan-splax");
     if (adhvanParaElm.length) {
@@ -694,7 +652,6 @@
   // window load event
   $(window).on("load", function () {
     thmOwlInit();
-    adhvanSlickInit();
     adhvanPara();
 
     if ($(".circle-progress").length) {
