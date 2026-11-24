@@ -460,7 +460,11 @@
             }
           ]
         }
-      ]
+      ],
+      "enquiry": {
+        "departureDate": "2027-01-10",
+        "returnDate": "2027-01-20"
+      }
     },
     {
       "id": "tamil-nadu-pongal-heritage-tour-domestic",
@@ -632,7 +636,11 @@
             }
           ]
         }
-      ]
+      ],
+      "enquiry": {
+        "departureDate": "2027-01-11",
+        "returnDate": "2027-01-16"
+      }
     },
     {
       "id": "adhvan-travel-services",

@@ -2,7 +2,7 @@
   "use strict";
 
   const DISPLAY_DELAY_MS = 5000;
-  const WHATSAPP_NUMBER = "919597229511";
+  const POPUP_SHOWN_KEY = "adhvanPongalPopupShown";
 
   function initPongalPopup() {
     const overlay = document.getElementById("adhvanPongalPopup");
@@ -14,30 +14,35 @@
 
     const dialog = overlay.querySelector('[role="dialog"]');
     const closeButton = overlay.querySelector(".adhvan-campaign__close");
-    // const whatsappLink = document.getElementById("adhvanPongalWhatsApp");
-    // if (!dialog || !closeButton || !whatsappLink) return;
+    if (!dialog || !closeButton) {
+      console.error("The Pongal campaign popup is missing required elements.");
+      return;
+    }
 
-    // const message = [
-    //   "Hello Adhvan Crafted Journeys!",
-    //   "I am interested in your Tamil Nadu Pongal tour packages.",
-    //   "Please share details, availability and pricing for:",
-    //   "1. Tamil Nadu – A Timeless Journey (5 Nights / 6 Days, 11–16 January 2027)",
-    //   "2. Enchanting Tamil Nadu (10 Nights / 11 Days, 10–20 January 2027)",
-    //   "I am a domestic/international traveller."
-    // ].join("\n");
-    // whatsappLink.href =
-    //   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    try {
+      if (window.sessionStorage.getItem(POPUP_SHOWN_KEY) === "true") return;
+    } catch (error) {
+      console.warn("Pongal popup frequency control is unavailable.", error);
+    }
 
     let previouslyFocused = null;
     let isOpen = false;
 
     function openPopup() {
+      try {
+        window.sessionStorage.setItem(POPUP_SHOWN_KEY, "true");
+      } catch (error) {
+        console.warn("Pongal popup frequency control is unavailable.", error);
+      }
+
       previouslyFocused = document.activeElement;
       overlay.classList.add("is-open");
       overlay.setAttribute("aria-hidden", "false");
       document.body.classList.add("adhvan-popup-open");
       isOpen = true;
-      closeButton.focus();
+      window.setTimeout(function () {
+        if (isOpen) closeButton.focus({ preventScroll: true });
+      }, 300);
     }
 
     function closePopup() {
@@ -47,9 +52,14 @@
       document.body.classList.remove("adhvan-popup-open");
       isOpen = false;
       if (previouslyFocused && typeof previouslyFocused.focus === "function") {
-        previouslyFocused.focus();
+        previouslyFocused.focus({ preventScroll: true });
       }
+      if (document.activeElement === closeButton) closeButton.blur();
     }
+
+    overlay.querySelectorAll("[data-itinerary-open]").forEach(function (button) {
+      button.addEventListener("click", closePopup);
+    });
 
     overlay.querySelectorAll("[data-popup-close]").forEach(function (link) {
       link.addEventListener("click", function () {
