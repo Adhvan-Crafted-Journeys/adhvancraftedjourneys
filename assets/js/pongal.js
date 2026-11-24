@@ -19,6 +19,7 @@
     if (!enquiryForm) return;
 
     var status = document.querySelector("#pongal-enquiry-status");
+    var isSubmitting = false;
 
     function track(eventName, parameters) {
       var tracking = window.adhvanTracking;
@@ -38,7 +39,15 @@
 
     enquiryForm.addEventListener("submit", function (event) {
       event.preventDefault();
-      if (!enquiryForm.reportValidity()) return;
+      if (isSubmitting || !enquiryForm.reportValidity()) return;
+      isSubmitting = true;
+      var whatsappActionTracked = false;
+
+      function trackWhatsAppClickOnce() {
+        if (whatsappActionTracked) return;
+        whatsappActionTracked = true;
+        trackWhatsAppClick();
+      }
 
       var values = new FormData(enquiryForm);
       var message = [
@@ -59,7 +68,7 @@
       var whatsappWindow = window.open(whatsappUrl.href, "_blank");
       if (whatsappWindow) {
         whatsappWindow.opener = null;
-        trackWhatsAppClick();
+        trackWhatsAppClickOnce();
         if (status) {
           status.textContent = "WhatsApp opened. Review the details there and send the message to complete your enquiry. This website does not store it.";
           status.hidden = false;
@@ -74,13 +83,25 @@
         fallbackLink.rel = "noopener noreferrer";
         fallbackLink.textContent = "Open WhatsApp";
         fallbackLink.addEventListener("click", function (clickEvent) {
+          clickEvent.preventDefault();
           clickEvent.stopPropagation();
-          trackWhatsAppClick();
+          if (whatsappActionTracked) return;
+          trackWhatsAppClickOnce();
+          var fallbackWindow = window.open(whatsappUrl.href, "_blank");
+          if (fallbackWindow) {
+            fallbackWindow.opener = null;
+          } else {
+            window.location.assign(whatsappUrl.href);
+          }
         });
         status.appendChild(fallbackLink);
         status.hidden = false;
         fallbackLink.focus();
       }
+
+      window.setTimeout(function () {
+        isSubmitting = false;
+      }, 1000);
     });
   });
 })();
