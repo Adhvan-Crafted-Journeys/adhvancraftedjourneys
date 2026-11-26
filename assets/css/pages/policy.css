@@ -1,0 +1,99 @@
+/*--------------------------------------------------------------
+# Privacy Policy
+--------------------------------------------------------------*/
+
+.privacy-policy {
+  padding: 60px 0;
+  background-image: url(../../images/backgrounds/travel-doodle.webp);
+  background-color: rgba(255, 255, 255, 0.75);
+  background-blend-mode: lighten;
+}
+
+.privacy-policy__content {
+  background: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.privacy-policy__card {
+  margin-top: 20px;
+}
+
+.privacy-policy__item {
+  padding: 10px 0;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.privacy-policy__item:last-child {
+  border-bottom: none;
+}
+
+.privacy-policy__subtitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+  font-family: 'Geologica', sans-serif;
+}
+
+.privacy-policy__list {
+  list-style: none;
+  padding-left: 0;
+  margin: 15px 0;
+  text-align: justify;
+}
+
+.privacy-policy__list li {
+  padding: 2px 0;
+  padding-left: 25px;
+  color: #555;
+  line-height: 1.55;
+  position: relative;
+  font-size: 15px;
+}
+
+.privacy-policy__list li:before {
+  content: "•";
+  color: #2d9457;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.privacy-policy__content p {
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 5px;
+  font-size: 15px;
+  text-align: justify;
+}
+
+.privacy-policy__content a {
+  color: #2d9457;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.privacy-policy__content a:hover {
+  color: #1f6b3a;
+  text-decoration: underline;
+}
+
+.privacy-policy-vertical-line {
+  border-left: 1px solid #ffffff;
+  height: 20px;
+  margin: 0 20px;
+}
+
+@media (max-width: 768px) {
+  .privacy-policy__content {
+    padding: 25px;
+  }
+
+  .privacy-policy__subtitle {
+    font-size: 16px;
+  }
+}

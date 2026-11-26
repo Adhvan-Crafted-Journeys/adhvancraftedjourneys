@@ -1,0 +1,47 @@
+body {
+  font-family: var(--adhvan-font);
+  color: var(--adhvan-text);
+  font-size: 16px;
+  line-height: 1.875;
+  font-weight: 400;
+}
+
+a {
+  color: var(--adhvan-base);
+  transition: all 400ms ease;
+}
+
+a,
+a:hover,
+a:focus,
+a:visited {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--adhvan-heading-font);
+  color: var(--adhvan-black);
+}
+
+@media (max-width: 575px) {
+
+  h1 br,
+  h2 br,
+  h3 br,
+  h4 br,
+  h5 br,
+  h6 br {
+    display: none;
+  }
+}
+
+@media (max-width: 575px) {
+  p br {
+    display: none;
+  }
+}

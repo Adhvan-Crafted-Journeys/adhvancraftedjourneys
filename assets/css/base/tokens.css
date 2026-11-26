@@ -1,0 +1,30 @@
+:root {
+  --adhvan-font: "Roboto", serif;
+  --adhvan-heading-font: "Geologica", serif;
+  --adhvan-special-font: "Caveat", serif;
+  --adhvan-text: #555555;
+  --adhvan-text-rgb: 85, 85, 85;
+  --adhvan-text2: #757575;
+  --adhvan-text2-rgb: 117, 117, 117;
+  --adhvan-base: #106046;
+  --adhvan-base-rgb: 16, 96, 70;
+  --adhvan-primary: #abe6d7;
+  --adhvan-primary-rgb: 171, 230, 215;
+  --adhvan-gray: #f0f0f0;
+  --adhvan-gray-rgb: 240, 240, 240;
+  --adhvan-gray2: #f1f4fa;
+  --adhvan-gray2-rgb: 241, 244, 250;
+  --adhvan-white: #fff;
+  --adhvan-white-rgb: 255, 255, 255;
+  --adhvan-black: #292929;
+  --adhvan-black-rgb: 41, 41, 41;
+  --adhvan-black2: #343434;
+  --adhvan-black2-rgb: 52, 52, 52;
+  --adhvan-black3: #000;
+  --adhvan-black3-rgb: 0, 0, 0;
+  --adhvan-border-color: #e5e3e0;
+  --adhvan-border-color-rgb: 229, 227, 224;
+  --card-bg: rgba(255, 255, 255, 0.04);
+  --muted: rgba(255, 255, 255, 0.75);
+  --glass: rgba(255, 255, 255, 0.02);
+}

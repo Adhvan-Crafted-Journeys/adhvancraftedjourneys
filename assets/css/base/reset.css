@@ -1,0 +1,41 @@
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F6F3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #106046;
+  border-radius: 20px;
+  border: 2px solid #F1F6F3;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0B4935;
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #106046 #F1F6F3;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body.locked {
+  overflow: hidden;
+}
+
+::placeholder {
+  color: inherit;
+  opacity: 1;
+}
+
+::placeholder {
+  color: inherit;
+  opacity: 1;
+}
