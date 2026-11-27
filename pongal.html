@@ -41,7 +41,15 @@
     rel="stylesheet">
   <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/adhvan.css">
+  <link rel="stylesheet" href="assets/vendors/adhvan-icons2/style.css">
+  <link rel="stylesheet" href="assets/css/base/tokens.css">
+  <link rel="stylesheet" href="assets/css/base/reset.css">
+  <link rel="stylesheet" href="assets/css/base/typography.css">
+  <link rel="stylesheet" href="assets/css/base/utilities.css">
+  <link rel="stylesheet" href="assets/css/layout/header.css">
+  <link rel="stylesheet" href="assets/css/components/buttons.css">
+  <link rel="stylesheet" href="assets/css/components/forms.css">
+  <link rel="stylesheet" href="assets/css/components/itinerary-modal.css">
   <link rel="stylesheet" href="assets/css/pongal.css">
 </head>
 
@@ -91,7 +99,12 @@
       <a class="pongal-brand" href="/" aria-label="Adhvan Crafted Journeys home">
         <img src="assets/images/adhvan-green-logo-760.webp" alt="Adhvan Crafted Journeys" width="760" height="166">
       </a>
-      <nav class="pongal-nav" aria-label="Main navigation">
+      <button class="pongal-nav-toggle" type="button" aria-controls="pongal-navigation" aria-expanded="false"
+        aria-label="Open navigation">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+      <nav class="pongal-nav" id="pongal-navigation" aria-label="Main navigation">
         <a href="/">Home</a>
         <a href="upcoming-packages.html">Upcoming Packages</a>
         <a href="#celebration">The Celebration</a>
@@ -251,7 +264,7 @@
             </div>
           </article>
           <article class="pongal-experience-card">
-            <img src="assets/images/tours/Itineraries/pongal/Village_Harvest_Life.jpg"
+            <img src="assets/images/tours/Itineraries/Pongal/Village_Harvest_Life.jpg"
               alt="Villagers celebrating Pongal alongside a paddy harvest" loading="lazy">
             <div><span>02 / AGRICULTURE</span>
               <h3>Village Harvest Life</h3>

@@ -2,7 +2,6 @@
   "use strict";
 
   const DISPLAY_DELAY_MS = 5000;
-  const POPUP_SHOWN_KEY = "adhvanPongalPopupShown";
 
   function initPongalPopup() {
     const overlay = document.getElementById("adhvanPongalPopup");
@@ -19,22 +18,10 @@
       return;
     }
 
-    try {
-      if (window.sessionStorage.getItem(POPUP_SHOWN_KEY) === "true") return;
-    } catch (error) {
-      console.warn("Pongal popup frequency control is unavailable.", error);
-    }
-
     let previouslyFocused = null;
     let isOpen = false;
 
     function openPopup() {
-      try {
-        window.sessionStorage.setItem(POPUP_SHOWN_KEY, "true");
-      } catch (error) {
-        console.warn("Pongal popup frequency control is unavailable.", error);
-      }
-
       previouslyFocused = document.activeElement;
       overlay.classList.add("is-open");
       overlay.setAttribute("aria-hidden", "false");

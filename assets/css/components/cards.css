@@ -501,10 +501,15 @@
   text-align: justify;
 }
 
-@media (max-width: 992px) {
-  .meet-partners__grid {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
+@media (max-width: 991px) {
+  .partner-card {
+    grid-template-columns: minmax(0, 38%) minmax(0, 1fr);
     gap: 22px;
+  }
+
+  .partner-photo {
+    width: 100%;
+    height: auto;
   }
 }
 
@@ -512,14 +517,9 @@
   .meet-partners {
     padding: 70px 0;
   }
-
-  .meet-partners__grid {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-    gap: 22px;
-  }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 575px) {
   .partner-card {
     grid-template-columns: minmax(0, 1fr);
     gap: 16px;
@@ -528,11 +528,14 @@
 
   .partner-card__photo-wrap {
     justify-content: center;
+    width: 100%;
   }
 
   .partner-photo {
-    width: 125px;
-    height: 156px;
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    aspect-ratio: 4 / 5;
   }
 
   .partner-info {
@@ -551,11 +554,6 @@
   .partner-description {
     font-size: 14px;
     line-height: 1.7;
-  }
-
-  .meet-partners__grid {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-    gap: 22px;
   }
 }
 

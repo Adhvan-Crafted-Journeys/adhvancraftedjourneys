@@ -15,6 +15,38 @@
       });
     });
 
+    var mobileNavToggle = document.querySelector(".pongal-nav-toggle");
+    var mobileNav = document.querySelector("#pongal-navigation");
+
+    if (mobileNavToggle && mobileNav) {
+      function setMobileNavOpen(isOpen) {
+        mobileNav.classList.toggle("is-open", isOpen);
+        mobileNavToggle.setAttribute("aria-expanded", String(isOpen));
+        mobileNavToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+      }
+
+      mobileNavToggle.addEventListener("click", function () {
+        setMobileNavOpen(mobileNavToggle.getAttribute("aria-expanded") !== "true");
+      });
+
+      mobileNav.addEventListener("click", function (event) {
+        if (event.target instanceof Element && event.target.closest("a[href]")) {
+          setMobileNavOpen(false);
+        }
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && mobileNavToggle.getAttribute("aria-expanded") === "true") {
+          setMobileNavOpen(false);
+          mobileNavToggle.focus();
+        }
+      });
+
+      window.addEventListener("resize", function () {
+        if (window.innerWidth > 760) setMobileNavOpen(false);
+      });
+    }
+
     var enquiryForm = document.querySelector("#travel-enquiry-form");
     if (!enquiryForm) return;
 
